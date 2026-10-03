@@ -10,9 +10,10 @@ The renderer uses UIKit and Core Graphics, with no external assets or game engin
 ## Open and run
 
 1. Copy the `ios` folder to a Mac with **Xcode 15 or newer**.
-2. Open **`TetrisDuel.xcodeproj`**. No project generator, CocoaPods or downloads are
-   needed to build the app.
-3. Select the **TetrisDuel** scheme and an iPhone or iPad simulator. Press **⌘R**.
+2. Open **`pt.TetrisDuel.xcodeproj`**. No project generator, CocoaPods or downloads
+   are needed to build the app.
+3. Select the **pt.TetrisDuel** scheme and an iPhone or iPad simulator.
+   Press **⌘R**.
 4. For a physical device, select your development team under **Signing &
    Capabilities**. Change `com.example.TetrisDuel` to a unique bundle identifier
    if needed. The deployment target is **iOS / iPadOS 16.0**.
@@ -118,7 +119,7 @@ The checked-in scheme includes **31 unit tests** and **3 UI tests**. On a Mac:
 ```sh
 cd ios
 swift test
-open TetrisDuel.xcodeproj
+open pt.TetrisDuel.xcodeproj
 # Select an iPhone or iPad simulator and press Command-U.
 ```
 
@@ -129,8 +130,9 @@ The shared-iPad UI test skips on an iPhone simulator.
 From the command line, list available destinations and choose one:
 
 ```sh
-xcodebuild -project TetrisDuel.xcodeproj -scheme TetrisDuel -showdestinations
-xcodebuild -project TetrisDuel.xcodeproj -scheme TetrisDuel \
+xcodebuild -project pt.TetrisDuel.xcodeproj -scheme pt.TetrisDuel \
+  -showdestinations
+xcodebuild -project pt.TetrisDuel.xcodeproj -scheme pt.TetrisDuel \
   -destination 'platform=iOS Simulator,id=YOUR_SIMULATOR_UDID' \
   -derivedDataPath build CODE_SIGNING_ALLOWED=NO test
 ```

@@ -25,18 +25,44 @@ final class MenuInteractor: MenuInteracting {
     private let defaults: UserDefaults
     private let isPad: Bool
     init(defaults: UserDefaults, isPad: Bool) { self.defaults = defaults; self.isPad = isPad }
-    var name: String { defaults.string(forKey: "playerName") ?? "Player" }
+    var name: String {
+        defaults.string(forKey: "playerName") ?? L10n.text("player.default")
+    }
     var items: [MenuItem] {
-        var values = [MenuItem(choice: .solo, title: "Solo game", symbol: "person.fill")]
-        if isPad { values.append(MenuItem(choice: .shared, title: "Two players · this iPad", symbol: "person.2.fill")) }
-        values += [MenuItem(choice: .host, title: "Host a nearby game", symbol: "wifi"),
-                   MenuItem(choice: .join, title: "Join a nearby game", symbol: "antenna.radiowaves.left.and.right")]
+        var values = [MenuItem(
+            choice: .solo,
+            title: L10n.text("menu.solo"),
+            symbol: "person.fill"
+        )]
+        if isPad {
+            values.append(MenuItem(
+                choice: .shared,
+                title: L10n.text("menu.shared"),
+                symbol: "person.2.fill"
+            ))
+        }
+
+        values += [
+            MenuItem(
+                choice: .host,
+                title: L10n.text("menu.host"),
+                symbol: "wifi"
+            ),
+            MenuItem(
+                choice: .join,
+                title: L10n.text("menu.join"),
+                symbol: "antenna.radiowaves.left.and.right"
+            )
+        ]
         return values
     }
     func saveName(_ name: String) {
         var value = name.trimmingCharacters(in: .whitespacesAndNewlines)
         while value.utf8.count > 60 { value.removeLast() }
-        defaults.set(value.isEmpty ? "Player" : value, forKey: "playerName")
+        defaults.set(
+            value.isEmpty ? L10n.text("player.default") : value,
+            forKey: "playerName"
+        )
     }
 }
 

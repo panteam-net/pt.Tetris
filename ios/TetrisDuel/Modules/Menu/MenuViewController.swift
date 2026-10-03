@@ -9,25 +9,48 @@ final class MenuViewController: UIViewController, MenuViewing {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Theme.background
-        navigationItem.backButtonTitle = "Menu"
+        navigationItem.backButtonTitle = L10n.text("common.menu")
         let scroll = UIScrollView()
         scroll.keyboardDismissMode = .onDrag
         view.addSubview(scroll); scroll.pinEdges(to: view)
-        let eyebrow = Theme.label("LOCAL MULTIPLAYER  /  3D", size: 12, weight: .bold, color: Theme.mint)
-        let title = Theme.label("TETRIS\nDUEL", size: 54, weight: .heavy)
+        let eyebrow = Theme.label(
+            L10n.text("menu.eyebrow"),
+            size: 12,
+            weight: .bold,
+            color: Theme.mint
+        )
+        let title = Theme.label(
+            L10n.text("menu.title"),
+            size: 54,
+            weight: .heavy
+        )
         title.numberOfLines = 2
-        let subtitle = Theme.label("Same pieces. Your own pace.\nOne winner.", size: 20, color: Theme.muted)
+        let subtitle = Theme.label(
+            L10n.text("menu.subtitle"),
+            size: 20,
+            color: Theme.muted
+        )
         subtitle.numberOfLines = 0
-        let nameLabel = Theme.label("YOUR NAME", size: 11, weight: .bold, color: Theme.muted)
+        let nameLabel = Theme.label(
+            L10n.text("menu.name"),
+            size: 11,
+            weight: .bold,
+            color: Theme.muted
+        )
         nameField.textColor = Theme.text; nameField.backgroundColor = Theme.panel
         nameField.layer.cornerRadius = 12; nameField.font = .systemFont(ofSize: 17)
         nameField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 14, height: 1)); nameField.leftViewMode = .always
         nameField.autocorrectionType = .no; nameField.returnKeyType = .done
         nameField.accessibilityIdentifier = "player-name"
+        nameField.accessibilityLabel = L10n.text("menu.name")
         nameField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         nameField.addTarget(self, action: #selector(endEditing), for: .editingDidEndOnExit)
         buttons.axis = .vertical; buttons.spacing = 12
-        let footnote = Theme.label("Nearby play uses local or peer-to-peer Wi-Fi.\nNo account or internet connection required.", size: 12, color: Theme.muted)
+        let footnote = Theme.label(
+            L10n.text("menu.footnote"),
+            size: 12,
+            color: Theme.muted
+        )
         footnote.numberOfLines = 0
         let content = UIStackView(arrangedSubviews: [eyebrow, title, subtitle, nameLabel, nameField, buttons, footnote])
         content.axis = .vertical; content.spacing = 16
@@ -54,7 +77,10 @@ final class MenuViewController: UIViewController, MenuViewing {
             button.addAction(UIAction { [weak self] _ in
                 guard let self = self else { return }
                 self.view.endEditing(true)
-                self.presenter.select(item.choice, name: self.nameField.text ?? "Player")
+                self.presenter.select(
+                    item.choice,
+                    name: self.nameField.text ?? L10n.text("player.default")
+                )
             }, for: .touchUpInside)
             buttons.addArrangedSubview(button)
         }

@@ -15,6 +15,7 @@ public struct HeldInput {
             direction = action == .left ? -1 : 1
             repeatTime = -0.16
         }
+        
         return action == .softDrop ? nil : action
     }
 

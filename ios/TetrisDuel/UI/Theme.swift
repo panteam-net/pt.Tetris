@@ -37,6 +37,7 @@ enum Theme {
         config.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 18, bottom: 16, trailing: 18)
         if let symbol = symbol { config.image = UIImage(systemName: symbol); config.imagePadding = 12 }
         let button = UIButton(configuration: config)
+        button.titleLabel?.numberOfLines = 0
         button.isExclusiveTouch = false
         return button
     }

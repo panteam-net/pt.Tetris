@@ -7,7 +7,7 @@ final class PlayerPanel: UIView {
     private let score = Theme.label(size: 24, weight: .bold)
     private let stats = Theme.label(size: 10, weight: .medium, color: Theme.muted)
     private let hold = PiecePreview(frame: .zero)
-    private let next = (0..<3).map { _ in PiecePreview(frame: .zero) }
+    private let nextPreviews = (0..<3).map { _ in PiecePreview(frame: .zero) }
     private let board = CubeBoardView(frame: .zero)
 
     init(seat: Int, controlled: Bool) {
@@ -18,19 +18,39 @@ final class PlayerPanel: UIView {
         name.accessibilityIdentifier = "player-\(seat)-name"
         score.font = .monospacedDigitSystemFont(ofSize: 24, weight: .bold)
         score.adjustsFontSizeToFitWidth = true; score.minimumScaleFactor = 0.55
+        score.accessibilityLabel = L10n.text("player.score")
         stats.adjustsFontSizeToFitWidth = true; stats.minimumScaleFactor = 0.7
         board.seat = seat
-        let holdLabel = Theme.label("HOLD", size: 8, weight: .bold, color: Theme.muted)
-        let nextLabel = Theme.label("NEXT", size: 8, weight: .bold, color: Theme.muted)
-        let previews = UIStackView(arrangedSubviews: [holdLabel, hold, nextLabel] + next)
+        let holdLabel = Theme.label(
+            L10n.text("player.hold"),
+            size: 8,
+            weight: .bold,
+            color: Theme.muted
+        )
+        let nextLabel = Theme.label(
+            L10n.text("player.next"),
+            size: 8,
+            weight: .bold,
+            color: Theme.muted
+        )
+        let previews = UIStackView(
+            arrangedSubviews: [holdLabel, hold, nextLabel] + nextPreviews
+        )
         previews.spacing = 4; previews.alignment = .center
-        hold.widthAnchor.constraint(equalTo: next[0].widthAnchor).isActive = true
-        for preview in [hold] + next {
+        hold.widthAnchor.constraint(
+            equalTo: nextPreviews[0].widthAnchor
+        ).isActive = true
+        for preview in [hold] + nextPreviews {
             preview.heightAnchor.constraint(equalToConstant: 32).isActive = true
             preview.widthAnchor.constraint(greaterThanOrEqualToConstant: 20).isActive = true
         }
-        next[1].widthAnchor.constraint(equalTo: next[0].widthAnchor).isActive = true
-        next[2].widthAnchor.constraint(equalTo: next[0].widthAnchor).isActive = true
+
+        nextPreviews[1].widthAnchor.constraint(
+            equalTo: nextPreviews[0].widthAnchor
+        ).isActive = true
+        nextPreviews[2].widthAnchor.constraint(
+            equalTo: nextPreviews[0].widthAnchor
+        ).isActive = true
         let stack = UIStackView(arrangedSubviews: [name, score, stats, previews, board, controls])
         stack.axis = .vertical; stack.spacing = 5
         addSubview(stack); stack.pinEdges(to: self, inset: 10)
@@ -43,9 +63,18 @@ final class PlayerPanel: UIView {
     func render(_ state: BoardSnapshot, title: String, enabled: Bool) {
         name.text = title
         score.text = state.score.formatted()
-        stats.text = "LINES \(state.lines)   LV \(state.level)   SENT \(state.sent)   +\(state.incoming)"
+        stats.text = L10n.format(
+            "player.stats",
+            state.lines,
+            state.level,
+            state.sent,
+            state.incoming
+        )
         hold.kind = state.held; hold.dimmed = state.holdUsed
-        for (index, preview) in next.enumerated() { preview.kind = state.next[index] }
+        for (index, preview) in nextPreviews.enumerated() {
+            preview.kind = state.next[index]
+        }
+
         board.snapshot = state
         controls.setEnabled(enabled)
     }

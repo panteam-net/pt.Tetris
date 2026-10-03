@@ -79,7 +79,7 @@ final class GameInteractor: GameInteracting {
         guard !stopped else { return }
         if configuration.mode.isNearby && phase != .disconnected {
             if clock.now - lastReceived > 8 {
-                connectionLost("Connection lost. The match is stopped; no winner is awarded.")
+                connectionLost(L10n.text("game.notice.timeout"))
                 return
             }
             heartbeatTimer += dt
@@ -139,7 +139,12 @@ final class GameInteractor: GameInteracting {
         if paused && (phase == .playing || phase == .countdown) {
             resumePhase = phase; phase = .paused; clearInputs()
         } else if !paused && phase == .paused {
-            guard unavailable.isEmpty else { notice = "Both players must return to the game before resuming."; publish(); return }
+            guard unavailable.isEmpty else {
+                notice = L10n.text("game.notice.unavailable")
+                publish()
+                return
+            }
+
             phase = resumePhase; notice = nil; clearInputs()
         }
         publish()
@@ -159,7 +164,7 @@ final class GameInteractor: GameInteracting {
         guard currentPhase == .finished else { return }
         if configuration.mode == .nearbyGuest {
             send(.rematch(round: remoteSnapshot?.round ?? round))
-            notice = "Rematch requested. Waiting for the other player."
+            notice = L10n.text("game.notice.rematchWaiting")
             publish()
         } else if configuration.mode == .nearbyHost {
             rematchVotes.insert(0)
@@ -169,7 +174,10 @@ final class GameInteractor: GameInteracting {
 
     private func tryRematch() {
         if rematchVotes.count == 2 { restart() }
-        else { notice = "Rematch requested. Both players must choose Rematch."; publish() }
+        else {
+            notice = L10n.text("game.notice.rematchBoth")
+            publish()
+        }
     }
 
     private func restart() {
@@ -189,7 +197,11 @@ final class GameInteractor: GameInteracting {
             if phase == .waiting { phase = .countdown; countdown = 3; publish() }
             send(.snapshot(snapshot))
         case .snapshot(let state) where configuration.mode == .nearbyGuest:
-            guard state.boards.count == 2 else { connectionLost("Invalid match received."); return }
+            guard state.boards.count == 2 else {
+                connectionLost(L10n.text("game.notice.invalidMatch"))
+                return
+            }
+
             if let old = remoteSnapshot {
                 guard state.round > old.round || (state.round == old.round && state.revision > old.revision) else { return }
                 if state.boards[1].lines > old.boards[1].lines { feedback.play(.clear) }
@@ -202,7 +214,11 @@ final class GameInteractor: GameInteracting {
             guard epoch == round, serial > lastRemoteSequence, phase == .playing else { return }
             if clock.now - inputWindowStart >= 1 { inputWindowStart = clock.now; remoteInputCount = 0 }
             remoteInputCount += 1
-            guard remoteInputCount <= 160 else { connectionLost("The peer sent too many inputs."); return }
+            guard remoteInputCount <= 160 else {
+                connectionLost(L10n.text("game.notice.rateLimit"))
+                return
+            }
+
             lastRemoteSequence = serial
             applyInput(action, seat: 1, pressed: pressed)
         case .pause(let epoch, let paused) where configuration.mode == .nearbyHost:
@@ -213,7 +229,7 @@ final class GameInteractor: GameInteracting {
             else { unavailable.insert(seat); if configuration.mode == .nearbyHost { applyPause(true) } }
         case .rematch(let epoch) where configuration.mode == .nearbyHost:
             if epoch == round && phase == .finished { rematchVotes.insert(1); tryRematch() }
-        case .bye: connectionLost("The other player left the match.")
+        case .bye: connectionLost(L10n.text("game.notice.playerLeft"))
         default: break
         }
     }
@@ -221,7 +237,7 @@ final class GameInteractor: GameInteracting {
     private func send(_ message: WireMessage) {
         guard let transport = transport, !stopped, phase != .disconnected else { return }
         do { try transport.send(message) }
-        catch { connectionLost("Connection interrupted. Return to the menu and join a new game.") }
+        catch { connectionLost(L10n.text("game.notice.interrupted")) }
     }
 
     private func connectionLost(_ text: String) {

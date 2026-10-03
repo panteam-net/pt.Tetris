@@ -19,12 +19,14 @@ private struct CubeProjection {
         let z = -sin(yaw) * p.x + cos(yaw) * p.z
         return SIMD3(x, cos(pitch) * p.y - sin(pitch) * z, sin(pitch) * p.y + cos(pitch) * z)
     }
+    
     func project(_ point: SIMD3<Double>) -> CGPoint {
         let p = transform(point)
         let perspective = 85 / (85 - p.z)
         return CGPoint(x: center.x + CGFloat(p.x * perspective) * scale,
                        y: center.y - CGFloat(p.y * perspective) * scale)
     }
+    
     func cube(x: Double, y: Double, color: UIColor, active: Bool = false) -> [Face] {
         let w = 0.92, h = 0.92, d = 0.86
         let vertices: [SIMD3<Double>] = [SIMD3(x,y,0),SIMD3(x+w,y,0),SIMD3(x+w,y+h,0),SIMD3(x,y+h,0),
@@ -67,7 +69,7 @@ final class CubeBoardView: UIView {
         super.init(frame: frame)
         isOpaque = true; backgroundColor = Theme.panel; contentMode = .redraw
         isAccessibilityElement = true
-        accessibilityLabel = "Tetris board"
+        accessibilityLabel = L10n.text("board.accessibility.label")
     }
     required init?(coder: NSCoder) { fatalError("Use init(frame:)") }
 
@@ -123,7 +125,12 @@ final class CubeBoardView: UIView {
             let meter = UIBezierPath(roundedRect: CGRect(x: bounds.width-7, y: bounds.height-15-height, width: 4, height: height), cornerRadius: 2)
             Theme.color(.z).setFill(); meter.fill()
         }
-        accessibilityValue = "\(snapshot.lines) lines, level \(snapshot.level), \(snapshot.incoming) incoming rows"
+        accessibilityValue = L10n.format(
+            "board.accessibility.value",
+            snapshot.lines,
+            snapshot.level,
+            snapshot.incoming
+        )
     }
 }
 

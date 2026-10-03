@@ -2,7 +2,7 @@
 
 **Swift / iOS:** версия на UIKit с VIPER, DI, двумя игроками на iPad и сетевой
 дуэлью через Multipeer Connectivity находится в [ios/README.md](ios/README.md).
-Откройте `ios/TetrisDuel.xcodeproj` на Mac в Xcode.
+Откройте `ios/pt.TetrisDuel.xcodeproj` на Mac в Xcode.
 
 Тетрис на Python для **двух игроков за одним компьютером**. Два поля с объёмными
 кубиками, освещением и перспективой. Правила классические: фигуры двигаются по

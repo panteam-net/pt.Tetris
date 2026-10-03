@@ -5,6 +5,7 @@ import json
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
+PROJECT_NAME = "pt.TetrisDuel"
 objects = {}
 
 
@@ -28,14 +29,52 @@ def serialize(value, indent=0):
     return json.dumps(str(value))
 
 
-def group(name, files):
+def group(name, directory, files):
     refs = []
-    for path in files:
-        extension = Path(path).suffix
-        file_type = {".swift": "sourcecode.swift", ".xcassets": "folder.assetcatalog",
-                     ".plist": "text.plist.xml", ".xcprivacy": "text.xml"}[extension]
-        refs.append(add("file:"+path, "PBXFileReference", lastKnownFileType=file_type, path=path, sourceTree="<group>"))
-    return add("group:"+name, "PBXGroup", name=name, children=refs, sourceTree="<group>")
+    root = Path(directory)
+    folders = {root: refs}
+    for path in sorted(files):
+        file_path = Path(path)
+        parent = root
+        children = refs
+        for component in file_path.relative_to(root).parts[:-1]:
+            parent = parent / component
+            if parent not in folders:
+                folders[parent] = []
+                children.append(add(
+                    "group:"+parent.as_posix(),
+                    "PBXGroup",
+                    path=component,
+                    children=folders[parent],
+                    sourceTree="<group>",
+                ))
+
+            children = folders[parent]
+
+        file_type = {
+            ".swift": "sourcecode.swift",
+            ".xcassets": "folder.assetcatalog",
+            ".plist": "text.plist.xml",
+            ".xcprivacy": "text.xml",
+        }[file_path.suffix]
+        children.append(add(
+            "file:"+path,
+            "PBXFileReference",
+            lastKnownFileType=file_type,
+            name=file_path.name,
+            path=path,
+            sourceTree="SOURCE_ROOT",
+        ))
+
+    result = add(
+        "group:"+name,
+        "PBXGroup",
+        name=name,
+        path=directory,
+        children=refs,
+        sourceTree="<group>",
+    )
+    return result
 
 
 def phase(name, kind, paths):
@@ -62,8 +101,23 @@ def build():
     test_sources = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "TetrisDuelTests").rglob("*.swift"))
     ui_sources = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "TetrisDuelUITests").rglob("*.swift"))
     resources = ["TetrisDuel/Resources/Assets.xcassets", "TetrisDuel/Resources/PrivacyInfo.xcprivacy"]
-    groups = [group("Application", app_sources + resources + ["TetrisDuel/Resources/Info.plist"]),
-              group("Unit Tests", test_sources), group("UI Tests", ui_sources)]
+    groups = [
+        group(
+            "Application",
+            "TetrisDuel",
+            app_sources + resources + ["TetrisDuel/Resources/Info.plist"],
+        ),
+        group(
+            "Unit Tests",
+            "TetrisDuelTests",
+            test_sources,
+        ),
+        group(
+            "UI Tests",
+            "TetrisDuelUITests",
+            ui_sources,
+        ),
+    ]
     products = []
     targets = []
     common = {"SDKROOT": "iphoneos", "IPHONEOS_DEPLOYMENT_TARGET": "16.0", "SWIFT_VERSION": "5.0",
@@ -72,32 +126,67 @@ def build():
               "SUPPORTED_PLATFORMS": "iphoneos iphonesimulator", "SUPPORTS_MACCATALYST": "NO",
               "SWIFT_EMIT_LOC_STRINGS": "YES", "ENABLE_USER_SCRIPT_SANDBOXING": "YES"}
     for name, source, product_type in (
-        ("TetrisDuel", app_sources, "com.apple.product-type.application"),
+        (PROJECT_NAME, app_sources, "com.apple.product-type.application"),
         ("TetrisDuelTests", test_sources, "com.apple.product-type.bundle.unit-test"),
         ("TetrisDuelUITests", ui_sources, "com.apple.product-type.bundle.ui-testing"),
     ):
-        is_app = name == "TetrisDuel"
+        is_app = name == PROJECT_NAME
         product = add("product:"+name, "PBXFileReference", explicitFileType="wrapper.application" if is_app else "wrapper.cfbundle",
                       includeInIndex=0, path=name+(".app" if is_app else ".xctest"), sourceTree="BUILT_PRODUCTS_DIR")
         products.append(product)
         phases = [phase(name+"Sources", "PBXSourcesBuildPhase", source), phase(name+"Frameworks", "PBXFrameworksBuildPhase", [])]
         phases.append(phase(name+"Resources", "PBXResourcesBuildPhase", resources if is_app else []))
-        settings = dict(common, PRODUCT_BUNDLE_IDENTIFIER="com.example."+name, PRODUCT_NAME="$(TARGET_NAME)")
+        bundle_name = "TetrisDuel" if is_app else name
+        settings = dict(
+            common,
+            PRODUCT_BUNDLE_IDENTIFIER="com.example."+bundle_name,
+            PRODUCT_NAME="$(TARGET_NAME)",
+        )
         if is_app:
-            settings.update(INFOPLIST_FILE="TetrisDuel/Resources/Info.plist", GENERATE_INFOPLIST_FILE="NO",
-                            ASSETCATALOG_COMPILER_APPICON_NAME="AppIcon", LD_RUNPATH_SEARCH_PATHS=["$(inherited)", "@executable_path/Frameworks"])
+            settings.update(
+                INFOPLIST_FILE="TetrisDuel/Resources/Info.plist",
+                GENERATE_INFOPLIST_FILE="NO",
+                PRODUCT_MODULE_NAME=PROJECT_NAME.replace(".", "_"),
+                ASSETCATALOG_COMPILER_APPICON_NAME="AppIcon",
+                LD_RUNPATH_SEARCH_PATHS=[
+                    "$(inherited)", "@executable_path/Frameworks"
+                ],
+            )
         else:
             settings.update(GENERATE_INFOPLIST_FILE="YES")
             if name == "TetrisDuelTests":
-                settings.update(TEST_HOST="$(BUILT_PRODUCTS_DIR)/TetrisDuel.app/TetrisDuel", BUNDLE_LOADER="$(TEST_HOST)",
-                                LD_RUNPATH_SEARCH_PATHS=["$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks"])
+                test_host = (
+                    f"$(BUILT_PRODUCTS_DIR)/{PROJECT_NAME}.app/{PROJECT_NAME}"
+                )
+                settings.update(
+                    TEST_HOST=test_host,
+                    BUNDLE_LOADER="$(TEST_HOST)",
+                    LD_RUNPATH_SEARCH_PATHS=[
+                        "$(inherited)",
+                        "@executable_path/Frameworks",
+                        "@loader_path/Frameworks",
+                    ],
+                )
             else:
-                settings.update(TEST_TARGET_NAME="TetrisDuel")
+                settings.update(TEST_TARGET_NAME=PROJECT_NAME)
+
         dependencies = []
         if not is_app:
-            proxy = add("proxy:"+name, "PBXContainerItemProxy", containerPortal=identifier("project"), proxyType=1,
-                        remoteGlobalIDString=identifier("target:TetrisDuel"), remoteInfo="TetrisDuel")
-            dependencies.append(add("dependency:"+name, "PBXTargetDependency", target=identifier("target:TetrisDuel"), targetProxy=proxy))
+            proxy = add(
+                "proxy:"+name,
+                "PBXContainerItemProxy",
+                containerPortal=identifier("project"),
+                proxyType=1,
+                remoteGlobalIDString=identifier("target:"+PROJECT_NAME),
+                remoteInfo=PROJECT_NAME,
+            )
+            dependencies.append(add(
+                "dependency:"+name,
+                "PBXTargetDependency",
+                target=identifier("target:"+PROJECT_NAME),
+                targetProxy=proxy,
+            ))
+
         targets.append(add("target:"+name, "PBXNativeTarget", buildConfigurationList=configuration_list(name, settings),
                            buildPhases=phases, buildRules=[], dependencies=dependencies, name=name, productName=name,
                            productReference=product, productType=product_type))
@@ -108,7 +197,7 @@ def build():
                   buildConfigurationList=configuration_list("Project", common), compatibilityVersion="Xcode 14.0",
                   developmentRegion="en", hasScannedForEncodings=0, knownRegions=["en", "Base"], mainGroup=main,
                   productRefGroup=product_group, projectDirPath="", projectRoot="", targets=targets)
-    output = ROOT / "TetrisDuel.xcodeproj"
+    output = ROOT / f"{PROJECT_NAME}.xcodeproj"
     output.mkdir(exist_ok=True)
     project_data = dict(archiveVersion=1, classes={}, objectVersion=56, objects=objects, rootObject=project)
     (output / "project.pbxproj").write_text("// !$*UTF8*$!\n" + serialize(project_data) + "\n", encoding="utf-8")
@@ -118,14 +207,23 @@ def build():
 
 def scheme(output):
     def reference(parent, name):
-        ET.SubElement(parent, "BuildableReference", BuildableIdentifier="primary", BlueprintIdentifier=identifier("target:"+name),
-                      BuildableName=name+(".app" if name == "TetrisDuel" else ".xctest"), BlueprintName=name,
-                      ReferencedContainer="container:TetrisDuel.xcodeproj")
+        ET.SubElement(
+            parent,
+            "BuildableReference",
+            BuildableIdentifier="primary",
+            BlueprintIdentifier=identifier("target:"+name),
+            BuildableName=name+(
+                ".app" if name == PROJECT_NAME else ".xctest"
+            ),
+            BlueprintName=name,
+            ReferencedContainer=f"container:{PROJECT_NAME}.xcodeproj",
+        )
+
     root = ET.Element("Scheme", LastUpgradeVersion="1600", version="1.3")
     build_action = ET.SubElement(root, "BuildAction", parallelizeBuildables="YES", buildImplicitDependencies="YES")
     entries = ET.SubElement(build_action, "BuildActionEntries")
-    for name in ("TetrisDuel", "TetrisDuelTests", "TetrisDuelUITests"):
-        app = name == "TetrisDuel"
+    for name in (PROJECT_NAME, "TetrisDuelTests", "TetrisDuelUITests"):
+        app = name == PROJECT_NAME
         entry = ET.SubElement(entries, "BuildActionEntry", buildForTesting="YES", buildForRunning="YES" if app else "NO",
                               buildForProfiling="YES" if app else "NO", buildForArchiving="YES" if app else "NO", buildForAnalyzing="YES")
         reference(entry, name)
@@ -137,14 +235,30 @@ def scheme(output):
     launch = ET.SubElement(root, "LaunchAction", buildConfiguration="Debug", selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB",
                           selectedLauncherIdentifier="Xcode.IDEFoundation.Launcher.LLDB", launchStyle="0", useCustomWorkingDirectory="NO",
                           ignoresPersistentStateOnLaunch="NO", debugDocumentVersioning="YES", allowLocationSimulation="YES")
-    reference(ET.SubElement(launch, "BuildableProductRunnable", runnableDebuggingMode="0"), "TetrisDuel")
+    reference(
+        ET.SubElement(
+            launch,
+            "BuildableProductRunnable",
+            runnableDebuggingMode="0",
+        ),
+        PROJECT_NAME,
+    )
     profile = ET.SubElement(root, "ProfileAction", buildConfiguration="Release", shouldUseLaunchSchemeArgsEnv="YES",
                            savedToolIdentifier="", useCustomWorkingDirectory="NO", debugDocumentVersioning="YES")
-    reference(ET.SubElement(profile, "BuildableProductRunnable", runnableDebuggingMode="0"), "TetrisDuel")
+    reference(
+        ET.SubElement(
+            profile,
+            "BuildableProductRunnable",
+            runnableDebuggingMode="0",
+        ),
+        PROJECT_NAME,
+    )
     ET.SubElement(root, "AnalyzeAction", buildConfiguration="Debug")
     ET.SubElement(root, "ArchiveAction", buildConfiguration="Release", revealArchiveInOrganizer="YES")
     ET.indent(root)
-    destination = output / "xcshareddata" / "xcschemes" / "TetrisDuel.xcscheme"
+    destination = (
+        output / "xcshareddata" / "xcschemes" / f"{PROJECT_NAME}.xcscheme"
+    )
     destination.parent.mkdir(parents=True, exist_ok=True)
     ET.ElementTree(root).write(destination, encoding="utf-8", xml_declaration=True)
 

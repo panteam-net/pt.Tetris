@@ -12,10 +12,19 @@ final class GameTouchButton: UIControl {
     init(action: GameAction, symbol: String, title: String, accent: UIColor) {
         self.action = action
         caption = Theme.label(title, size: 9, weight: .semibold, color: accent)
+        caption.adjustsFontSizeToFitWidth = true
+        caption.minimumScaleFactor = 0.65
         super.init(frame: .zero)
         isExclusiveTouch = false
         isAccessibilityElement = true
         accessibilityLabel = title
+        if action == .rotate {
+            accessibilityLabel = L10n.text("controls.rotate.accessibility")
+        } else if action == .reverse {
+            accessibilityLabel = L10n.text("controls.reverse.accessibility")
+        }
+
+        accessibilityIdentifier = "control-\(action)"
         accessibilityTraits = .button
         backgroundColor = Theme.line.withAlphaComponent(0.6)
         layer.cornerRadius = 11
@@ -57,10 +66,17 @@ final class TouchControls: UIView {
     init(seat: Int) {
         super.init(frame: .zero)
         let definitions: [[(GameAction, String, String)]] = [
-            [(.left,"arrow.left","LEFT"),(.reverse,"arrow.counterclockwise","ROTATE"),
-             (.rotate,"arrow.clockwise","ROTATE"),(.right,"arrow.right","RIGHT")],
-            [(.hold,"arrow.left.arrow.right","HOLD"),(.softDrop,"arrow.down","DOWN"),
-             (.hardDrop,"arrow.down.to.line","DROP")]
+            [
+                (.left, "arrow.left", L10n.text("controls.left")),
+                (.reverse, "arrow.counterclockwise", L10n.text("controls.rotate")),
+                (.rotate, "arrow.clockwise", L10n.text("controls.rotate")),
+                (.right, "arrow.right", L10n.text("controls.right"))
+            ],
+            [
+                (.hold, "arrow.left.arrow.right", L10n.text("controls.hold")),
+                (.softDrop, "arrow.down", L10n.text("controls.down")),
+                (.hardDrop, "arrow.down.to.line", L10n.text("controls.drop"))
+            ]
         ]
         let rows = definitions.map { row -> UIStackView in
             let controls = row.map { action, symbol, title -> GameTouchButton in

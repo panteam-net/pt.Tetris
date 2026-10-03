@@ -1,5 +1,5 @@
 import XCTest
-@testable import TetrisDuel
+@testable import pt_TetrisDuel
 
 private final class TestClock: GameClock {
     var onTick: ((Double) -> Void)?

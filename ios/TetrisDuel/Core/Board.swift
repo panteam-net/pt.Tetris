@@ -67,6 +67,7 @@ public final class Board {
             resetLock(wasGrounded)
             return true
         }
+        
         return false
     }
 
@@ -103,9 +104,11 @@ public final class Board {
         var remaining = amount
         while remaining > 0 && !pending.isEmpty {
             let cancelled = min(remaining, pending[0].rows)
-            remaining -= cancelled; pending[0].rows -= cancelled
+            remaining -= cancelled
+            pending[0].rows -= cancelled
             if pending[0].rows == 0 { pending.removeFirst() }
         }
+        
         return remaining
     }
 
@@ -118,9 +121,12 @@ public final class Board {
             for _ in 0..<count {
                 grid.append(contentsOf: (0..<Rules.width).map { $0 == first.hole ? 0 : Tetromino.garbage.rawValue })
             }
-            pending[0].rows -= count; budget -= count
+            
+            pending[0].rows -= count
+            budget -= count
             if pending[0].rows == 0 { pending.removeFirst() }
         }
+        
         if budget < 8 { effects.append(.garbage) }
     }
 
@@ -138,6 +144,7 @@ public final class Board {
             for row in 0..<Rules.height where !full.contains(row) {
                 remainder.append(contentsOf: grid[(row * Rules.width)..<((row + 1) * Rules.width)])
             }
+            
             grid = [UInt8](repeating: 0, count: count * Rules.width) + remainder
             combo += 1
             let bonus = backToBack && count == 4
@@ -147,7 +154,11 @@ public final class Board {
             lines += count
             backToBack = count == 4
             var attack = [0, 0, 1, 2, 4][count] + (bonus ? 1 : 0) + min(4, combo / 2)
-            if grid.allSatisfy({ $0 == 0 }) { score += 2000 * oldLevel; attack += 6 }
+            if grid.allSatisfy({ $0 == 0 }) {
+                score += 2000 * oldLevel
+                attack += 6
+            }
+            
             attack = cancelIncoming(attack)
             outgoing += attack; sent += attack
             effects.append(.clear)
@@ -157,29 +168,53 @@ public final class Board {
             applyGarbage()
             if cells.allSatisfy({ $0.y < Rules.hidden }) { alive = false }
         }
+        
         holdUsed = false
         if alive { spawn() }
     }
 
     public func tick(_ dt: Double, softDrop: Bool = false) {
         guard alive, dt.isFinite, dt >= 0 else { return }
-        let interval = softDrop ? min(0.035, gravityInterval) : gravityInterval
+        let interval = softDrop
+            ? min(0.035, gravityInterval)
+            : gravityInterval
         gravityTime += min(dt, 0.25)
         while gravityTime >= interval {
             gravityTime -= interval
-            if valid(dy: 1) { piece.y += 1; if softDrop { score += 1 } }
-            else { gravityTime = 0; break }
+            if valid(dy: 1) {
+                piece.y += 1
+                if softDrop {
+                    score += 1 }
+            }
+            else {
+                gravityTime = 0
+                break
+            }
         }
+        
         if grounded {
             lockTime += min(dt, 0.25)
-            if lockTime >= Rules.lockDelay { lock() }
-        } else if lockResets < Rules.lockResetLimit { lockTime = 0 }
+            if lockTime >= Rules.lockDelay {
+                lock()
+            }
+        } else if lockResets < Rules.lockResetLimit {
+            lockTime = 0
+        }
     }
 
     public var snapshot: BoardSnapshot {
-        BoardSnapshot(grid: grid, piece: piece, ghostY: piece.y + ghostDistance, held: held,
-                      holdUsed: holdUsed, next: preview, score: score, lines: lines,
-                      sent: sent, incoming: incoming, alive: alive)
+        BoardSnapshot(
+            grid: grid,
+            piece: piece,
+            ghostY: piece.y + ghostDistance,
+            held: held,
+            holdUsed: holdUsed,
+            next: preview,
+            score: score,
+            lines: lines,
+            sent: sent,
+            incoming: incoming,
+            alive: alive)
     }
 
     // Internal fixture seam available to @testable tests; the UI cannot edit a board.

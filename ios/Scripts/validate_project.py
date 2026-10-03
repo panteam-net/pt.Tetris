@@ -33,14 +33,17 @@ def validate():
     assert info["NSBonjourServices"] == ["_tetris-duel._tcp"]
     assert info.get("NSLocalNetworkUsageDescription")
     assert not any("Bluetooth" in key for key in info), "No Bluetooth permission should be requested"
-    project_path = ROOT / "TetrisDuel.xcodeproj/project.pbxproj"
+    project_directory = ROOT / "pt.TetrisDuel.xcodeproj"
+    project_path = project_directory / "project.pbxproj"
     project_text = project_path.read_text()
     all_sources = list((ROOT / "TetrisDuel").rglob("*.swift")) + list((ROOT / "TetrisDuelTests").rglob("*.swift")) + list((ROOT / "TetrisDuelUITests").rglob("*.swift"))
     for path in all_sources:
         assert path.relative_to(ROOT).as_posix() in project_text, f"Source missing from project: {path}"
     for path in (ROOT / "TetrisDuel/Core").glob("*.swift"):
         assert not re.search(r"import (UIKit|MultipeerConnectivity|CoreBluetooth)", path.read_text()), f"Platform dependency in core: {path}"
-    scheme = ET.parse(ROOT / "TetrisDuel.xcodeproj/xcshareddata/xcschemes/TetrisDuel.xcscheme")
+    scheme = ET.parse(
+        project_directory / "xcshareddata/xcschemes/pt.TetrisDuel.xcscheme"
+    )
     assert len(scheme.findall(".//TestableReference")) == 2
     try:
         from openstep_parser import OpenStepDecoder

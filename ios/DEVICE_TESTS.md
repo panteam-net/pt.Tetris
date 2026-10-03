@@ -4,7 +4,7 @@ These are outstanding runtime checks, not a record of completed tests.
 
 ## Build and local play
 
-- Build the app and run the TetrisDuel scheme tests on an iPhone and an iPad.
+- Build the app and run the pt.TetrisDuel scheme tests on an iPhone and an iPad.
 - Confirm iPhone shows one board, iPad offers the shared-device duel, and both
   full-size iPad orientations keep the controls and both fields visible.
 - Start solo, rotate at both walls and the floor, hold once per piece, soft-drop,

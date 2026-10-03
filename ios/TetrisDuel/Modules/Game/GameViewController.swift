@@ -10,7 +10,10 @@ final class GameViewController: UIViewController, GameViewing {
     private let overlay = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
     private let overlayTitle = Theme.label(size: 32, weight: .heavy)
     private let overlayDetail = Theme.label(size: 15, color: Theme.muted)
-    private let primaryButton = Theme.button("Resume", primary: true)
+    private let primaryButton = Theme.button(
+        L10n.text("common.resume"),
+        primary: true
+    )
     private var observers: [NSObjectProtocol] = []
     private var lastPhase: MatchPhase?
     private var heldKeys = Set<Int>()
@@ -24,7 +27,7 @@ final class GameViewController: UIViewController, GameViewing {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "TETRIS DUEL"
+        title = L10n.text("game.title")
         view.backgroundColor = Theme.background
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItems = [
@@ -32,7 +35,16 @@ final class GameViewController: UIViewController, GameViewing {
             UIBarButtonItem(image: UIImage(systemName: "questionmark.circle"), style: .plain, target: self, action: #selector(helpPressed)),
             UIBarButtonItem(image: UIImage(systemName: "speaker.wave.2"), style: .plain, target: self, action: #selector(soundPressed))
         ]
-        navigationItem.rightBarButtonItems?[0].accessibilityLabel = "Pause or resume"
+        navigationItem.rightBarButtonItems?[0].accessibilityLabel =
+            L10n.text("game.pause.accessibility")
+        navigationItem.rightBarButtonItems?[0].accessibilityIdentifier =
+            "game-pause"
+        navigationItem.rightBarButtonItems?[1].accessibilityLabel =
+            L10n.text("game.help.title")
+        navigationItem.rightBarButtonItems?[1].accessibilityIdentifier =
+            "game-help"
+        navigationItem.rightBarButtonItems?[2].accessibilityIdentifier =
+            "game-sound"
         let spacer = UIView()
         let header = UIStackView(arrangedSubviews: [statusLabel, spacer, timerLabel])
         header.heightAnchor.constraint(equalToConstant: 24).isActive = true
@@ -83,6 +95,7 @@ final class GameViewController: UIViewController, GameViewing {
         overlay.layer.cornerRadius = 24; overlay.clipsToBounds = true
         overlay.layer.borderColor = Theme.line.cgColor; overlay.layer.borderWidth = 1
         overlayTitle.numberOfLines = 0; overlayTitle.textAlignment = .center
+        overlayTitle.accessibilityIdentifier = "game-overlay-title"
         overlayTitle.adjustsFontSizeToFitWidth = true; overlayTitle.minimumScaleFactor = 0.65
         overlayDetail.numberOfLines = 0; overlayDetail.textAlignment = .center
         primaryButton.addTarget(self, action: #selector(primaryPressed), for: .touchUpInside)
@@ -103,15 +116,30 @@ final class GameViewController: UIViewController, GameViewing {
     func render(_ model: GameViewModel) {
         let seconds = Int(model.snapshot.elapsed)
         timerLabel.text = String(format: "%02d:%02d", seconds/60, seconds%60)
-        statusLabel.text = model.title + (mode == .solo ? "" : "  ·  \(model.snapshot.wins[0]) : \(model.snapshot.wins[1])")
+        statusLabel.text = mode == .solo ? model.title : L10n.format(
+            "game.header",
+            model.title,
+            model.snapshot.wins[0],
+            model.snapshot.wins[1]
+        )
         if model.snapshot.boards.count == 2 {
             let other = model.snapshot.boards[1-mode.localSeat]
-            opponentLabel.text = "\(model.opponentName.uppercased())  •  \(other.score) PTS  •  \(other.lines) LINES"
+            opponentLabel.text = L10n.format(
+                "game.opponent.summary",
+                model.opponentName.uppercased(),
+                other.score,
+                other.lines
+            )
         }
         for panel in panels where model.snapshot.boards.indices.contains(panel.seat) {
             let title: String
-            if mode == .sharedDevice { title = "PLAYER 0\(panel.seat+1)" }
-            else { title = panel.seat == mode.localSeat ? "YOU" : model.opponentName.uppercased() }
+            if mode == .sharedDevice {
+                title = L10n.format("player.numbered", panel.seat + 1)
+            } else {
+                title = panel.seat == mode.localSeat
+                    ? L10n.text("player.you") : model.opponentName.uppercased()
+            }
+
             panel.render(model.snapshot.boards[panel.seat], title: title, enabled: model.snapshot.phase == .playing)
         }
         overlay.isHidden = model.overlayTitle == nil
@@ -119,6 +147,9 @@ final class GameViewController: UIViewController, GameViewing {
         primaryButton.isHidden = model.primaryTitle == nil
         primaryButton.configuration?.title = model.primaryTitle
         navigationItem.rightBarButtonItems?[2].image = UIImage(systemName: model.soundEnabled ? "speaker.wave.2" : "speaker.slash")
+        navigationItem.rightBarButtonItems?[2].accessibilityLabel = L10n.text(
+            model.soundEnabled ? "game.sound.disable" : "game.sound.enable"
+        )
         if lastPhase != model.snapshot.phase {
             heldKeys.removeAll()
             if let title = model.overlayTitle { UIAccessibility.post(notification: .announcement, argument: title) }
@@ -127,9 +158,15 @@ final class GameViewController: UIViewController, GameViewing {
     }
 
     func showHelp() {
-        let alert = UIAlertController(title: "How to play", message:
-            "Fill horizontal lines without gaps. Clear 2 / 3 / 4 lines to send 1 / 2 / 4 rows to your opponent. Combos increase attacks; your clears cancel incoming rows.\n\nHold saves a piece once per turn. The outline shows its landing position. Whoever tops out loses.\n\nHold arrows for movement. Tap rotation, Hold or Drop.\n\nKeyboard: A/D, W/Q, S, Space, left Shift. Player 2: arrows, /, Enter, right Shift. P pauses.\n\nNearby matches use Wi-Fi with no internet required. Both players must agree to a rematch.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Got it", style: .default))
+        let alert = UIAlertController(
+            title: L10n.text("game.help.title"),
+            message: L10n.text("game.help.body"),
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(
+            title: L10n.text("common.gotIt"),
+            style: .default
+        ))
         present(alert, animated: true)
     }
 

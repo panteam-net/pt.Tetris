@@ -15,16 +15,27 @@ final class LobbyViewController: UIViewController, LobbyViewing, UITableViewData
     required init?(coder: NSCoder) { fatalError("Use dependency-injected initializer") }
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = role == .host ? "Host a game" : "Join a game"
+        title = L10n.text(
+            role == .host ? "lobby.host.title" : "lobby.join.title"
+        )
         view.backgroundColor = Theme.background
         let icon = UIImageView(image: UIImage(systemName: "wifi", withConfiguration: UIImage.SymbolConfiguration(pointSize: 48, weight: .medium)))
         icon.tintColor = Theme.mint; icon.contentMode = .scaleAspectFit
         icon.heightAnchor.constraint(equalToConstant: 72).isActive = true
-        let name = Theme.label(role == .host ? playerName : "NEARBY GAMES", size: 28, weight: .bold)
+        let name = Theme.label(
+            role == .host ? playerName : L10n.text("lobby.nearbyGames"),
+            size: 28,
+            weight: .bold
+        )
         name.textAlignment = .center
+        name.numberOfLines = 0
         status.textAlignment = .center; status.numberOfLines = 0
         spinner.color = Theme.mint; spinner.hidesWhenStopped = true
-        let hint = Theme.label(role == .host ? "On the other device, choose Join a nearby game.\nAccept your opponent’s invitation here." : "Choose a host below. Both devices need Wi-Fi\nand Local Network permission enabled.", size: 14, color: Theme.muted)
+        let hint = Theme.label(
+            L10n.text(role == .host ? "lobby.host.hint" : "lobby.join.hint"),
+            size: 14,
+            color: Theme.muted
+        )
         hint.numberOfLines = 0; hint.textAlignment = .center
         table.backgroundColor = .clear; table.dataSource = self; table.delegate = self
         table.rowHeight = 68; table.isHidden = role == .host
@@ -52,9 +63,19 @@ final class LobbyViewController: UIViewController, LobbyViewing, UITableViewData
     }
     func showPeers(_ peers: [NearbyPeer]) { self.peers = peers; table.reloadData() }
     func showInvitation(name: String, answer: @escaping (Bool) -> Void) {
-        let alert = UIAlertController(title: "Play with \(name)?", message: "This player wants to join your nearby duel.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Decline", style: .cancel) { _ in answer(false) })
-        alert.addAction(UIAlertAction(title: "Play", style: .default) { _ in answer(true) })
+        let alert = UIAlertController(
+            title: L10n.format("lobby.invitation.title", name),
+            message: L10n.text("lobby.invitation.message"),
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(
+            title: L10n.text("common.decline"),
+            style: .cancel
+        ) { _ in answer(false) })
+        alert.addAction(UIAlertAction(
+            title: L10n.text("common.play"),
+            style: .default
+        ) { _ in answer(true) })
         present(alert, animated: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 18) { [weak alert] in
             guard let alert = alert, alert.presentingViewController != nil else { return }
@@ -66,7 +87,8 @@ final class LobbyViewController: UIViewController, LobbyViewing, UITableViewData
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
         cell.backgroundColor = Theme.panel; cell.textLabel?.textColor = Theme.text
         cell.detailTextLabel?.textColor = Theme.muted
-        cell.textLabel?.text = peers[indexPath.row].name; cell.detailTextLabel?.text = "Tap to request a duel"
+        cell.textLabel?.text = peers[indexPath.row].name
+        cell.detailTextLabel?.text = L10n.text("lobby.peer.hint")
         cell.accessoryType = .disclosureIndicator
         return cell
     }

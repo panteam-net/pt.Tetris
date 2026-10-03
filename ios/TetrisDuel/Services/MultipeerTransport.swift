@@ -26,7 +26,9 @@ final class MultipeerTransport: NSObject, NearbyTransport {
     init(displayName: String) {
         var name = displayName.trimmingCharacters(in: .whitespacesAndNewlines)
         while name.utf8.count > 60 { name.removeLast() }
-        identity = MCPeerID(displayName: name.isEmpty ? "Tetris player" : name)
+        identity = MCPeerID(
+            displayName: name.isEmpty ? L10n.text("player.nearbyDefault") : name
+        )
         super.init()
         session = MCSession(peer: identity, securityIdentity: nil, encryptionPreference: .required)
         session.delegate = self
@@ -38,7 +40,7 @@ final class MultipeerTransport: NSObject, NearbyTransport {
         let service = MCNearbyServiceAdvertiser(peer: identity,
             discoveryInfo: ["version": String(WireCodec.version)], serviceType: Self.serviceType)
         advertiser = service; service.delegate = self; service.startAdvertisingPeer()
-        onEvent?(.status("Waiting for a player to join…"))
+        onEvent?(.status(L10n.text("nearby.status.waiting")))
     }
 
     func browse() {
@@ -46,7 +48,7 @@ final class MultipeerTransport: NSObject, NearbyTransport {
         role = .guest
         let service = MCNearbyServiceBrowser(peer: identity, serviceType: Self.serviceType)
         browser = service; service.delegate = self; service.startBrowsingForPeers()
-        onEvent?(.status("Looking for nearby games…"))
+        onEvent?(.status(L10n.text("nearby.status.searching")))
     }
 
     func invite(_ peer: NearbyPeer) {
@@ -54,7 +56,10 @@ final class MultipeerTransport: NSObject, NearbyTransport {
         candidate = remote
         browser?.stopBrowsingForPeers()
         browser?.invitePeer(remote, to: session, withContext: Data([WireCodec.version]), timeout: 20)
-        onEvent?(.status("Waiting for \(remote.displayName) to accept…"))
+        onEvent?(.status(L10n.format(
+            "nearby.status.invitation",
+            remote.displayName
+        )))
         scheduleTimeout()
     }
 
@@ -63,7 +68,7 @@ final class MultipeerTransport: NSObject, NearbyTransport {
         let task = DispatchWorkItem { [weak self] in
             guard let self = self, !self.isConnected, !self.closed else { return }
             self.disconnect()
-            self.onEvent?(.failure("The invitation timed out or was declined. Go back and try again."))
+            self.onEvent?(.failure(L10n.text("nearby.error.invitation")))
         }
         connectionTimeout = task
         DispatchQueue.main.asyncAfter(deadline: .now() + 22, execute: task)
@@ -98,8 +103,11 @@ final class MultipeerTransport: NSObject, NearbyTransport {
         switch state {
         case .connected:
             guard peer == candidate, connectedPeer == nil || connectedPeer == peer else {
-                disconnect(); onEvent?(.failure("Unexpected extra peer. Please create a new room.")); return
+                disconnect()
+                onEvent?(.failure(L10n.text("nearby.error.extraPeer")))
+                return
             }
+
             connectedPeer = peer
             connectionTimeout?.cancel(); connectionTimeout = nil
             advertiser?.stopAdvertisingPeer(); browser?.stopBrowsingForPeers()
@@ -107,8 +115,9 @@ final class MultipeerTransport: NSObject, NearbyTransport {
         case .notConnected:
             guard peer == candidate || peer == connectedPeer else { return }
             disconnect()
-            onEvent?(.disconnected("The nearby player disconnected. Start a new room to play again."))
-        case .connecting: onEvent?(.status("Connecting securely…"))
+            onEvent?(.disconnected(L10n.text("nearby.error.disconnected")))
+        case .connecting:
+            onEvent?(.status(L10n.text("nearby.status.connecting")))
         @unknown default: break
         }
     }
@@ -123,7 +132,10 @@ final class MultipeerTransport: NSObject, NearbyTransport {
 extension MultipeerTransport: MCNearbyServiceAdvertiserDelegate {
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) {
         DispatchQueue.main.async { [weak self] in
-            self?.onEvent?(.failure("Cannot host a game. Enable Wi-Fi and allow Local Network access in Settings. \(error.localizedDescription)"))
+            self?.onEvent?(.failure(L10n.format(
+                "nearby.error.host",
+                error.localizedDescription
+            )))
         }
     }
 
@@ -172,7 +184,10 @@ extension MultipeerTransport: MCNearbyServiceBrowserDelegate {
     }
     func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {
         DispatchQueue.main.async { [weak self] in
-            self?.onEvent?(.failure("Cannot find games. Enable Wi-Fi and allow Local Network access in Settings. \(error.localizedDescription)"))
+            self?.onEvent?(.failure(L10n.format(
+                "nearby.error.search",
+                error.localizedDescription
+            )))
         }
     }
 }
@@ -188,7 +203,7 @@ extension MultipeerTransport: MCSessionDelegate {
             do { self.onMessage?(try WireCodec.decode(data)) }
             catch {
                 self.disconnect()
-                self.onEvent?(.failure("The other game sent an incompatible update. Use the same app version."))
+                self.onEvent?(.failure(L10n.text("nearby.error.incompatible")))
             }
         }
     }
