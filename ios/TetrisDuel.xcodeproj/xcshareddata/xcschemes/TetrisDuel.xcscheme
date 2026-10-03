@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Scheme LastUpgradeVersion="1600" version="1.3">
+  <BuildAction parallelizeBuildables="YES" buildImplicitDependencies="YES">
+    <BuildActionEntries>
+      <BuildActionEntry buildForTesting="YES" buildForRunning="YES" buildForProfiling="YES" buildForArchiving="YES" buildForAnalyzing="YES">
+        <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="7F67DF368B8EAE2B29F4E645" BuildableName="TetrisDuel.app" BlueprintName="TetrisDuel" ReferencedContainer="container:TetrisDuel.xcodeproj" />
+      </BuildActionEntry>
+      <BuildActionEntry buildForTesting="YES" buildForRunning="NO" buildForProfiling="NO" buildForArchiving="NO" buildForAnalyzing="YES">
+        <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="375B7DD02422F305ACB12CFB" BuildableName="TetrisDuelTests.xctest" BlueprintName="TetrisDuelTests" ReferencedContainer="container:TetrisDuel.xcodeproj" />
+      </BuildActionEntry>
+      <BuildActionEntry buildForTesting="YES" buildForRunning="NO" buildForProfiling="NO" buildForArchiving="NO" buildForAnalyzing="YES">
+        <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="D28A1A6A2A62CE61DE2F1DF7" BuildableName="TetrisDuelUITests.xctest" BlueprintName="TetrisDuelUITests" ReferencedContainer="container:TetrisDuel.xcodeproj" />
+      </BuildActionEntry>
+    </BuildActionEntries>
+  </BuildAction>
+  <TestAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.IDEFoundation.Launcher.LLDB" shouldUseLaunchSchemeArgsEnv="YES">
+    <Testables>
+      <TestableReference skipped="NO" parallelizable="NO">
+        <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="375B7DD02422F305ACB12CFB" BuildableName="TetrisDuelTests.xctest" BlueprintName="TetrisDuelTests" ReferencedContainer="container:TetrisDuel.xcodeproj" />
+      </TestableReference>
+      <TestableReference skipped="NO" parallelizable="NO">
+        <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="D28A1A6A2A62CE61DE2F1DF7" BuildableName="TetrisDuelUITests.xctest" BlueprintName="TetrisDuelUITests" ReferencedContainer="container:TetrisDuel.xcodeproj" />
+      </TestableReference>
+    </Testables>
+  </TestAction>
+  <LaunchAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.IDEFoundation.Launcher.LLDB" launchStyle="0" useCustomWorkingDirectory="NO" ignoresPersistentStateOnLaunch="NO" debugDocumentVersioning="YES" allowLocationSimulation="YES">
+    <BuildableProductRunnable runnableDebuggingMode="0">
+      <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="7F67DF368B8EAE2B29F4E645" BuildableName="TetrisDuel.app" BlueprintName="TetrisDuel" ReferencedContainer="container:TetrisDuel.xcodeproj" />
+    </BuildableProductRunnable>
+  </LaunchAction>
+  <ProfileAction buildConfiguration="Release" shouldUseLaunchSchemeArgsEnv="YES" savedToolIdentifier="" useCustomWorkingDirectory="NO" debugDocumentVersioning="YES">
+    <BuildableProductRunnable runnableDebuggingMode="0">
+      <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="7F67DF368B8EAE2B29F4E645" BuildableName="TetrisDuel.app" BlueprintName="TetrisDuel" ReferencedContainer="container:TetrisDuel.xcodeproj" />
+    </BuildableProductRunnable>
+  </ProfileAction>
+  <AnalyzeAction buildConfiguration="Debug" />
+  <ArchiveAction buildConfiguration="Release" revealArchiveInOrganizer="YES" />
+</Scheme>

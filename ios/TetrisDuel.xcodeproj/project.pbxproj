@@ -1,0 +1,896 @@
+// !$*UTF8*$!
+{
+	"archiveVersion" = "1";
+	"classes" = {
+	};
+	"objectVersion" = "56";
+	"objects" = {
+		"E78547D18CC71A776CC75DE5" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/App/AppContainer.swift";
+			"sourceTree" = "<group>";
+		};
+		"5586BA0348C8B0D44F998019" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/App/AppDelegate.swift";
+			"sourceTree" = "<group>";
+		};
+		"03EDBF5800BB1E6570E105A3" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/App/SceneDelegate.swift";
+			"sourceTree" = "<group>";
+		};
+		"05ED5FA971E40AEB47031040" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Core/Board.swift";
+			"sourceTree" = "<group>";
+		};
+		"2EE37870D4F051AB9C0C0EBF" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Core/Entities.swift";
+			"sourceTree" = "<group>";
+		};
+		"3E86B0D570F9A3401FB90117" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Core/HeldInput.swift";
+			"sourceTree" = "<group>";
+		};
+		"C3A53AD8AF18043848C9A99D" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Core/Match.swift";
+			"sourceTree" = "<group>";
+		};
+		"DCFC8CEAA4DEDF9C0470EF7A" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Core/SeededRandom.swift";
+			"sourceTree" = "<group>";
+		};
+		"7BCBB3F890E11DF42D27F117" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Core/WireProtocol.swift";
+			"sourceTree" = "<group>";
+		};
+		"90E990089E9DA44D74CB77DD" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Modules/Game/GameContracts.swift";
+			"sourceTree" = "<group>";
+		};
+		"0BE7E02D51AD066FE910437E" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Modules/Game/GameInteractor.swift";
+			"sourceTree" = "<group>";
+		};
+		"8F574EB01E38EE196EE0BBFD" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Modules/Game/GamePresenter.swift";
+			"sourceTree" = "<group>";
+		};
+		"AF6D75E6D9FFCA2153F069FA" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Modules/Game/GameRouter.swift";
+			"sourceTree" = "<group>";
+		};
+		"73155CD7A5B74BE4C469A740" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Modules/Game/GameViewController.swift";
+			"sourceTree" = "<group>";
+		};
+		"EC37C49D43C499435599F02F" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Modules/Lobby/LobbyVIPER.swift";
+			"sourceTree" = "<group>";
+		};
+		"CEBF88F78D47633E2CD7BFC6" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Modules/Lobby/LobbyViewController.swift";
+			"sourceTree" = "<group>";
+		};
+		"BB0BD4BF84F800D052C855A9" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Modules/Menu/MenuVIPER.swift";
+			"sourceTree" = "<group>";
+		};
+		"76A06E6A4A0C8215E3D27E76" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Modules/Menu/MenuViewController.swift";
+			"sourceTree" = "<group>";
+		};
+		"9A45F00C0A76AD34C9AB7F80" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Services/DisplayLinkClock.swift";
+			"sourceTree" = "<group>";
+		};
+		"39FFFB7EFB30DCB7B4CA9BCF" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Services/FeedbackService.swift";
+			"sourceTree" = "<group>";
+		};
+		"AE7B098C6DD8D5065ECBF88B" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Services/MultipeerTransport.swift";
+			"sourceTree" = "<group>";
+		};
+		"CF3F98BA02E58666ED1C54CA" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/Services/ServiceContracts.swift";
+			"sourceTree" = "<group>";
+		};
+		"5D9F99194E2DE3CF745F3DC3" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/UI/CubeBoardView.swift";
+			"sourceTree" = "<group>";
+		};
+		"74277FFE2B2104F36BFB2522" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/UI/PlayerPanel.swift";
+			"sourceTree" = "<group>";
+		};
+		"1FB1B3DAFD4A2665916A16BA" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/UI/Theme.swift";
+			"sourceTree" = "<group>";
+		};
+		"D07713FAAA8BEF6AC2A6BAE8" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuel/UI/TouchControls.swift";
+			"sourceTree" = "<group>";
+		};
+		"2635EFF94AEFBB980A538B5D" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "folder.assetcatalog";
+			"path" = "TetrisDuel/Resources/Assets.xcassets";
+			"sourceTree" = "<group>";
+		};
+		"A8F19A7727F161F477272659" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "text.xml";
+			"path" = "TetrisDuel/Resources/PrivacyInfo.xcprivacy";
+			"sourceTree" = "<group>";
+		};
+		"87DB4D009CC59A34D01477E7" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "text.plist.xml";
+			"path" = "TetrisDuel/Resources/Info.plist";
+			"sourceTree" = "<group>";
+		};
+		"5BA6CA76DD1BD29BBBB5547D" = {
+			"isa" = "PBXGroup";
+			"name" = "Application";
+			"children" = (
+				"E78547D18CC71A776CC75DE5",
+				"5586BA0348C8B0D44F998019",
+				"03EDBF5800BB1E6570E105A3",
+				"05ED5FA971E40AEB47031040",
+				"2EE37870D4F051AB9C0C0EBF",
+				"3E86B0D570F9A3401FB90117",
+				"C3A53AD8AF18043848C9A99D",
+				"DCFC8CEAA4DEDF9C0470EF7A",
+				"7BCBB3F890E11DF42D27F117",
+				"90E990089E9DA44D74CB77DD",
+				"0BE7E02D51AD066FE910437E",
+				"8F574EB01E38EE196EE0BBFD",
+				"AF6D75E6D9FFCA2153F069FA",
+				"73155CD7A5B74BE4C469A740",
+				"EC37C49D43C499435599F02F",
+				"CEBF88F78D47633E2CD7BFC6",
+				"BB0BD4BF84F800D052C855A9",
+				"76A06E6A4A0C8215E3D27E76",
+				"9A45F00C0A76AD34C9AB7F80",
+				"39FFFB7EFB30DCB7B4CA9BCF",
+				"AE7B098C6DD8D5065ECBF88B",
+				"CF3F98BA02E58666ED1C54CA",
+				"5D9F99194E2DE3CF745F3DC3",
+				"74277FFE2B2104F36BFB2522",
+				"1FB1B3DAFD4A2665916A16BA",
+				"D07713FAAA8BEF6AC2A6BAE8",
+				"2635EFF94AEFBB980A538B5D",
+				"A8F19A7727F161F477272659",
+				"87DB4D009CC59A34D01477E7",
+			);
+			"sourceTree" = "<group>";
+		};
+		"04BC14F364338B68420CC225" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuelTests/Core/EngineTests.swift";
+			"sourceTree" = "<group>";
+		};
+		"5F557267C8CF9C962D57F893" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuelTests/Core/WireTests.swift";
+			"sourceTree" = "<group>";
+		};
+		"75EDFB885D78DD89377A91E6" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuelTests/GameInteractorTests.swift";
+			"sourceTree" = "<group>";
+		};
+		"E73290434CF2536C8BFF49F3" = {
+			"isa" = "PBXGroup";
+			"name" = "Unit Tests";
+			"children" = (
+				"04BC14F364338B68420CC225",
+				"5F557267C8CF9C962D57F893",
+				"75EDFB885D78DD89377A91E6",
+			);
+			"sourceTree" = "<group>";
+		};
+		"5FF25CE7B649C0C7902FB7DE" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "TetrisDuelUITests/TetrisDuelUITests.swift";
+			"sourceTree" = "<group>";
+		};
+		"F3D639DAD13860D099B3BDA8" = {
+			"isa" = "PBXGroup";
+			"name" = "UI Tests";
+			"children" = (
+				"5FF25CE7B649C0C7902FB7DE",
+			);
+			"sourceTree" = "<group>";
+		};
+		"193A29DBB30E7E568F560EB7" = {
+			"isa" = "PBXFileReference";
+			"explicitFileType" = "wrapper.application";
+			"includeInIndex" = "0";
+			"path" = "TetrisDuel.app";
+			"sourceTree" = "BUILT_PRODUCTS_DIR";
+		};
+		"9A0BC604D6A155DB394C3F98" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "E78547D18CC71A776CC75DE5";
+		};
+		"1319F821F5F35058DC66FF20" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "5586BA0348C8B0D44F998019";
+		};
+		"97F7E0AC208F982B287BE7C9" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "03EDBF5800BB1E6570E105A3";
+		};
+		"FF56B9B7B4D149A8FD84435A" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "05ED5FA971E40AEB47031040";
+		};
+		"35A0D49C2D61718461FDE681" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "2EE37870D4F051AB9C0C0EBF";
+		};
+		"D94D33606B14A78EE1C70D2A" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "3E86B0D570F9A3401FB90117";
+		};
+		"AA411CC63CCC3C4B29149738" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "C3A53AD8AF18043848C9A99D";
+		};
+		"67EF695BAAE816E14D8A8F4A" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "DCFC8CEAA4DEDF9C0470EF7A";
+		};
+		"1EBB6536130F04001F6964F5" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "7BCBB3F890E11DF42D27F117";
+		};
+		"79E9F99BC85CA981157BBC0E" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "90E990089E9DA44D74CB77DD";
+		};
+		"7C8590AFAEF83124D9F429FC" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "0BE7E02D51AD066FE910437E";
+		};
+		"704A4E16085FEF0C012F7323" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "8F574EB01E38EE196EE0BBFD";
+		};
+		"34A62C66ED2C696F50331E63" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "AF6D75E6D9FFCA2153F069FA";
+		};
+		"4B205AEAABEEABFE4C4FE30E" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "73155CD7A5B74BE4C469A740";
+		};
+		"6D220463E6B708A67FCC5E34" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "EC37C49D43C499435599F02F";
+		};
+		"F0C0D3978E90BAA5CB50406D" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "CEBF88F78D47633E2CD7BFC6";
+		};
+		"1FC483B8C6AEC4F5ED29C307" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "BB0BD4BF84F800D052C855A9";
+		};
+		"75F0B7737DA0B2C4DAC3C256" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "76A06E6A4A0C8215E3D27E76";
+		};
+		"156C6A17F55019292BFF6C9B" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "9A45F00C0A76AD34C9AB7F80";
+		};
+		"8F1F3652AD6239CA6AFB871F" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "39FFFB7EFB30DCB7B4CA9BCF";
+		};
+		"0DAAE7460142390D828E601E" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "AE7B098C6DD8D5065ECBF88B";
+		};
+		"EC158D7A4D952EE02FA5BFD5" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "CF3F98BA02E58666ED1C54CA";
+		};
+		"2D04BB75FA96D99AE0368625" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "5D9F99194E2DE3CF745F3DC3";
+		};
+		"F2AEA67B7460821959C60C85" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "74277FFE2B2104F36BFB2522";
+		};
+		"6E6076E7E283B440D5EC4626" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "1FB1B3DAFD4A2665916A16BA";
+		};
+		"D246A26DCFD7264A04D390FD" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "D07713FAAA8BEF6AC2A6BAE8";
+		};
+		"91D8BFEC167075A833076D4B" = {
+			"isa" = "PBXSourcesBuildPhase";
+			"buildActionMask" = "2147483647";
+			"files" = (
+				"9A0BC604D6A155DB394C3F98",
+				"1319F821F5F35058DC66FF20",
+				"97F7E0AC208F982B287BE7C9",
+				"FF56B9B7B4D149A8FD84435A",
+				"35A0D49C2D61718461FDE681",
+				"D94D33606B14A78EE1C70D2A",
+				"AA411CC63CCC3C4B29149738",
+				"67EF695BAAE816E14D8A8F4A",
+				"1EBB6536130F04001F6964F5",
+				"79E9F99BC85CA981157BBC0E",
+				"7C8590AFAEF83124D9F429FC",
+				"704A4E16085FEF0C012F7323",
+				"34A62C66ED2C696F50331E63",
+				"4B205AEAABEEABFE4C4FE30E",
+				"6D220463E6B708A67FCC5E34",
+				"F0C0D3978E90BAA5CB50406D",
+				"1FC483B8C6AEC4F5ED29C307",
+				"75F0B7737DA0B2C4DAC3C256",
+				"156C6A17F55019292BFF6C9B",
+				"8F1F3652AD6239CA6AFB871F",
+				"0DAAE7460142390D828E601E",
+				"EC158D7A4D952EE02FA5BFD5",
+				"2D04BB75FA96D99AE0368625",
+				"F2AEA67B7460821959C60C85",
+				"6E6076E7E283B440D5EC4626",
+				"D246A26DCFD7264A04D390FD",
+			);
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"0CB6FA017FC97EE316A7FCFF" = {
+			"isa" = "PBXFrameworksBuildPhase";
+			"buildActionMask" = "2147483647";
+			"files" = (
+			);
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"03D7CCA9DFA56EE53148B6F9" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "2635EFF94AEFBB980A538B5D";
+		};
+		"61D76A0441AA3C3DCA9F050E" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "A8F19A7727F161F477272659";
+		};
+		"4F6364B4953902B62E7283A4" = {
+			"isa" = "PBXResourcesBuildPhase";
+			"buildActionMask" = "2147483647";
+			"files" = (
+				"03D7CCA9DFA56EE53148B6F9",
+				"61D76A0441AA3C3DCA9F050E",
+			);
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"6F41BE25214EE6D5340B7100" = {
+			"isa" = "XCBuildConfiguration";
+			"buildSettings" = {
+				"SDKROOT" = "iphoneos";
+				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
+				"SWIFT_VERSION" = "5.0";
+				"SWIFT_STRICT_CONCURRENCY" = "minimal";
+				"CLANG_ENABLE_MODULES" = "YES";
+				"CLANG_ENABLE_OBJC_ARC" = "YES";
+				"TARGETED_DEVICE_FAMILY" = "1,2";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"DEVELOPMENT_TEAM" = "";
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"SUPPORTS_MACCATALYST" = "NO";
+				"SWIFT_EMIT_LOC_STRINGS" = "YES";
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.TetrisDuel";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"INFOPLIST_FILE" = "TetrisDuel/Resources/Info.plist";
+				"GENERATE_INFOPLIST_FILE" = "NO";
+				"ASSETCATALOG_COMPILER_APPICON_NAME" = "AppIcon";
+				"LD_RUNPATH_SEARCH_PATHS" = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
+				"DEBUG_INFORMATION_FORMAT" = "dwarf";
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
+				"ENABLE_TESTABILITY" = "YES";
+			};
+			"name" = "Debug";
+		};
+		"FBC6EC500B4C753D04D2339B" = {
+			"isa" = "XCBuildConfiguration";
+			"buildSettings" = {
+				"SDKROOT" = "iphoneos";
+				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
+				"SWIFT_VERSION" = "5.0";
+				"SWIFT_STRICT_CONCURRENCY" = "minimal";
+				"CLANG_ENABLE_MODULES" = "YES";
+				"CLANG_ENABLE_OBJC_ARC" = "YES";
+				"TARGETED_DEVICE_FAMILY" = "1,2";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"DEVELOPMENT_TEAM" = "";
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"SUPPORTS_MACCATALYST" = "NO";
+				"SWIFT_EMIT_LOC_STRINGS" = "YES";
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.TetrisDuel";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"INFOPLIST_FILE" = "TetrisDuel/Resources/Info.plist";
+				"GENERATE_INFOPLIST_FILE" = "NO";
+				"ASSETCATALOG_COMPILER_APPICON_NAME" = "AppIcon";
+				"LD_RUNPATH_SEARCH_PATHS" = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"SWIFT_OPTIMIZATION_LEVEL" = "-O";
+				"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
+			};
+			"name" = "Release";
+		};
+		"B58CBC282EB08B34BCF5D387" = {
+			"isa" = "XCConfigurationList";
+			"buildConfigurations" = (
+				"6F41BE25214EE6D5340B7100",
+				"FBC6EC500B4C753D04D2339B",
+			);
+			"defaultConfigurationIsVisible" = "0";
+			"defaultConfigurationName" = "Release";
+		};
+		"7F67DF368B8EAE2B29F4E645" = {
+			"isa" = "PBXNativeTarget";
+			"buildConfigurationList" = "B58CBC282EB08B34BCF5D387";
+			"buildPhases" = (
+				"91D8BFEC167075A833076D4B",
+				"0CB6FA017FC97EE316A7FCFF",
+				"4F6364B4953902B62E7283A4",
+			);
+			"buildRules" = (
+			);
+			"dependencies" = (
+			);
+			"name" = "TetrisDuel";
+			"productName" = "TetrisDuel";
+			"productReference" = "193A29DBB30E7E568F560EB7";
+			"productType" = "com.apple.product-type.application";
+		};
+		"E9DA9E2F1137BCD388AB11EF" = {
+			"isa" = "PBXFileReference";
+			"explicitFileType" = "wrapper.cfbundle";
+			"includeInIndex" = "0";
+			"path" = "TetrisDuelTests.xctest";
+			"sourceTree" = "BUILT_PRODUCTS_DIR";
+		};
+		"2A0C0BDF8835171B7C955E9A" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "04BC14F364338B68420CC225";
+		};
+		"AAF003FDAB1267A0A41667F0" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "5F557267C8CF9C962D57F893";
+		};
+		"8800EE5A0B8591C2AB3899B1" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "75EDFB885D78DD89377A91E6";
+		};
+		"0C20181D85BBCDDE5C24AE9B" = {
+			"isa" = "PBXSourcesBuildPhase";
+			"buildActionMask" = "2147483647";
+			"files" = (
+				"2A0C0BDF8835171B7C955E9A",
+				"AAF003FDAB1267A0A41667F0",
+				"8800EE5A0B8591C2AB3899B1",
+			);
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"0F1C84843F1EF60D5BD7C4E3" = {
+			"isa" = "PBXFrameworksBuildPhase";
+			"buildActionMask" = "2147483647";
+			"files" = (
+			);
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"0F005296F4A95AEA31BE5BB6" = {
+			"isa" = "PBXResourcesBuildPhase";
+			"buildActionMask" = "2147483647";
+			"files" = (
+			);
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"7C0929761C43C9BD56666C01" = {
+			"isa" = "PBXContainerItemProxy";
+			"containerPortal" = "244210E48437B6556980A702";
+			"proxyType" = "1";
+			"remoteGlobalIDString" = "7F67DF368B8EAE2B29F4E645";
+			"remoteInfo" = "TetrisDuel";
+		};
+		"31F618711B96EF7ABC27EF69" = {
+			"isa" = "PBXTargetDependency";
+			"target" = "7F67DF368B8EAE2B29F4E645";
+			"targetProxy" = "7C0929761C43C9BD56666C01";
+		};
+		"043D535C88A60A005DDCFD7B" = {
+			"isa" = "XCBuildConfiguration";
+			"buildSettings" = {
+				"SDKROOT" = "iphoneos";
+				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
+				"SWIFT_VERSION" = "5.0";
+				"SWIFT_STRICT_CONCURRENCY" = "minimal";
+				"CLANG_ENABLE_MODULES" = "YES";
+				"CLANG_ENABLE_OBJC_ARC" = "YES";
+				"TARGETED_DEVICE_FAMILY" = "1,2";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"DEVELOPMENT_TEAM" = "";
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"SUPPORTS_MACCATALYST" = "NO";
+				"SWIFT_EMIT_LOC_STRINGS" = "YES";
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.TetrisDuelTests";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"GENERATE_INFOPLIST_FILE" = "YES";
+				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/TetrisDuel.app/TetrisDuel";
+				"BUNDLE_LOADER" = "$(TEST_HOST)";
+				"LD_RUNPATH_SEARCH_PATHS" = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
+				"DEBUG_INFORMATION_FORMAT" = "dwarf";
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
+				"ENABLE_TESTABILITY" = "YES";
+			};
+			"name" = "Debug";
+		};
+		"A0C5DE804E3835B494BCDE97" = {
+			"isa" = "XCBuildConfiguration";
+			"buildSettings" = {
+				"SDKROOT" = "iphoneos";
+				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
+				"SWIFT_VERSION" = "5.0";
+				"SWIFT_STRICT_CONCURRENCY" = "minimal";
+				"CLANG_ENABLE_MODULES" = "YES";
+				"CLANG_ENABLE_OBJC_ARC" = "YES";
+				"TARGETED_DEVICE_FAMILY" = "1,2";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"DEVELOPMENT_TEAM" = "";
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"SUPPORTS_MACCATALYST" = "NO";
+				"SWIFT_EMIT_LOC_STRINGS" = "YES";
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.TetrisDuelTests";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"GENERATE_INFOPLIST_FILE" = "YES";
+				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/TetrisDuel.app/TetrisDuel";
+				"BUNDLE_LOADER" = "$(TEST_HOST)";
+				"LD_RUNPATH_SEARCH_PATHS" = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"SWIFT_OPTIMIZATION_LEVEL" = "-O";
+				"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
+			};
+			"name" = "Release";
+		};
+		"8DA3E6FFD22BE9270CCB21B3" = {
+			"isa" = "XCConfigurationList";
+			"buildConfigurations" = (
+				"043D535C88A60A005DDCFD7B",
+				"A0C5DE804E3835B494BCDE97",
+			);
+			"defaultConfigurationIsVisible" = "0";
+			"defaultConfigurationName" = "Release";
+		};
+		"375B7DD02422F305ACB12CFB" = {
+			"isa" = "PBXNativeTarget";
+			"buildConfigurationList" = "8DA3E6FFD22BE9270CCB21B3";
+			"buildPhases" = (
+				"0C20181D85BBCDDE5C24AE9B",
+				"0F1C84843F1EF60D5BD7C4E3",
+				"0F005296F4A95AEA31BE5BB6",
+			);
+			"buildRules" = (
+			);
+			"dependencies" = (
+				"31F618711B96EF7ABC27EF69",
+			);
+			"name" = "TetrisDuelTests";
+			"productName" = "TetrisDuelTests";
+			"productReference" = "E9DA9E2F1137BCD388AB11EF";
+			"productType" = "com.apple.product-type.bundle.unit-test";
+		};
+		"058FF6F83844D9D8F507FD3C" = {
+			"isa" = "PBXFileReference";
+			"explicitFileType" = "wrapper.cfbundle";
+			"includeInIndex" = "0";
+			"path" = "TetrisDuelUITests.xctest";
+			"sourceTree" = "BUILT_PRODUCTS_DIR";
+		};
+		"432567C444E540EBFACD06BF" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "5FF25CE7B649C0C7902FB7DE";
+		};
+		"B5564A9520CA90618B895D19" = {
+			"isa" = "PBXSourcesBuildPhase";
+			"buildActionMask" = "2147483647";
+			"files" = (
+				"432567C444E540EBFACD06BF",
+			);
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"4C756D735D43CE1143BFA89A" = {
+			"isa" = "PBXFrameworksBuildPhase";
+			"buildActionMask" = "2147483647";
+			"files" = (
+			);
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"899B65E1F2612EDBD22EF940" = {
+			"isa" = "PBXResourcesBuildPhase";
+			"buildActionMask" = "2147483647";
+			"files" = (
+			);
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"4FE9244EBB88BF6AF5DE80B6" = {
+			"isa" = "PBXContainerItemProxy";
+			"containerPortal" = "244210E48437B6556980A702";
+			"proxyType" = "1";
+			"remoteGlobalIDString" = "7F67DF368B8EAE2B29F4E645";
+			"remoteInfo" = "TetrisDuel";
+		};
+		"7D5D54B5EFE4F24B6D543B9E" = {
+			"isa" = "PBXTargetDependency";
+			"target" = "7F67DF368B8EAE2B29F4E645";
+			"targetProxy" = "4FE9244EBB88BF6AF5DE80B6";
+		};
+		"EC7E183500219429303D3139" = {
+			"isa" = "XCBuildConfiguration";
+			"buildSettings" = {
+				"SDKROOT" = "iphoneos";
+				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
+				"SWIFT_VERSION" = "5.0";
+				"SWIFT_STRICT_CONCURRENCY" = "minimal";
+				"CLANG_ENABLE_MODULES" = "YES";
+				"CLANG_ENABLE_OBJC_ARC" = "YES";
+				"TARGETED_DEVICE_FAMILY" = "1,2";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"DEVELOPMENT_TEAM" = "";
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"SUPPORTS_MACCATALYST" = "NO";
+				"SWIFT_EMIT_LOC_STRINGS" = "YES";
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.TetrisDuelUITests";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"GENERATE_INFOPLIST_FILE" = "YES";
+				"TEST_TARGET_NAME" = "TetrisDuel";
+				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
+				"DEBUG_INFORMATION_FORMAT" = "dwarf";
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
+				"ENABLE_TESTABILITY" = "YES";
+			};
+			"name" = "Debug";
+		};
+		"B0F02F14914737F72A232337" = {
+			"isa" = "XCBuildConfiguration";
+			"buildSettings" = {
+				"SDKROOT" = "iphoneos";
+				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
+				"SWIFT_VERSION" = "5.0";
+				"SWIFT_STRICT_CONCURRENCY" = "minimal";
+				"CLANG_ENABLE_MODULES" = "YES";
+				"CLANG_ENABLE_OBJC_ARC" = "YES";
+				"TARGETED_DEVICE_FAMILY" = "1,2";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"DEVELOPMENT_TEAM" = "";
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"SUPPORTS_MACCATALYST" = "NO";
+				"SWIFT_EMIT_LOC_STRINGS" = "YES";
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.TetrisDuelUITests";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"GENERATE_INFOPLIST_FILE" = "YES";
+				"TEST_TARGET_NAME" = "TetrisDuel";
+				"SWIFT_OPTIMIZATION_LEVEL" = "-O";
+				"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
+			};
+			"name" = "Release";
+		};
+		"45C6E6EFB26DD1D605432DE2" = {
+			"isa" = "XCConfigurationList";
+			"buildConfigurations" = (
+				"EC7E183500219429303D3139",
+				"B0F02F14914737F72A232337",
+			);
+			"defaultConfigurationIsVisible" = "0";
+			"defaultConfigurationName" = "Release";
+		};
+		"D28A1A6A2A62CE61DE2F1DF7" = {
+			"isa" = "PBXNativeTarget";
+			"buildConfigurationList" = "45C6E6EFB26DD1D605432DE2";
+			"buildPhases" = (
+				"B5564A9520CA90618B895D19",
+				"4C756D735D43CE1143BFA89A",
+				"899B65E1F2612EDBD22EF940",
+			);
+			"buildRules" = (
+			);
+			"dependencies" = (
+				"7D5D54B5EFE4F24B6D543B9E",
+			);
+			"name" = "TetrisDuelUITests";
+			"productName" = "TetrisDuelUITests";
+			"productReference" = "058FF6F83844D9D8F507FD3C";
+			"productType" = "com.apple.product-type.bundle.ui-testing";
+		};
+		"AE7805B56D1DCAFAA071416F" = {
+			"isa" = "PBXGroup";
+			"children" = (
+				"193A29DBB30E7E568F560EB7",
+				"E9DA9E2F1137BCD388AB11EF",
+				"058FF6F83844D9D8F507FD3C",
+			);
+			"name" = "Products";
+			"sourceTree" = "<group>";
+		};
+		"1581DD06BA742054F0CA2C42" = {
+			"isa" = "PBXGroup";
+			"children" = (
+				"5BA6CA76DD1BD29BBBB5547D",
+				"E73290434CF2536C8BFF49F3",
+				"F3D639DAD13860D099B3BDA8",
+				"AE7805B56D1DCAFAA071416F",
+			);
+			"sourceTree" = "<group>";
+		};
+		"0B8CF9A978C27BD86D8B22D2" = {
+			"isa" = "XCBuildConfiguration";
+			"buildSettings" = {
+				"SDKROOT" = "iphoneos";
+				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
+				"SWIFT_VERSION" = "5.0";
+				"SWIFT_STRICT_CONCURRENCY" = "minimal";
+				"CLANG_ENABLE_MODULES" = "YES";
+				"CLANG_ENABLE_OBJC_ARC" = "YES";
+				"TARGETED_DEVICE_FAMILY" = "1,2";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"DEVELOPMENT_TEAM" = "";
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"SUPPORTS_MACCATALYST" = "NO";
+				"SWIFT_EMIT_LOC_STRINGS" = "YES";
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
+				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
+				"DEBUG_INFORMATION_FORMAT" = "dwarf";
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
+				"ENABLE_TESTABILITY" = "YES";
+			};
+			"name" = "Debug";
+		};
+		"9EA3F85534490133C1FD3250" = {
+			"isa" = "XCBuildConfiguration";
+			"buildSettings" = {
+				"SDKROOT" = "iphoneos";
+				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
+				"SWIFT_VERSION" = "5.0";
+				"SWIFT_STRICT_CONCURRENCY" = "minimal";
+				"CLANG_ENABLE_MODULES" = "YES";
+				"CLANG_ENABLE_OBJC_ARC" = "YES";
+				"TARGETED_DEVICE_FAMILY" = "1,2";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"DEVELOPMENT_TEAM" = "";
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"SUPPORTS_MACCATALYST" = "NO";
+				"SWIFT_EMIT_LOC_STRINGS" = "YES";
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
+				"SWIFT_OPTIMIZATION_LEVEL" = "-O";
+				"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
+			};
+			"name" = "Release";
+		};
+		"72FE4DCF846896F90B9F49D6" = {
+			"isa" = "XCConfigurationList";
+			"buildConfigurations" = (
+				"0B8CF9A978C27BD86D8B22D2",
+				"9EA3F85534490133C1FD3250",
+			);
+			"defaultConfigurationIsVisible" = "0";
+			"defaultConfigurationName" = "Release";
+		};
+		"244210E48437B6556980A702" = {
+			"isa" = "PBXProject";
+			"attributes" = {
+				"LastUpgradeCheck" = "1600";
+				"BuildIndependentTargetsInParallel" = "YES";
+				"TargetAttributes" = {
+					"7F67DF368B8EAE2B29F4E645" = {
+						"CreatedOnToolsVersion" = "16.0";
+					};
+					"375B7DD02422F305ACB12CFB" = {
+						"CreatedOnToolsVersion" = "16.0";
+					};
+					"D28A1A6A2A62CE61DE2F1DF7" = {
+						"CreatedOnToolsVersion" = "16.0";
+					};
+				};
+			};
+			"buildConfigurationList" = "72FE4DCF846896F90B9F49D6";
+			"compatibilityVersion" = "Xcode 14.0";
+			"developmentRegion" = "en";
+			"hasScannedForEncodings" = "0";
+			"knownRegions" = (
+				"en",
+				"Base",
+			);
+			"mainGroup" = "1581DD06BA742054F0CA2C42";
+			"productRefGroup" = "AE7805B56D1DCAFAA071416F";
+			"projectDirPath" = "";
+			"projectRoot" = "";
+			"targets" = (
+				"7F67DF368B8EAE2B29F4E645",
+				"375B7DD02422F305ACB12CFB",
+				"D28A1A6A2A62CE61DE2F1DF7",
+			);
+		};
+	};
+	"rootObject" = "244210E48437B6556980A702";
+}

@@ -1,0 +1,14 @@
+.deps/
+.venv/
+__pycache__/
+*.pyc
+*.log
+artifacts/
+ios/.build/
+ios/.swiftpm/
+ios/.validation/
+ios/build/
+ios/DerivedData/
+ios/TestResults.xcresult/
+*.xcuserstate
+xcuserdata/
