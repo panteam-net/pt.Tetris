@@ -77,10 +77,8 @@ xcodebuild archive \
     -derivedDataPath "$RUNNER_TEMP/ReleaseDerivedData" \
     -clonedSourcePackagesDirPath "$RUNNER_TEMP/SourcePackages" \
     -disableAutomaticPackageResolution \
-    CODE_SIGN_STYLE=Manual \
-    CODE_SIGN_IDENTITY='Apple Distribution' \
     DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
-    PROVISIONING_PROFILE_SPECIFIER="$profile_uuid" \
+    TESTFLIGHT_PROVISIONING_PROFILE_UUID="$profile_uuid" \
     | tee "$output_dir/archive.log"
 
 xcodebuild -exportArchive \
