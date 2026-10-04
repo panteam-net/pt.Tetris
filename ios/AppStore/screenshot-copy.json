@@ -1,0 +1,34 @@
+{
+  "en": {
+    "iphone": [
+      {"scene": "solo", "tag": "CLASSIC PLAY, A NEW DIMENSION", "headline": ["Stack. Clear.", "Go again."], "body": "Find your flow with colorful 3D blocks.", "footer": "SOLO · IPHONE + IPAD", "accent": "mint"},
+      {"scene": "nearby", "tag": "NEARBY MULTIPLAYER", "headline": ["Same pieces.", "Real rivalry."], "body": "Challenge a friend over local Wi-Fi.", "footer": "LOCAL WI-FI · NO ACCOUNT REQUIRED", "accent": "amber"},
+      {"scene": "strategy", "tag": "PLAN YOUR NEXT MOVE", "headline": ["See it coming.", "Make it fit."], "body": "Hold a piece. Preview the next three.", "footer": "HOLD · PREVIEW · LANDING OUTLINE", "accent": "mint"},
+      {"scene": "speed", "tag": "SCORE + LEVELS", "headline": ["Every clear.", "A new gear."], "body": "Clear lines. Build combos. Pick up speed.", "footer": "COMBOS · PERFECT CLEARS · LEVELS", "accent": "amber"},
+      {"scene": "menu", "tag": "YOUR GAME, YOUR WAY", "headline": ["Solo focus.", "Friendly duels."], "body": "Play solo or connect with someone nearby.", "footer": "TOUCH CONTROLS · KEYBOARD SUPPORT", "accent": "mint"}
+    ],
+    "ipad": [
+      {"scene": "duel", "tag": "SHARED-IPAD MULTIPLAYER", "headline": ["Two players.", "One iPad."], "body": "Two boards. Independent touch controls.", "footer": "SIDE-BY-SIDE PLAY · INSTANT REMATCHES", "accent": "amber"},
+      {"scene": "solo", "tag": "YOUR SOLO SESSION", "headline": ["Find your flow.", "Beat your score."], "body": "Classic falling blocks with a fresh 3D feel.", "footer": "SOLO · SCORE · LEVELS", "accent": "mint"},
+      {"scene": "strategy", "tag": "PLAN YOUR NEXT MOVE", "headline": ["See it coming.", "Make it fit."], "body": "Hold a piece. Preview the next three.", "footer": "HOLD · PREVIEW · LANDING OUTLINE", "accent": "mint"},
+      {"scene": "nearby", "tag": "NEARBY MULTIPLAYER", "headline": ["Two devices.", "One great duel."], "body": "Bring your rivalry to nearby iPhones and iPads.", "footer": "LOCAL WI-FI · NO ACCOUNT REQUIRED", "accent": "amber"},
+      {"scene": "menu", "tag": "YOUR GAME, YOUR WAY", "headline": ["Pick your pace.", "Pick your mode."], "body": "Solo, shared iPad, or nearby Wi-Fi duels.", "footer": "THREE WAYS TO PLAY", "accent": "mint"}
+    ]
+  },
+  "ru": {
+    "iphone": [
+      {"scene": "solo", "tag": "КЛАССИКА В НОВОМ ИЗМЕРЕНИИ", "headline": ["Собирай линии.", "Играй ещё."], "body": "Поймайте ритм игры с яркими 3D-фигурами.", "footer": "ОДИНОЧНАЯ ИГРА · IPHONE + IPAD", "accent": "mint"},
+      {"scene": "nearby", "tag": "ДУЭЛИ РЯДОМ", "headline": ["Те же фигуры.", "Новый соперник."], "body": "Бросьте вызов другу по локальной сети Wi-Fi.", "footer": "ЛОКАЛЬНЫЙ WI-FI · БЕЗ АККАУНТА", "accent": "amber"},
+      {"scene": "strategy", "tag": "ПЛАНИРУЙТЕ СЛЕДУЮЩИЙ ХОД", "headline": ["Следующий ход.", "Уже на виду."], "body": "Сохраните фигуру. Планируйте три следующих.", "footer": "ЗАПАС · ПРЕВЬЮ · КОНТУР ПАДЕНИЯ", "accent": "mint"},
+      {"scene": "speed", "tag": "ОЧКИ И УРОВНИ", "headline": ["Больше линий.", "Выше темп."], "body": "Очищайте линии, собирайте комбо и повышайте уровень.", "footer": "КОМБО · ЧИСТОЕ ПОЛЕ · УРОВНИ", "accent": "amber"},
+      {"scene": "menu", "tag": "ВАША ИГРА, ВАШИ ПРАВИЛА", "headline": ["Играйте соло.", "Сразитесь рядом."], "body": "Выберите одиночную игру или дуэль с другом.", "footer": "СЕНСОРНОЕ УПРАВЛЕНИЕ · КЛАВИАТУРА", "accent": "mint"}
+    ],
+    "ipad": [
+      {"scene": "duel", "tag": "ВДВОЁМ НА ОДНОМ IPAD", "headline": ["Два игрока.", "Один iPad."], "body": "Два поля. Независимое сенсорное управление.", "footer": "ИГРА НА ОДНОМ ЭКРАНЕ · БЫСТРЫЙ РЕВАНШ", "accent": "amber"},
+      {"scene": "solo", "tag": "ВАША ОДИНОЧНАЯ ИГРА", "headline": ["Поймайте ритм.", "Набирайте очки."], "body": "Классические падающие фигуры с объёмной графикой.", "footer": "ОДИНОЧНАЯ ИГРА · ОЧКИ · УРОВНИ", "accent": "mint"},
+      {"scene": "strategy", "tag": "ПЛАНИРУЙТЕ СЛЕДУЮЩИЙ ХОД", "headline": ["Следующий ход.", "Уже на виду."], "body": "Сохраните фигуру. Планируйте три следующих.", "footer": "ЗАПАС · ПРЕВЬЮ · КОНТУР ПАДЕНИЯ", "accent": "mint"},
+      {"scene": "nearby", "tag": "ДУЭЛИ РЯДОМ", "headline": ["Два устройства.", "Одна дуэль."], "body": "Сражайтесь с другом на соседних iPhone и iPad.", "footer": "ЛОКАЛЬНЫЙ WI-FI · БЕЗ АККАУНТА", "accent": "amber"},
+      {"scene": "menu", "tag": "ВАША ИГРА, ВАШИ ПРАВИЛА", "headline": ["Выберите темп.", "Выберите режим."], "body": "Одиночная игра, два игрока на iPad или дуэль по Wi-Fi.", "footer": "ТРИ СПОСОБА ИГРАТЬ", "accent": "mint"}
+    ]
+  }
+}

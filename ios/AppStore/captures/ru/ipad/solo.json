@@ -1,0 +1,39 @@
+{
+  "boards" : [
+    {
+      "incoming" : 0,
+      "level" : 2,
+      "lines" : 16,
+      "score" : 4342,
+      "sent" : 5
+    }
+  ],
+  "elapsed" : 43.199999999999683,
+  "height" : 1376,
+  "regions" : [
+    {
+      "height" : 1221,
+      "type" : "PlayerPanel",
+      "width" : 1008,
+      "x" : 12,
+      "y" : 122
+    },
+    {
+      "height" : 986.5,
+      "type" : "CubeBoardView",
+      "width" : 988,
+      "x" : 22,
+      "y" : 239.5
+    },
+    {
+      "height" : 102,
+      "type" : "TouchControls",
+      "width" : 988,
+      "x" : 22,
+      "y" : 1231
+    }
+  ],
+  "scale" : 2,
+  "scene" : "solo",
+  "width" : 1032
+}

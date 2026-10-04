@@ -60,3 +60,9 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# App Store asset tooling
+.appstore-venv/
+ios/AppStore/tools/__pycache__/
+ios/AppStore/snapshots/appstore-snapshots.zip
+ios/AppStore/promotional-appstore.zip

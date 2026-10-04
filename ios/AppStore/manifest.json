@@ -1,0 +1,360 @@
+{
+  "screenshots": [
+    {
+      "file": "screenshots/en/iphone-6.5/01-solo.png",
+      "language": "en",
+      "device": "iphone-6.5",
+      "width": 1284,
+      "height": 2778,
+      "mode": "RGB",
+      "scene": "solo"
+    },
+    {
+      "file": "screenshots/en/iphone-6.5/02-nearby.png",
+      "language": "en",
+      "device": "iphone-6.5",
+      "width": 1284,
+      "height": 2778,
+      "mode": "RGB",
+      "scene": "nearby"
+    },
+    {
+      "file": "screenshots/en/iphone-6.5/03-strategy.png",
+      "language": "en",
+      "device": "iphone-6.5",
+      "width": 1284,
+      "height": 2778,
+      "mode": "RGB",
+      "scene": "strategy"
+    },
+    {
+      "file": "screenshots/en/iphone-6.5/04-speed.png",
+      "language": "en",
+      "device": "iphone-6.5",
+      "width": 1284,
+      "height": 2778,
+      "mode": "RGB",
+      "scene": "speed"
+    },
+    {
+      "file": "screenshots/en/iphone-6.5/05-menu.png",
+      "language": "en",
+      "device": "iphone-6.5",
+      "width": 1284,
+      "height": 2778,
+      "mode": "RGB",
+      "scene": "menu"
+    },
+    {
+      "file": "screenshots/en/ipad/01-duel.png",
+      "language": "en",
+      "device": "ipad",
+      "width": 2064,
+      "height": 2752,
+      "mode": "RGB",
+      "scene": "duel"
+    },
+    {
+      "file": "screenshots/en/ipad/02-solo.png",
+      "language": "en",
+      "device": "ipad",
+      "width": 2064,
+      "height": 2752,
+      "mode": "RGB",
+      "scene": "solo"
+    },
+    {
+      "file": "screenshots/en/ipad/03-strategy.png",
+      "language": "en",
+      "device": "ipad",
+      "width": 2064,
+      "height": 2752,
+      "mode": "RGB",
+      "scene": "strategy"
+    },
+    {
+      "file": "screenshots/en/ipad/04-nearby.png",
+      "language": "en",
+      "device": "ipad",
+      "width": 2064,
+      "height": 2752,
+      "mode": "RGB",
+      "scene": "nearby"
+    },
+    {
+      "file": "screenshots/en/ipad/05-menu.png",
+      "language": "en",
+      "device": "ipad",
+      "width": 2064,
+      "height": 2752,
+      "mode": "RGB",
+      "scene": "menu"
+    },
+    {
+      "file": "screenshots/en/iphone/01-solo.png",
+      "language": "en",
+      "device": "iphone",
+      "width": 1320,
+      "height": 2868,
+      "mode": "RGB",
+      "scene": "solo"
+    },
+    {
+      "file": "screenshots/en/iphone/02-nearby.png",
+      "language": "en",
+      "device": "iphone",
+      "width": 1320,
+      "height": 2868,
+      "mode": "RGB",
+      "scene": "nearby"
+    },
+    {
+      "file": "screenshots/en/iphone/03-strategy.png",
+      "language": "en",
+      "device": "iphone",
+      "width": 1320,
+      "height": 2868,
+      "mode": "RGB",
+      "scene": "strategy"
+    },
+    {
+      "file": "screenshots/en/iphone/04-speed.png",
+      "language": "en",
+      "device": "iphone",
+      "width": 1320,
+      "height": 2868,
+      "mode": "RGB",
+      "scene": "speed"
+    },
+    {
+      "file": "screenshots/en/iphone/05-menu.png",
+      "language": "en",
+      "device": "iphone",
+      "width": 1320,
+      "height": 2868,
+      "mode": "RGB",
+      "scene": "menu"
+    },
+    {
+      "file": "screenshots/ru/iphone-6.5/01-solo.png",
+      "language": "ru",
+      "device": "iphone-6.5",
+      "width": 1284,
+      "height": 2778,
+      "mode": "RGB",
+      "scene": "solo"
+    },
+    {
+      "file": "screenshots/ru/iphone-6.5/02-nearby.png",
+      "language": "ru",
+      "device": "iphone-6.5",
+      "width": 1284,
+      "height": 2778,
+      "mode": "RGB",
+      "scene": "nearby"
+    },
+    {
+      "file": "screenshots/ru/iphone-6.5/03-strategy.png",
+      "language": "ru",
+      "device": "iphone-6.5",
+      "width": 1284,
+      "height": 2778,
+      "mode": "RGB",
+      "scene": "strategy"
+    },
+    {
+      "file": "screenshots/ru/iphone-6.5/04-speed.png",
+      "language": "ru",
+      "device": "iphone-6.5",
+      "width": 1284,
+      "height": 2778,
+      "mode": "RGB",
+      "scene": "speed"
+    },
+    {
+      "file": "screenshots/ru/iphone-6.5/05-menu.png",
+      "language": "ru",
+      "device": "iphone-6.5",
+      "width": 1284,
+      "height": 2778,
+      "mode": "RGB",
+      "scene": "menu"
+    },
+    {
+      "file": "screenshots/ru/ipad/01-duel.png",
+      "language": "ru",
+      "device": "ipad",
+      "width": 2064,
+      "height": 2752,
+      "mode": "RGB",
+      "scene": "duel"
+    },
+    {
+      "file": "screenshots/ru/ipad/02-solo.png",
+      "language": "ru",
+      "device": "ipad",
+      "width": 2064,
+      "height": 2752,
+      "mode": "RGB",
+      "scene": "solo"
+    },
+    {
+      "file": "screenshots/ru/ipad/03-strategy.png",
+      "language": "ru",
+      "device": "ipad",
+      "width": 2064,
+      "height": 2752,
+      "mode": "RGB",
+      "scene": "strategy"
+    },
+    {
+      "file": "screenshots/ru/ipad/04-nearby.png",
+      "language": "ru",
+      "device": "ipad",
+      "width": 2064,
+      "height": 2752,
+      "mode": "RGB",
+      "scene": "nearby"
+    },
+    {
+      "file": "screenshots/ru/ipad/05-menu.png",
+      "language": "ru",
+      "device": "ipad",
+      "width": 2064,
+      "height": 2752,
+      "mode": "RGB",
+      "scene": "menu"
+    },
+    {
+      "file": "screenshots/ru/iphone/01-solo.png",
+      "language": "ru",
+      "device": "iphone",
+      "width": 1320,
+      "height": 2868,
+      "mode": "RGB",
+      "scene": "solo"
+    },
+    {
+      "file": "screenshots/ru/iphone/02-nearby.png",
+      "language": "ru",
+      "device": "iphone",
+      "width": 1320,
+      "height": 2868,
+      "mode": "RGB",
+      "scene": "nearby"
+    },
+    {
+      "file": "screenshots/ru/iphone/03-strategy.png",
+      "language": "ru",
+      "device": "iphone",
+      "width": 1320,
+      "height": 2868,
+      "mode": "RGB",
+      "scene": "strategy"
+    },
+    {
+      "file": "screenshots/ru/iphone/04-speed.png",
+      "language": "ru",
+      "device": "iphone",
+      "width": 1320,
+      "height": 2868,
+      "mode": "RGB",
+      "scene": "speed"
+    },
+    {
+      "file": "screenshots/ru/iphone/05-menu.png",
+      "language": "ru",
+      "device": "iphone",
+      "width": 1320,
+      "height": 2868,
+      "mode": "RGB",
+      "scene": "menu"
+    }
+  ],
+  "promotional_archive": {
+    "file": "promotional-appstore.zip",
+    "files": [
+      {
+        "file": "screenshots/en/iphone-6.5/01-solo.png",
+        "archive_name": "en/iphone-6.5-1284x2778/01-solo.png"
+      },
+      {
+        "file": "screenshots/en/iphone-6.5/02-nearby.png",
+        "archive_name": "en/iphone-6.5-1284x2778/02-nearby.png"
+      },
+      {
+        "file": "screenshots/en/iphone-6.5/03-strategy.png",
+        "archive_name": "en/iphone-6.5-1284x2778/03-strategy.png"
+      },
+      {
+        "file": "screenshots/en/iphone-6.5/04-speed.png",
+        "archive_name": "en/iphone-6.5-1284x2778/04-speed.png"
+      },
+      {
+        "file": "screenshots/en/iphone-6.5/05-menu.png",
+        "archive_name": "en/iphone-6.5-1284x2778/05-menu.png"
+      },
+      {
+        "file": "screenshots/en/ipad/01-duel.png",
+        "archive_name": "en/ipad-13-2064x2752/01-duel.png"
+      },
+      {
+        "file": "screenshots/en/ipad/02-solo.png",
+        "archive_name": "en/ipad-13-2064x2752/02-solo.png"
+      },
+      {
+        "file": "screenshots/en/ipad/03-strategy.png",
+        "archive_name": "en/ipad-13-2064x2752/03-strategy.png"
+      },
+      {
+        "file": "screenshots/en/ipad/04-nearby.png",
+        "archive_name": "en/ipad-13-2064x2752/04-nearby.png"
+      },
+      {
+        "file": "screenshots/en/ipad/05-menu.png",
+        "archive_name": "en/ipad-13-2064x2752/05-menu.png"
+      },
+      {
+        "file": "screenshots/ru/iphone-6.5/01-solo.png",
+        "archive_name": "ru/iphone-6.5-1284x2778/01-solo.png"
+      },
+      {
+        "file": "screenshots/ru/iphone-6.5/02-nearby.png",
+        "archive_name": "ru/iphone-6.5-1284x2778/02-nearby.png"
+      },
+      {
+        "file": "screenshots/ru/iphone-6.5/03-strategy.png",
+        "archive_name": "ru/iphone-6.5-1284x2778/03-strategy.png"
+      },
+      {
+        "file": "screenshots/ru/iphone-6.5/04-speed.png",
+        "archive_name": "ru/iphone-6.5-1284x2778/04-speed.png"
+      },
+      {
+        "file": "screenshots/ru/iphone-6.5/05-menu.png",
+        "archive_name": "ru/iphone-6.5-1284x2778/05-menu.png"
+      },
+      {
+        "file": "screenshots/ru/ipad/01-duel.png",
+        "archive_name": "ru/ipad-13-2064x2752/01-duel.png"
+      },
+      {
+        "file": "screenshots/ru/ipad/02-solo.png",
+        "archive_name": "ru/ipad-13-2064x2752/02-solo.png"
+      },
+      {
+        "file": "screenshots/ru/ipad/03-strategy.png",
+        "archive_name": "ru/ipad-13-2064x2752/03-strategy.png"
+      },
+      {
+        "file": "screenshots/ru/ipad/04-nearby.png",
+        "archive_name": "ru/ipad-13-2064x2752/04-nearby.png"
+      },
+      {
+        "file": "screenshots/ru/ipad/05-menu.png",
+        "archive_name": "ru/ipad-13-2064x2752/05-menu.png"
+      }
+    ]
+  },
+  "icon": "icon/app-icon-1024.png"
+}
