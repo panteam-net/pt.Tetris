@@ -9,14 +9,14 @@ The renderer uses UIKit and Core Graphics, with no external assets or game engin
 
 ## Open and run
 
-1. Copy the `ios` folder to a Mac with **Xcode 15 or newer**.
-2. Open **`pt.TetrisDuel.xcodeproj`**. No project generator, CocoaPods or downloads
-   are needed to build the app.
+1. Copy the `ios` folder to a Mac with **Xcode 26 or newer**.
+2. Open **`pt.TetrisDuel.xcodeproj`**. Xcode resolves the Firebase Swift packages
+   using the committed dependency lockfile.
 3. Select the **pt.TetrisDuel** scheme and an iPhone or iPad simulator.
    Press **⌘R**.
 4. For a physical device, select your development team under **Signing &
-   Capabilities**. Change `com.example.TetrisDuel` to a unique bundle identifier
-   if needed. The deployment target is **iOS / iPadOS 16.0**.
+   Capabilities**. The app's bundle identifier is **`pro.pteam.TetrisDuel`**.
+   The deployment target is **iOS / iPadOS 16.0**.
 
 The project uses Swift 5 language mode and the UIKit scene lifecycle. It includes
 an app icon, launch background, privacy manifest and shared test scheme.
@@ -76,8 +76,9 @@ required to validate peer-to-peer radio behavior. Both players must keep the app
 in the foreground; a connection lost while backgrounded requires a new room.
 
 Sessions require encryption and accept only one approved opponent. Advertising
-and browsing stop once connected. There is no server or account. Nicknames and
-match state are exchanged only with the nearby session; the app has no analytics.
+and browsing stop once connected. Nearby play needs no server or account.
+Nicknames and match state are exchanged only with the nearby session. The app
+also initializes Firebase Analytics and sends an analytics test event at launch.
 
 ## Rules
 
@@ -153,9 +154,12 @@ xcodebuild -project pt.TetrisDuel.xcodeproj -scheme pt.TetrisDuel \
   -derivedDataPath build CODE_SIGNING_ALLOWED=NO test
 ```
 
-The repository includes a GitHub Actions workflow that runs the Swift package
-tests and Xcode tests on both iPhone and iPad simulators when pushed to GitHub.
-It does not publish or deploy the app.
+The repository includes a GitHub Actions workflow that builds and runs Xcode
+tests on both iPhone and iPad simulators for iOS pull requests and pushes to
+`main`. It also runs the portable core and release-preparation tests. Version
+tags and manual runs upload a signed build to TestFlight after the tests pass.
+See [`TESTFLIGHT.md`](TESTFLIGHT.md) for Apple setup, GitHub secrets, and release
+instructions.
 
 **Validation performed in the Windows authoring environment:** all 31 Swift
 files parsed with a Swift grammar; the Xcode project parsed with 102 valid

@@ -22,6 +22,14 @@ def validate_localizations(sources, project_text):
         assert path.relative_to(ROOT).as_posix() in project_text
         catalogs[path.stem] = catalog["strings"]
         for key, entry in catalog["strings"].items():
+            is_extracted_bundle_name = (
+                path.stem == "InfoPlist"
+                and key in {"CFBundleDisplayName", "CFBundleName"}
+                and entry.get("extractionState") == "extracted_with_value"
+            )
+            if is_extracted_bundle_name:
+                continue
+
             values = {}
             for language in ("en", "ru"):
                 unit = entry["localizations"][language]["stringUnit"]
