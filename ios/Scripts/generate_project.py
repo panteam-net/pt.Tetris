@@ -87,6 +87,7 @@ def configuration_list(name, settings):
     configs = []
     for mode in ("Debug", "Release"):
         values = dict(settings)
+        values["ONLY_ACTIVE_ARCH"] = "YES" if mode == "Debug" else "NO"
         values["SWIFT_OPTIMIZATION_LEVEL"] = "-Onone" if mode == "Debug" else "-O"
         values["DEBUG_INFORMATION_FORMAT"] = "dwarf" if mode == "Debug" else "dwarf-with-dsym"
         if mode == "Debug":

@@ -1,13 +1,19 @@
 import UIKit
+import FirebaseAnalytics
+import FirebaseCore
 
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        true
+        FirebaseApp.configure()
+        Analytics.logEvent(
+            "analytics_test",
+            parameters: nil)
+        return true
     }
-    
+
     func application(
         _ application: UIApplication,
         configurationForConnecting connectingSceneSession: UISceneSession,

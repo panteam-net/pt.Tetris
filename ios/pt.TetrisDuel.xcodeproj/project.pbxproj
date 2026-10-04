@@ -31,6 +31,9 @@
 		928DE91FB9CEEF35768AE353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2635EFF94AEFBB980A538B5D /* Assets.xcassets */; };
 		93E1CB7549395B3BB5B3FF9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5586BA0348C8B0D44F998019 /* AppDelegate.swift */; };
 		997D3BC8BAD52D57DCC3369E /* DisplayLinkClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A45F00C0A76AD34C9AB7F80 /* DisplayLinkClock.swift */; };
+		9D7FCE4A30729DB9000C885D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D7FCE4930729DB9000C885D /* GoogleService-Info.plist */; };
+		9D7FCE4D30729F9E000C885D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9D7FCE4C30729F9E000C885D /* FirebaseAnalytics */; };
+		9D7FCE4F30729F9E000C885D /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9D7FCE4E30729F9E000C885D /* FirebaseCore */; };
 		A206AD51FE68FFB8FE1FBE7C /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F574EB01E38EE196EE0BBFD /* GamePresenter.swift */; };
 		A41F93DDC774D620299EA626 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 84E8DD3B6F1960F72D9AEC9A /* Localizable.xcstrings */; };
 		AA93254FA89332A4B716DBB8 /* MultipeerTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B098C6DD8D5065ECBF88B /* MultipeerTransport.swift */; };
@@ -87,6 +90,7 @@
 		8F574EB01E38EE196EE0BBFD /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GamePresenter.swift; path = TetrisDuel/Modules/Game/GamePresenter.swift; sourceTree = SOURCE_ROOT; };
 		90E990089E9DA44D74CB77DD /* GameContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameContracts.swift; path = TetrisDuel/Modules/Game/GameContracts.swift; sourceTree = SOURCE_ROOT; };
 		9A45F00C0A76AD34C9AB7F80 /* DisplayLinkClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DisplayLinkClock.swift; path = TetrisDuel/Services/DisplayLinkClock.swift; sourceTree = SOURCE_ROOT; };
+		9D7FCE4930729DB9000C885D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A28744FECC1A4711366BD8F8 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Localization.swift; path = TetrisDuel/App/Localization.swift; sourceTree = SOURCE_ROOT; };
 		A8F19A7727F161F477272659 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = TetrisDuel/Resources/PrivacyInfo.xcprivacy; sourceTree = SOURCE_ROOT; };
 		AE7B098C6DD8D5065ECBF88B /* MultipeerTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultipeerTransport.swift; path = TetrisDuel/Services/MultipeerTransport.swift; sourceTree = SOURCE_ROOT; };
@@ -117,6 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D7FCE4D30729F9E000C885D /* FirebaseAnalytics in Frameworks */,
+				9D7FCE4F30729F9E000C885D /* FirebaseCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +174,7 @@
 				F7852CDC93E1FD22386D6EDD /* Resources */,
 				A74E0C0F4EBF0A9EF8936D3B /* Services */,
 				63A9E64FB0D4FF36356EF0AD /* UI */,
+				9D7FCE4930729DB9000C885D /* GoogleService-Info.plist */,
 			);
 			name = Application;
 			path = TetrisDuel;
@@ -325,6 +332,10 @@
 			dependencies = (
 			);
 			name = pt.TetrisDuel;
+			packageProductDependencies = (
+				9D7FCE4C30729F9E000C885D /* FirebaseAnalytics */,
+				9D7FCE4E30729F9E000C885D /* FirebaseCore */,
+			);
 			productName = pt.TetrisDuel;
 			productReference = F84862199BFD648C79081BF3 /* pt.TetrisDuel.app */;
 			productType = "com.apple.product-type.application";
@@ -377,6 +388,9 @@
 				Base,
 			);
 			mainGroup = 1581DD06BA742054F0CA2C42;
+			packageReferences = (
+				9D7FCE4B30729F9E000C885D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = AE7805B56D1DCAFAA071416F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -409,6 +423,7 @@
 			files = (
 				928DE91FB9CEEF35768AE353 /* Assets.xcassets in Resources */,
 				72F47F2319C6E69B2A853797 /* PrivacyInfo.xcprivacy in Resources */,
+				9D7FCE4A30729DB9000C885D /* GoogleService-Info.plist in Resources */,
 				A41F93DDC774D620299EA626 /* Localizable.xcstrings in Resources */,
 				25695AD4145FCF21391E09A9 /* InfoPlist.xcstrings in Resources */,
 			);
@@ -530,6 +545,7 @@
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -560,6 +576,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = pro.pteam.TetrisDuel;
 				PRODUCT_MODULE_NAME = pt_TetrisDuel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -585,6 +605,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -696,6 +717,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = pro.pteam.TetrisDuel;
 				PRODUCT_MODULE_NAME = pt_TetrisDuel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -750,6 +775,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9D7FCE4B30729F9E000C885D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.19.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9D7FCE4C30729F9E000C885D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D7FCE4B30729F9E000C885D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		9D7FCE4E30729F9E000C885D /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D7FCE4B30729F9E000C885D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 244210E48437B6556980A702 /* Project object */;
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCNyq5PNB4Cf2pTpgRqbmoFWN9j_odlSX0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>348283240223</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>pro.pteam.TetrisDuel</string>
+	<key>PROJECT_ID</key>
+	<string>lesson33-viper</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lesson33-viper.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:348283240223:ios:917107881af2ee5fc5fa2a</string>
+</dict>
+</plist>
