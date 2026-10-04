@@ -36,20 +36,27 @@ public final class Match {
             board.now = elapsed
             board.tick(step, softDrop: softDrop.indices.contains(seat) && softDrop[seat])
         }
+        
         if boards.count == 2 {
             let mutual = min(boards[0].outgoing, boards[1].outgoing)
             for seat in 0..<2 {
                 let attack = boards[seat].outgoing - mutual
                 if attack > 0 {
-                    boards[1-seat].receive(GarbagePacket(rows: attack, hole: random[seat].index(Rules.width),
-                                                        readyAt: elapsed + 1.5))
+                    boards[1-seat].receive(
+                        GarbagePacket(
+                            rows: attack,
+                            hole: random[seat].index(Rules.width),
+                            readyAt: elapsed + 1.5))
                 }
             }
         }
+        
         boards.forEach { $0.outgoing = 0 }
         if boards.contains(where: { !$0.alive }) {
             finished = true
-            winner = boards.count == 2 ? boards.firstIndex(where: { $0.alive }) : nil
+            winner = boards.count == 2
+                ? boards.firstIndex(where: { $0.alive })
+                : nil
         }
     }
 }

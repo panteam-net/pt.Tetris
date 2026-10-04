@@ -6,10 +6,15 @@ final class FeedbackService: FeedbackServing {
         get { !defaults.bool(forKey: "feedbackMuted") }
         set { defaults.set(!newValue, forKey: "feedbackMuted") }
     }
+    
     private let defaults: UserDefaults
     private let impact = UIImpactFeedbackGenerator(style: .light)
     private let notification = UINotificationFeedbackGenerator()
-    init(defaults: UserDefaults) { self.defaults = defaults }
+    
+    init(defaults: UserDefaults) {
+        self.defaults = defaults
+    }
+    
     func play(_ effect: GameEffect) {
         guard isEnabled else { return }
         switch effect {

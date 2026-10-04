@@ -1,0 +1,613 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "common.menu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Menu" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Меню" } }
+      }
+    },
+    "common.resume": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Resume" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Продолжить" } }
+      }
+    },
+    "common.rematch": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Rematch" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Реванш" } }
+      }
+    },
+    "common.backToMenu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Back to menu" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "В меню" } }
+      }
+    },
+    "common.gotIt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Got it" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Понятно" } }
+      }
+    },
+    "common.decline": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Decline" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Отклонить" } }
+      }
+    },
+    "common.play": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Play" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Играть" } }
+      }
+    },
+    "menu.eyebrow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "LOCAL MULTIPLAYER  /  3D" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ИГРА ДЛЯ ДВОИХ  /  3D" } }
+      }
+    },
+    "menu.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "TETRIS\nDUEL" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ТЕТРИС\nДУЭЛЬ" } }
+      }
+    },
+    "menu.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Same pieces. Your own pace.\nOne winner." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Одинаковые фигуры. Свой темп.\nОдин победитель." } }
+      }
+    },
+    "menu.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "YOUR NAME" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ВАШЕ ИМЯ" } }
+      }
+    },
+    "menu.footnote": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Nearby play uses local or peer-to-peer Wi-Fi.\nNo account or internet connection required." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Игра рядом — по локальной сети или напрямую через Wi-Fi.\nАккаунт и интернет не нужны." } }
+      }
+    },
+    "menu.solo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Solo game" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Одиночная игра" } }
+      }
+    },
+    "menu.shared": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Two players · this iPad" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Два игрока · этот iPad" } }
+      }
+    },
+    "menu.host": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Host a nearby game" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Создать игру рядом" } }
+      }
+    },
+    "menu.join": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Join a nearby game" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Найти игру рядом" } }
+      }
+    },
+    "player.default": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Player" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Игрок" } }
+      }
+    },
+    "player.opponent": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Opponent" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Соперник" } }
+      }
+    },
+    "player.nearbyDefault": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Tetris player" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Игрок в тетрис" } }
+      }
+    },
+    "player.you": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "YOU" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ВЫ" } }
+      }
+    },
+    "player.numbered": {
+      "comment": "The argument is the player number, with a leading zero.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "PLAYER %1$02ld" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ИГРОК %1$02ld" } }
+      }
+    },
+    "player.hold": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "HOLD" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ЗАПАС" } }
+      }
+    },
+    "player.next": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "NEXT" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ДАЛЕЕ" } }
+      }
+    },
+    "player.stats": {
+      "comment": "Arguments: lines cleared, level, rows sent, incoming rows.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "LINES %1$ld   LV %2$ld   SENT %3$ld   +%4$ld" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ЛИНИИ %1$ld   УР %2$ld   ОТПР %3$ld   +%4$ld" } }
+      }
+    },
+    "player.score": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Score" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Счёт" } }
+      }
+    },
+    "lobby.host.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Host a game" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Создать игру" } }
+      }
+    },
+    "lobby.join.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Join a game" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Присоединиться" } }
+      }
+    },
+    "lobby.nearbyGames": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "NEARBY GAMES" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ИГРЫ РЯДОМ" } }
+      }
+    },
+    "lobby.host.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "On the other device, choose Join a nearby game.\nAccept your opponent’s invitation here." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "На другом устройстве выберите «Найти игру рядом».\nЗдесь примите приглашение соперника." } }
+      }
+    },
+    "lobby.join.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Choose a host below. Both devices need Wi-Fi\nand Local Network permission enabled." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Выберите игру ниже. На обоих устройствах включите Wi-Fi\nи разрешите доступ к локальной сети." } }
+      }
+    },
+    "lobby.invitation.title": {
+      "comment": "The argument is the nearby player's name.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Play with %1$@?" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Сыграть с игроком %1$@?" } }
+      }
+    },
+    "lobby.invitation.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "This player wants to join your nearby duel." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Этот игрок хочет присоединиться к вашей дуэли." } }
+      }
+    },
+    "lobby.peer.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Tap to request a duel" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Нажмите, чтобы предложить дуэль" } }
+      }
+    },
+    "nearby.status.waiting": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Waiting for a player to join…" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Ждём подключения игрока…" } }
+      }
+    },
+    "nearby.status.searching": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Looking for nearby games…" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Ищем игры рядом…" } }
+      }
+    },
+    "nearby.status.invitation": {
+      "comment": "The argument is the invited player's name.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Waiting for %1$@ to accept…" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Ждём ответа от игрока %1$@…" } }
+      }
+    },
+    "nearby.status.connecting": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Connecting securely…" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Устанавливаем защищённое соединение…" } }
+      }
+    },
+    "nearby.error.invitation": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "The invitation timed out or was declined. Go back and try again." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Приглашение отклонено или время ожидания истекло. Вернитесь назад и попробуйте снова." } }
+      }
+    },
+    "nearby.error.extraPeer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Unexpected extra peer. Please create a new room." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Подключился лишний игрок. Создайте новую игру." } }
+      }
+    },
+    "nearby.error.disconnected": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "The nearby player disconnected. Start a new room to play again." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Игрок рядом отключился. Создайте новую игру, чтобы сыграть снова." } }
+      }
+    },
+    "nearby.error.host": {
+      "comment": "The argument is the system's localized error description.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Cannot host a game. Enable Wi-Fi and allow Local Network access in Settings. %1$@" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Не удалось создать игру. Включите Wi-Fi и разрешите доступ к локальной сети в настройках. %1$@" } }
+      }
+    },
+    "nearby.error.search": {
+      "comment": "The argument is the system's localized error description.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Cannot find games. Enable Wi-Fi and allow Local Network access in Settings. %1$@" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Не удалось найти игры. Включите Wi-Fi и разрешите доступ к локальной сети в настройках. %1$@" } }
+      }
+    },
+    "nearby.error.incompatible": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "The other game sent an incompatible update. Use the same app version." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Получено несовместимое обновление игры. Установите одинаковую версию приложения на обоих устройствах." } }
+      }
+    },
+    "game.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "TETRIS DUEL" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ТЕТРИС-ДУЭЛЬ" } }
+      }
+    },
+    "game.ready": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "GET READY" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ПРИГОТОВЬТЕСЬ" } }
+      }
+    },
+    "game.waiting": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Waiting for both devices…" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Ждём готовности обоих устройств…" } }
+      }
+    },
+    "game.countdown": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Same pieces. Your own pace." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Одинаковые фигуры. Свой темп." } }
+      }
+    },
+    "game.paused": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "PAUSED" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ПАУЗА" } }
+      }
+    },
+    "game.paused.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "The boards and the timer are paused." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Игровые поля и таймер на паузе." } }
+      }
+    },
+    "game.gameOver": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "GAME OVER" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ИГРА ОКОНЧЕНА" } }
+      }
+    },
+    "game.playerWins": {
+      "comment": "The argument is the winning player's number.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "PLAYER %1$ld WINS" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ПОБЕДИЛ ИГРОК %1$ld" } }
+      }
+    },
+    "game.youWin": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "YOU WIN" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ВЫ ПОБЕДИЛИ" } }
+      }
+    },
+    "game.youLose": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "YOU LOSE" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ВЫ ПРОИГРАЛИ" } }
+      }
+    },
+    "game.draw": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "DRAW" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "НИЧЬЯ" } }
+      }
+    },
+    "game.solo.result": {
+      "comment": "Arguments: score, lines cleared. These are metric labels.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "POINTS: %1$ld  •  LINES: %2$ld" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ОЧКИ: %1$ld  •  ЛИНИИ: %2$ld" } }
+      }
+    },
+    "game.matchWins": {
+      "comment": "Arguments: player 1 wins, player 2 wins.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "%1$ld : %2$ld  •  MATCH WINS" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "%1$ld : %2$ld  •  ПОБЕДЫ В МАТЧАХ" } }
+      }
+    },
+    "game.disconnected": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "CONNECTION LOST" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "СВЯЗЬ ПОТЕРЯНА" } }
+      }
+    },
+    "game.mode.solo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "SOLO" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ОДИНОЧНАЯ ИГРА" } }
+      }
+    },
+    "game.mode.shared": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "LOCAL DUEL" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ДУЭЛЬ НА iPad" } }
+      }
+    },
+    "game.mode.nearby": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "NEARBY DUEL" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ДУЭЛЬ РЯДОМ" } }
+      }
+    },
+    "game.header": {
+      "comment": "Arguments: game mode, player 1 wins, player 2 wins.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "%1$@  ·  %2$ld : %3$ld" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "%1$@  ·  %2$ld : %3$ld" } }
+      }
+    },
+    "game.opponent.summary": {
+      "comment": "Arguments: opponent's name, score, lines cleared.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "%1$@  •  PTS: %2$ld  •  LINES: %3$ld" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "%1$@  •  ОЧКИ: %2$ld  •  ЛИНИИ: %3$ld" } }
+      }
+    },
+    "game.help.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "How to play" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Как играть" } }
+      }
+    },
+    "game.help.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Fill horizontal lines without gaps. Clear 2 / 3 / 4 lines to send 1 / 2 / 4 rows to your opponent. Combos increase attacks; your clears cancel incoming rows.\n\nHold saves a piece once per turn. The outline shows its landing position. Whoever tops out loses.\n\nHold arrows for movement. Tap rotation, Hold or Drop.\n\nKeyboard: A/D, W/Q, S, Space, left Shift. Player 2: arrows, /, Enter, right Shift. P pauses.\n\nNearby matches use Wi-Fi with no internet required. Both players must agree to a rematch." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Заполняйте горизонтальные линии без пробелов. За 2 / 3 / 4 убранные линии соперник получает 1 / 2 / 4 строки. Комбо усиливают атаки, а убранные вами линии отменяют входящие строки.\n\n«Запас» сохраняет фигуру один раз за ход. Контур показывает место её приземления. Кто заполнит поле доверху, проигрывает.\n\nУдерживайте стрелки для перемещения. Нажимайте кнопки поворота, «Запас» или «Сброс».\n\nКлавиатура: A/D, W/Q, S, пробел, левый Shift. Игрок 2: стрелки, /, Enter, правый Shift. P — пауза.\n\nДля игры рядом нужен Wi-Fi, но не интернет. На реванш должны согласиться оба игрока." } }
+      }
+    },
+    "game.pause.accessibility": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Pause or resume" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Пауза или продолжение игры" } }
+      }
+    },
+    "game.sound.disable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Disable sound and haptics" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Выключить звук и вибрацию" } }
+      }
+    },
+    "game.sound.enable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Enable sound and haptics" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Включить звук и вибрацию" } }
+      }
+    },
+    "game.notice.timeout": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Connection lost. The match is stopped; no winner is awarded." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Связь потеряна. Матч остановлен, победитель не определяется." } }
+      }
+    },
+    "game.notice.unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Both players must return to the game before resuming." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Для продолжения оба игрока должны вернуться в игру." } }
+      }
+    },
+    "game.notice.rematchWaiting": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Rematch requested. Waiting for the other player." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Реванш запрошен. Ждём второго игрока." } }
+      }
+    },
+    "game.notice.rematchBoth": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Rematch requested. Both players must choose Rematch." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Реванш запрошен. Оба игрока должны нажать «Реванш»." } }
+      }
+    },
+    "game.notice.invalidMatch": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Invalid match received." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Получены некорректные данные матча." } }
+      }
+    },
+    "game.notice.rateLimit": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "The peer sent too many inputs." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Соперник отправил слишком много команд." } }
+      }
+    },
+    "game.notice.playerLeft": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "The other player left the match." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Второй игрок покинул матч." } }
+      }
+    },
+    "game.notice.interrupted": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Connection interrupted. Return to the menu and join a new game." } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Соединение прервано. Вернитесь в меню и присоединитесь к новой игре." } }
+      }
+    },
+    "controls.left": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "LEFT" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ВЛЕВО" } }
+      }
+    },
+    "controls.right": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "RIGHT" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ВПРАВО" } }
+      }
+    },
+    "controls.rotate": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "ROTATE" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ПОВОРОТ" } }
+      }
+    },
+    "controls.hold": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "HOLD" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ЗАПАС" } }
+      }
+    },
+    "controls.down": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "DOWN" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "ВНИЗ" } }
+      }
+    },
+    "controls.drop": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "DROP" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "СБРОС" } }
+      }
+    },
+    "controls.rotate.accessibility": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Rotate clockwise" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Повернуть по часовой стрелке" } }
+      }
+    },
+    "controls.reverse.accessibility": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Rotate counterclockwise" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Повернуть против часовой стрелки" } }
+      }
+    },
+    "board.accessibility.label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Tetris board" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Поле тетриса" } }
+      }
+    },
+    "board.accessibility.value": {
+      "comment": "Arguments: lines cleared, level, incoming rows.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Lines cleared: %1$ld, level: %2$ld, incoming rows: %3$ld" } },
+        "ru": { "stringUnit": { "state": "translated", "value": "Убрано линий: %1$ld, уровень: %2$ld, входящих строк: %3$ld" } }
+      }
+    }
+  },
+  "version": "1.0"
+}

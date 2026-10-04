@@ -56,6 +56,7 @@ def group(name, directory, files):
             ".xcassets": "folder.assetcatalog",
             ".plist": "text.plist.xml",
             ".xcprivacy": "text.xml",
+            ".xcstrings": "text.json.xcstrings",
         }[file_path.suffix]
         children.append(add(
             "file:"+path,
@@ -100,7 +101,12 @@ def build():
     app_sources = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "TetrisDuel").rglob("*.swift"))
     test_sources = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "TetrisDuelTests").rglob("*.swift"))
     ui_sources = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "TetrisDuelUITests").rglob("*.swift"))
-    resources = ["TetrisDuel/Resources/Assets.xcassets", "TetrisDuel/Resources/PrivacyInfo.xcprivacy"]
+    resources = [
+        "TetrisDuel/Resources/Assets.xcassets",
+        "TetrisDuel/Resources/PrivacyInfo.xcprivacy",
+        "TetrisDuel/Resources/Localizable.xcstrings",
+        "TetrisDuel/Resources/InfoPlist.xcstrings",
+    ]
     groups = [
         group(
             "Application",
@@ -195,7 +201,10 @@ def build():
     project = add("project", "PBXProject", attributes={"LastUpgradeCheck": "1600", "BuildIndependentTargetsInParallel": "YES",
                    "TargetAttributes": {target: {"CreatedOnToolsVersion": "16.0"} for target in targets}},
                   buildConfigurationList=configuration_list("Project", common), compatibilityVersion="Xcode 14.0",
-                  developmentRegion="en", hasScannedForEncodings=0, knownRegions=["en", "Base"], mainGroup=main,
+                  developmentRegion="en",
+                  hasScannedForEncodings=0,
+                  knownRegions=["en", "ru", "Base"],
+                  mainGroup=main,
                   productRefGroup=product_group, projectDirPath="", projectRoot="", targets=targets)
     output = ROOT / f"{PROJECT_NAME}.xcodeproj"
     output.mkdir(exist_ok=True)

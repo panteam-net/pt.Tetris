@@ -22,25 +22,44 @@ enum Theme {
         case .garbage: return UIColor(red: 0.39, green: 0.44, blue: 0.53, alpha: 1)
         }
     }
-    static func label(_ text: String = "", size: CGFloat = 14, weight: UIFont.Weight = .regular,
-                      color: UIColor = Theme.text) -> UILabel {
+    
+    static func label(
+        _ text: String = "",
+        size: CGFloat = 14,
+        weight: UIFont.Weight = .regular,
+        color: UIColor = Theme.text) -> UILabel {
         let label = UILabel()
-        label.text = text; label.textColor = color; label.font = .systemFont(ofSize: size, weight: weight)
+        label.text = text
+        label.textColor = color
+        label.font = .systemFont(ofSize: size, weight: weight)
         return label
     }
-    static func button(_ title: String, symbol: String? = nil, primary: Bool = false) -> UIButton {
+    
+    static func button(
+        _ title: String,
+        symbol: String? = nil,
+        primary: Bool = false) -> UIButton {
         var config = primary ? UIButton.Configuration.filled() : .tinted()
         config.title = title
         config.baseBackgroundColor = mint
         config.baseForegroundColor = primary ? background : mint
         config.cornerStyle = .large
-        config.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 18, bottom: 16, trailing: 18)
-        if let symbol = symbol { config.image = UIImage(systemName: symbol); config.imagePadding = 12 }
+        config.contentInsets = NSDirectionalEdgeInsets(
+            top: 16,
+            leading: 18,
+            bottom: 16,
+            trailing: 18)
+        if let symbol = symbol {
+            config.image = UIImage(systemName: symbol)
+            config.imagePadding = 12
+        }
+            
         let button = UIButton(configuration: config)
         button.titleLabel?.numberOfLines = 0
         button.isExclusiveTouch = false
         return button
     }
+    
     static func card(_ view: UIView) {
         view.backgroundColor = panel
         view.layer.cornerRadius = 18

@@ -1,1014 +1,755 @@
 // !$*UTF8*$!
 {
-	"archiveVersion" = "1";
-	"classes" = {
+	archiveVersion = 1;
+	classes = {
 	};
-	"objectVersion" = "56";
-	"objects" = {
-		"E20FB7C94A8EF9BE495AB2A4" = {
-			"isa" = "PBXGroup";
-			"path" = "App";
-			"children" = (
-				"E78547D18CC71A776CC75DE5",
-				"5586BA0348C8B0D44F998019",
-				"03EDBF5800BB1E6570E105A3",
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0092942069EF00210FEF3572 /* LobbyVIPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC37C49D43C499435599F02F /* LobbyVIPER.swift */; };
+		08770DCF868AAFB55689A5F1 /* PlayerPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74277FFE2B2104F36BFB2522 /* PlayerPanel.swift */; };
+		0B5C5FA1B3C95E8B88E794AF /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78547D18CC71A776CC75DE5 /* AppContainer.swift */; };
+		1199BA168DA81D8A4AC0777E /* GameContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E990089E9DA44D74CB77DD /* GameContracts.swift */; };
+		18B156A8CC3A3E1797CC35A4 /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D30BEDE8D17E76DF71F39A /* LocalizationTests.swift */; };
+		1B48203B8AC7C6E946204040 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73155CD7A5B74BE4C469A740 /* GameViewController.swift */; };
+		25695AD4145FCF21391E09A9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B5241E79DC57D927386EF387 /* InfoPlist.xcstrings */; };
+		25DB57FD0A9BC7FEC483BE72 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28744FECC1A4711366BD8F8 /* Localization.swift */; };
+		29E92D84ED381D3310545004 /* ServiceContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F98BA02E58666ED1C54CA /* ServiceContracts.swift */; };
+		2A0C0BDF8835171B7C955E9A /* EngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC14F364338B68420CC225 /* EngineTests.swift */; };
+		3663B8C41A919F4479A854AC /* CubeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F99194E2DE3CF745F3DC3 /* CubeBoardView.swift */; };
+		3C7F2A2CFC271490C210AFC3 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A53AD8AF18043848C9A99D /* Match.swift */; };
+		414BAB0F763378E955220561 /* SeededRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC8CEAA4DEDF9C0470EF7A /* SeededRandom.swift */; };
+		432567C444E540EBFACD06BF /* TetrisDuelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF25CE7B649C0C7902FB7DE /* TetrisDuelUITests.swift */; };
+		4A7BC252FF7099D8A6F67BBB /* TouchControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07713FAAA8BEF6AC2A6BAE8 /* TouchControls.swift */; };
+		691CA6C9A71932E6A349F760 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED5FA971E40AEB47031040 /* Board.swift */; };
+		72F47F2319C6E69B2A853797 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A8F19A7727F161F477272659 /* PrivacyInfo.xcprivacy */; };
+		7B3E2C5676EBE27B765693BA /* HeldInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E86B0D570F9A3401FB90117 /* HeldInput.swift */; };
+		7FA803AF4215ED344D905B2B /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FFFB7EFB30DCB7B4CA9BCF /* FeedbackService.swift */; };
+		80B75418C84CBF88BD3B789D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A06E6A4A0C8215E3D27E76 /* MenuViewController.swift */; };
+		8800EE5A0B8591C2AB3899B1 /* GameInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EDFB885D78DD89377A91E6 /* GameInteractorTests.swift */; };
+		928DE91FB9CEEF35768AE353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2635EFF94AEFBB980A538B5D /* Assets.xcassets */; };
+		93E1CB7549395B3BB5B3FF9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5586BA0348C8B0D44F998019 /* AppDelegate.swift */; };
+		997D3BC8BAD52D57DCC3369E /* DisplayLinkClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A45F00C0A76AD34C9AB7F80 /* DisplayLinkClock.swift */; };
+		A206AD51FE68FFB8FE1FBE7C /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F574EB01E38EE196EE0BBFD /* GamePresenter.swift */; };
+		A41F93DDC774D620299EA626 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 84E8DD3B6F1960F72D9AEC9A /* Localizable.xcstrings */; };
+		AA93254FA89332A4B716DBB8 /* MultipeerTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B098C6DD8D5065ECBF88B /* MultipeerTransport.swift */; };
+		AAF003FDAB1267A0A41667F0 /* WireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F557267C8CF9C962D57F893 /* WireTests.swift */; };
+		ACEA61B41479D2499FC95AF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDBF5800BB1E6570E105A3 /* SceneDelegate.swift */; };
+		AFDC78236306697C2268A307 /* GameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE7E02D51AD066FE910437E /* GameInteractor.swift */; };
+		B0EAD04570B8C01D8F0B394B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1B3DAFD4A2665916A16BA /* Theme.swift */; };
+		B39A0726AB37E2B1DFECEE2F /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF88F78D47633E2CD7BFC6 /* LobbyViewController.swift */; };
+		D35235A95315C64DEA25546F /* MenuVIPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BD4BF84F800D052C855A9 /* MenuVIPER.swift */; };
+		DA7FD718AB13A736847FC291 /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6D75E6D9FFCA2153F069FA /* GameRouter.swift */; };
+		DC7ACBFCC8E6C15D9EC853B8 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE37870D4F051AB9C0C0EBF /* Entities.swift */; };
+		E42177DF3511A18FEA785860 /* WireProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCBB3F890E11DF42D27F117 /* WireProtocol.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4FE9244EBB88BF6AF5DE80B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 244210E48437B6556980A702 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C33D12BD84D022C69279C1EF;
+			remoteInfo = pt.TetrisDuel;
+		};
+		7C0929761C43C9BD56666C01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 244210E48437B6556980A702 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C33D12BD84D022C69279C1EF;
+			remoteInfo = pt.TetrisDuel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03EDBF5800BB1E6570E105A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = TetrisDuel/App/SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
+		04BC14F364338B68420CC225 /* EngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EngineTests.swift; path = TetrisDuelTests/Core/EngineTests.swift; sourceTree = SOURCE_ROOT; };
+		058FF6F83844D9D8F507FD3C /* TetrisDuelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisDuelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05ED5FA971E40AEB47031040 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Board.swift; path = TetrisDuel/Core/Board.swift; sourceTree = SOURCE_ROOT; };
+		0BE7E02D51AD066FE910437E /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameInteractor.swift; path = TetrisDuel/Modules/Game/GameInteractor.swift; sourceTree = SOURCE_ROOT; };
+		1FB1B3DAFD4A2665916A16BA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = TetrisDuel/UI/Theme.swift; sourceTree = SOURCE_ROOT; };
+		2635EFF94AEFBB980A538B5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TetrisDuel/Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		2EE37870D4F051AB9C0C0EBF /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Entities.swift; path = TetrisDuel/Core/Entities.swift; sourceTree = SOURCE_ROOT; };
+		39FFFB7EFB30DCB7B4CA9BCF /* FeedbackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedbackService.swift; path = TetrisDuel/Services/FeedbackService.swift; sourceTree = SOURCE_ROOT; };
+		3E86B0D570F9A3401FB90117 /* HeldInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeldInput.swift; path = TetrisDuel/Core/HeldInput.swift; sourceTree = SOURCE_ROOT; };
+		5586BA0348C8B0D44F998019 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = TetrisDuel/App/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		5D9F99194E2DE3CF745F3DC3 /* CubeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CubeBoardView.swift; path = TetrisDuel/UI/CubeBoardView.swift; sourceTree = SOURCE_ROOT; };
+		5F557267C8CF9C962D57F893 /* WireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WireTests.swift; path = TetrisDuelTests/Core/WireTests.swift; sourceTree = SOURCE_ROOT; };
+		5FF25CE7B649C0C7902FB7DE /* TetrisDuelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TetrisDuelUITests.swift; path = TetrisDuelUITests/TetrisDuelUITests.swift; sourceTree = SOURCE_ROOT; };
+		73155CD7A5B74BE4C469A740 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = TetrisDuel/Modules/Game/GameViewController.swift; sourceTree = SOURCE_ROOT; };
+		74277FFE2B2104F36BFB2522 /* PlayerPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerPanel.swift; path = TetrisDuel/UI/PlayerPanel.swift; sourceTree = SOURCE_ROOT; };
+		75EDFB885D78DD89377A91E6 /* GameInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameInteractorTests.swift; path = TetrisDuelTests/GameInteractorTests.swift; sourceTree = SOURCE_ROOT; };
+		76A06E6A4A0C8215E3D27E76 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = TetrisDuel/Modules/Menu/MenuViewController.swift; sourceTree = SOURCE_ROOT; };
+		7BCBB3F890E11DF42D27F117 /* WireProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WireProtocol.swift; path = TetrisDuel/Core/WireProtocol.swift; sourceTree = SOURCE_ROOT; };
+		84E8DD3B6F1960F72D9AEC9A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = TetrisDuel/Resources/Localizable.xcstrings; sourceTree = SOURCE_ROOT; };
+		87DB4D009CC59A34D01477E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = TetrisDuel/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
+		8F574EB01E38EE196EE0BBFD /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GamePresenter.swift; path = TetrisDuel/Modules/Game/GamePresenter.swift; sourceTree = SOURCE_ROOT; };
+		90E990089E9DA44D74CB77DD /* GameContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameContracts.swift; path = TetrisDuel/Modules/Game/GameContracts.swift; sourceTree = SOURCE_ROOT; };
+		9A45F00C0A76AD34C9AB7F80 /* DisplayLinkClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DisplayLinkClock.swift; path = TetrisDuel/Services/DisplayLinkClock.swift; sourceTree = SOURCE_ROOT; };
+		A28744FECC1A4711366BD8F8 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Localization.swift; path = TetrisDuel/App/Localization.swift; sourceTree = SOURCE_ROOT; };
+		A8F19A7727F161F477272659 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = TetrisDuel/Resources/PrivacyInfo.xcprivacy; sourceTree = SOURCE_ROOT; };
+		AE7B098C6DD8D5065ECBF88B /* MultipeerTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultipeerTransport.swift; path = TetrisDuel/Services/MultipeerTransport.swift; sourceTree = SOURCE_ROOT; };
+		AF6D75E6D9FFCA2153F069FA /* GameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameRouter.swift; path = TetrisDuel/Modules/Game/GameRouter.swift; sourceTree = SOURCE_ROOT; };
+		B5241E79DC57D927386EF387 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = InfoPlist.xcstrings; path = TetrisDuel/Resources/InfoPlist.xcstrings; sourceTree = SOURCE_ROOT; };
+		BB0BD4BF84F800D052C855A9 /* MenuVIPER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuVIPER.swift; path = TetrisDuel/Modules/Menu/MenuVIPER.swift; sourceTree = SOURCE_ROOT; };
+		C3A53AD8AF18043848C9A99D /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Match.swift; path = TetrisDuel/Core/Match.swift; sourceTree = SOURCE_ROOT; };
+		CEBF88F78D47633E2CD7BFC6 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LobbyViewController.swift; path = TetrisDuel/Modules/Lobby/LobbyViewController.swift; sourceTree = SOURCE_ROOT; };
+		CF3F98BA02E58666ED1C54CA /* ServiceContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceContracts.swift; path = TetrisDuel/Services/ServiceContracts.swift; sourceTree = SOURCE_ROOT; };
+		D07713FAAA8BEF6AC2A6BAE8 /* TouchControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TouchControls.swift; path = TetrisDuel/UI/TouchControls.swift; sourceTree = SOURCE_ROOT; };
+		DCFC8CEAA4DEDF9C0470EF7A /* SeededRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SeededRandom.swift; path = TetrisDuel/Core/SeededRandom.swift; sourceTree = SOURCE_ROOT; };
+		E78547D18CC71A776CC75DE5 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppContainer.swift; path = TetrisDuel/App/AppContainer.swift; sourceTree = SOURCE_ROOT; };
+		E9DA9E2F1137BCD388AB11EF /* TetrisDuelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisDuelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC37C49D43C499435599F02F /* LobbyVIPER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LobbyVIPER.swift; path = TetrisDuel/Modules/Lobby/LobbyVIPER.swift; sourceTree = SOURCE_ROOT; };
+		F3D30BEDE8D17E76DF71F39A /* LocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalizationTests.swift; path = TetrisDuelTests/LocalizationTests.swift; sourceTree = SOURCE_ROOT; };
+		F84862199BFD648C79081BF3 /* pt.TetrisDuel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pt.TetrisDuel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0F1C84843F1EF60D5BD7C4E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
-			"sourceTree" = "<group>";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		"E78547D18CC71A776CC75DE5" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "AppContainer.swift";
-			"path" = "TetrisDuel/App/AppContainer.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"5586BA0348C8B0D44F998019" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "AppDelegate.swift";
-			"path" = "TetrisDuel/App/AppDelegate.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"03EDBF5800BB1E6570E105A3" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "SceneDelegate.swift";
-			"path" = "TetrisDuel/App/SceneDelegate.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"A63001B9E6E178CC20911124" = {
-			"isa" = "PBXGroup";
-			"path" = "Core";
-			"children" = (
-				"05ED5FA971E40AEB47031040",
-				"2EE37870D4F051AB9C0C0EBF",
-				"3E86B0D570F9A3401FB90117",
-				"C3A53AD8AF18043848C9A99D",
-				"DCFC8CEAA4DEDF9C0470EF7A",
-				"7BCBB3F890E11DF42D27F117",
+		33ADDA73D0F2C2DECCBB2DB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
-			"sourceTree" = "<group>";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		"05ED5FA971E40AEB47031040" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "Board.swift";
-			"path" = "TetrisDuel/Core/Board.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"2EE37870D4F051AB9C0C0EBF" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "Entities.swift";
-			"path" = "TetrisDuel/Core/Entities.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"3E86B0D570F9A3401FB90117" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "HeldInput.swift";
-			"path" = "TetrisDuel/Core/HeldInput.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"C3A53AD8AF18043848C9A99D" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "Match.swift";
-			"path" = "TetrisDuel/Core/Match.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"DCFC8CEAA4DEDF9C0470EF7A" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "SeededRandom.swift";
-			"path" = "TetrisDuel/Core/SeededRandom.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"7BCBB3F890E11DF42D27F117" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "WireProtocol.swift";
-			"path" = "TetrisDuel/Core/WireProtocol.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"2A670FE6CF5A6F353E6DCBE5" = {
-			"isa" = "PBXGroup";
-			"path" = "Modules";
-			"children" = (
-				"AA1F8B286DD0459F8F6EEA01",
-				"D145047FF4C68A74E4A88E22",
-				"BCFA169A10132955A1C6C587",
+		4C756D735D43CE1143BFA89A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
-			"sourceTree" = "<group>";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		"AA1F8B286DD0459F8F6EEA01" = {
-			"isa" = "PBXGroup";
-			"path" = "Game";
-			"children" = (
-				"90E990089E9DA44D74CB77DD",
-				"0BE7E02D51AD066FE910437E",
-				"8F574EB01E38EE196EE0BBFD",
-				"AF6D75E6D9FFCA2153F069FA",
-				"73155CD7A5B74BE4C469A740",
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11FF0C1D51C51BFED00CC84E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				04BC14F364338B68420CC225 /* EngineTests.swift */,
+				5F557267C8CF9C962D57F893 /* WireTests.swift */,
 			);
-			"sourceTree" = "<group>";
+			path = Core;
+			sourceTree = "<group>";
 		};
-		"90E990089E9DA44D74CB77DD" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "GameContracts.swift";
-			"path" = "TetrisDuel/Modules/Game/GameContracts.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"0BE7E02D51AD066FE910437E" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "GameInteractor.swift";
-			"path" = "TetrisDuel/Modules/Game/GameInteractor.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"8F574EB01E38EE196EE0BBFD" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "GamePresenter.swift";
-			"path" = "TetrisDuel/Modules/Game/GamePresenter.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"AF6D75E6D9FFCA2153F069FA" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "GameRouter.swift";
-			"path" = "TetrisDuel/Modules/Game/GameRouter.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"73155CD7A5B74BE4C469A740" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "GameViewController.swift";
-			"path" = "TetrisDuel/Modules/Game/GameViewController.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"D145047FF4C68A74E4A88E22" = {
-			"isa" = "PBXGroup";
-			"path" = "Lobby";
-			"children" = (
-				"EC37C49D43C499435599F02F",
-				"CEBF88F78D47633E2CD7BFC6",
+		1581DD06BA742054F0CA2C42 = {
+			isa = PBXGroup;
+			children = (
+				5BA6CA76DD1BD29BBBB5547D /* Application */,
+				E73290434CF2536C8BFF49F3 /* Unit Tests */,
+				F3D639DAD13860D099B3BDA8 /* UI Tests */,
+				AE7805B56D1DCAFAA071416F /* Products */,
 			);
-			"sourceTree" = "<group>";
+			sourceTree = "<group>";
 		};
-		"EC37C49D43C499435599F02F" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "LobbyVIPER.swift";
-			"path" = "TetrisDuel/Modules/Lobby/LobbyVIPER.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"CEBF88F78D47633E2CD7BFC6" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "LobbyViewController.swift";
-			"path" = "TetrisDuel/Modules/Lobby/LobbyViewController.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"BCFA169A10132955A1C6C587" = {
-			"isa" = "PBXGroup";
-			"path" = "Menu";
-			"children" = (
-				"BB0BD4BF84F800D052C855A9",
-				"76A06E6A4A0C8215E3D27E76",
+		2A670FE6CF5A6F353E6DCBE5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AA1F8B286DD0459F8F6EEA01 /* Game */,
+				D145047FF4C68A74E4A88E22 /* Lobby */,
+				BCFA169A10132955A1C6C587 /* Menu */,
 			);
-			"sourceTree" = "<group>";
+			path = Modules;
+			sourceTree = "<group>";
 		};
-		"BB0BD4BF84F800D052C855A9" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "MenuVIPER.swift";
-			"path" = "TetrisDuel/Modules/Menu/MenuVIPER.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"76A06E6A4A0C8215E3D27E76" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "MenuViewController.swift";
-			"path" = "TetrisDuel/Modules/Menu/MenuViewController.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"F7852CDC93E1FD22386D6EDD" = {
-			"isa" = "PBXGroup";
-			"path" = "Resources";
-			"children" = (
-				"2635EFF94AEFBB980A538B5D",
-				"87DB4D009CC59A34D01477E7",
-				"A8F19A7727F161F477272659",
+		5BA6CA76DD1BD29BBBB5547D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E20FB7C94A8EF9BE495AB2A4 /* App */,
+				A63001B9E6E178CC20911124 /* Core */,
+				2A670FE6CF5A6F353E6DCBE5 /* Modules */,
+				F7852CDC93E1FD22386D6EDD /* Resources */,
+				A74E0C0F4EBF0A9EF8936D3B /* Services */,
+				63A9E64FB0D4FF36356EF0AD /* UI */,
 			);
-			"sourceTree" = "<group>";
+			name = Application;
+			path = TetrisDuel;
+			sourceTree = "<group>";
 		};
-		"2635EFF94AEFBB980A538B5D" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "folder.assetcatalog";
-			"name" = "Assets.xcassets";
-			"path" = "TetrisDuel/Resources/Assets.xcassets";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"87DB4D009CC59A34D01477E7" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "text.plist.xml";
-			"name" = "Info.plist";
-			"path" = "TetrisDuel/Resources/Info.plist";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"A8F19A7727F161F477272659" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "text.xml";
-			"name" = "PrivacyInfo.xcprivacy";
-			"path" = "TetrisDuel/Resources/PrivacyInfo.xcprivacy";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"A74E0C0F4EBF0A9EF8936D3B" = {
-			"isa" = "PBXGroup";
-			"path" = "Services";
-			"children" = (
-				"9A45F00C0A76AD34C9AB7F80",
-				"39FFFB7EFB30DCB7B4CA9BCF",
-				"AE7B098C6DD8D5065ECBF88B",
-				"CF3F98BA02E58666ED1C54CA",
+		63A9E64FB0D4FF36356EF0AD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5D9F99194E2DE3CF745F3DC3 /* CubeBoardView.swift */,
+				74277FFE2B2104F36BFB2522 /* PlayerPanel.swift */,
+				1FB1B3DAFD4A2665916A16BA /* Theme.swift */,
+				D07713FAAA8BEF6AC2A6BAE8 /* TouchControls.swift */,
 			);
-			"sourceTree" = "<group>";
+			path = UI;
+			sourceTree = "<group>";
 		};
-		"9A45F00C0A76AD34C9AB7F80" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "DisplayLinkClock.swift";
-			"path" = "TetrisDuel/Services/DisplayLinkClock.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"39FFFB7EFB30DCB7B4CA9BCF" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "FeedbackService.swift";
-			"path" = "TetrisDuel/Services/FeedbackService.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"AE7B098C6DD8D5065ECBF88B" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "MultipeerTransport.swift";
-			"path" = "TetrisDuel/Services/MultipeerTransport.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"CF3F98BA02E58666ED1C54CA" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "ServiceContracts.swift";
-			"path" = "TetrisDuel/Services/ServiceContracts.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"63A9E64FB0D4FF36356EF0AD" = {
-			"isa" = "PBXGroup";
-			"path" = "UI";
-			"children" = (
-				"5D9F99194E2DE3CF745F3DC3",
-				"74277FFE2B2104F36BFB2522",
-				"1FB1B3DAFD4A2665916A16BA",
-				"D07713FAAA8BEF6AC2A6BAE8",
+		A63001B9E6E178CC20911124 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				05ED5FA971E40AEB47031040 /* Board.swift */,
+				2EE37870D4F051AB9C0C0EBF /* Entities.swift */,
+				3E86B0D570F9A3401FB90117 /* HeldInput.swift */,
+				C3A53AD8AF18043848C9A99D /* Match.swift */,
+				DCFC8CEAA4DEDF9C0470EF7A /* SeededRandom.swift */,
+				7BCBB3F890E11DF42D27F117 /* WireProtocol.swift */,
 			);
-			"sourceTree" = "<group>";
+			path = Core;
+			sourceTree = "<group>";
 		};
-		"5D9F99194E2DE3CF745F3DC3" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "CubeBoardView.swift";
-			"path" = "TetrisDuel/UI/CubeBoardView.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"74277FFE2B2104F36BFB2522" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "PlayerPanel.swift";
-			"path" = "TetrisDuel/UI/PlayerPanel.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"1FB1B3DAFD4A2665916A16BA" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "Theme.swift";
-			"path" = "TetrisDuel/UI/Theme.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"D07713FAAA8BEF6AC2A6BAE8" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "TouchControls.swift";
-			"path" = "TetrisDuel/UI/TouchControls.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"5BA6CA76DD1BD29BBBB5547D" = {
-			"isa" = "PBXGroup";
-			"name" = "Application";
-			"path" = "TetrisDuel";
-			"children" = (
-				"E20FB7C94A8EF9BE495AB2A4",
-				"A63001B9E6E178CC20911124",
-				"2A670FE6CF5A6F353E6DCBE5",
-				"F7852CDC93E1FD22386D6EDD",
-				"A74E0C0F4EBF0A9EF8936D3B",
-				"63A9E64FB0D4FF36356EF0AD",
+		A74E0C0F4EBF0A9EF8936D3B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9A45F00C0A76AD34C9AB7F80 /* DisplayLinkClock.swift */,
+				39FFFB7EFB30DCB7B4CA9BCF /* FeedbackService.swift */,
+				AE7B098C6DD8D5065ECBF88B /* MultipeerTransport.swift */,
+				CF3F98BA02E58666ED1C54CA /* ServiceContracts.swift */,
 			);
-			"sourceTree" = "<group>";
+			path = Services;
+			sourceTree = "<group>";
 		};
-		"11FF0C1D51C51BFED00CC84E" = {
-			"isa" = "PBXGroup";
-			"path" = "Core";
-			"children" = (
-				"04BC14F364338B68420CC225",
-				"5F557267C8CF9C962D57F893",
+		AA1F8B286DD0459F8F6EEA01 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				90E990089E9DA44D74CB77DD /* GameContracts.swift */,
+				0BE7E02D51AD066FE910437E /* GameInteractor.swift */,
+				8F574EB01E38EE196EE0BBFD /* GamePresenter.swift */,
+				AF6D75E6D9FFCA2153F069FA /* GameRouter.swift */,
+				73155CD7A5B74BE4C469A740 /* GameViewController.swift */,
 			);
-			"sourceTree" = "<group>";
+			path = Game;
+			sourceTree = "<group>";
 		};
-		"04BC14F364338B68420CC225" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "EngineTests.swift";
-			"path" = "TetrisDuelTests/Core/EngineTests.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"5F557267C8CF9C962D57F893" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "WireTests.swift";
-			"path" = "TetrisDuelTests/Core/WireTests.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"75EDFB885D78DD89377A91E6" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "GameInteractorTests.swift";
-			"path" = "TetrisDuelTests/GameInteractorTests.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"E73290434CF2536C8BFF49F3" = {
-			"isa" = "PBXGroup";
-			"name" = "Unit Tests";
-			"path" = "TetrisDuelTests";
-			"children" = (
-				"11FF0C1D51C51BFED00CC84E",
-				"75EDFB885D78DD89377A91E6",
+		AE7805B56D1DCAFAA071416F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F84862199BFD648C79081BF3 /* pt.TetrisDuel.app */,
+				E9DA9E2F1137BCD388AB11EF /* TetrisDuelTests.xctest */,
+				058FF6F83844D9D8F507FD3C /* TetrisDuelUITests.xctest */,
 			);
-			"sourceTree" = "<group>";
+			name = Products;
+			sourceTree = "<group>";
 		};
-		"5FF25CE7B649C0C7902FB7DE" = {
-			"isa" = "PBXFileReference";
-			"lastKnownFileType" = "sourcecode.swift";
-			"name" = "TetrisDuelUITests.swift";
-			"path" = "TetrisDuelUITests/TetrisDuelUITests.swift";
-			"sourceTree" = "SOURCE_ROOT";
-		};
-		"F3D639DAD13860D099B3BDA8" = {
-			"isa" = "PBXGroup";
-			"name" = "UI Tests";
-			"path" = "TetrisDuelUITests";
-			"children" = (
-				"5FF25CE7B649C0C7902FB7DE",
+		BCFA169A10132955A1C6C587 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				BB0BD4BF84F800D052C855A9 /* MenuVIPER.swift */,
+				76A06E6A4A0C8215E3D27E76 /* MenuViewController.swift */,
 			);
-			"sourceTree" = "<group>";
+			path = Menu;
+			sourceTree = "<group>";
 		};
-		"F84862199BFD648C79081BF3" = {
-			"isa" = "PBXFileReference";
-			"explicitFileType" = "wrapper.application";
-			"includeInIndex" = "0";
-			"path" = "pt.TetrisDuel.app";
-			"sourceTree" = "BUILT_PRODUCTS_DIR";
-		};
-		"0B5C5FA1B3C95E8B88E794AF" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "E78547D18CC71A776CC75DE5";
-		};
-		"93E1CB7549395B3BB5B3FF9A" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "5586BA0348C8B0D44F998019";
-		};
-		"ACEA61B41479D2499FC95AF5" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "03EDBF5800BB1E6570E105A3";
-		};
-		"691CA6C9A71932E6A349F760" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "05ED5FA971E40AEB47031040";
-		};
-		"DC7ACBFCC8E6C15D9EC853B8" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "2EE37870D4F051AB9C0C0EBF";
-		};
-		"7B3E2C5676EBE27B765693BA" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "3E86B0D570F9A3401FB90117";
-		};
-		"3C7F2A2CFC271490C210AFC3" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "C3A53AD8AF18043848C9A99D";
-		};
-		"414BAB0F763378E955220561" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "DCFC8CEAA4DEDF9C0470EF7A";
-		};
-		"E42177DF3511A18FEA785860" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "7BCBB3F890E11DF42D27F117";
-		};
-		"1199BA168DA81D8A4AC0777E" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "90E990089E9DA44D74CB77DD";
-		};
-		"AFDC78236306697C2268A307" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "0BE7E02D51AD066FE910437E";
-		};
-		"A206AD51FE68FFB8FE1FBE7C" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "8F574EB01E38EE196EE0BBFD";
-		};
-		"DA7FD718AB13A736847FC291" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "AF6D75E6D9FFCA2153F069FA";
-		};
-		"1B48203B8AC7C6E946204040" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "73155CD7A5B74BE4C469A740";
-		};
-		"0092942069EF00210FEF3572" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "EC37C49D43C499435599F02F";
-		};
-		"B39A0726AB37E2B1DFECEE2F" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "CEBF88F78D47633E2CD7BFC6";
-		};
-		"D35235A95315C64DEA25546F" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "BB0BD4BF84F800D052C855A9";
-		};
-		"80B75418C84CBF88BD3B789D" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "76A06E6A4A0C8215E3D27E76";
-		};
-		"997D3BC8BAD52D57DCC3369E" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "9A45F00C0A76AD34C9AB7F80";
-		};
-		"7FA803AF4215ED344D905B2B" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "39FFFB7EFB30DCB7B4CA9BCF";
-		};
-		"AA93254FA89332A4B716DBB8" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "AE7B098C6DD8D5065ECBF88B";
-		};
-		"29E92D84ED381D3310545004" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "CF3F98BA02E58666ED1C54CA";
-		};
-		"3663B8C41A919F4479A854AC" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "5D9F99194E2DE3CF745F3DC3";
-		};
-		"08770DCF868AAFB55689A5F1" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "74277FFE2B2104F36BFB2522";
-		};
-		"B0EAD04570B8C01D8F0B394B" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "1FB1B3DAFD4A2665916A16BA";
-		};
-		"4A7BC252FF7099D8A6F67BBB" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "D07713FAAA8BEF6AC2A6BAE8";
-		};
-		"122D841EF3DC792DA0203EE7" = {
-			"isa" = "PBXSourcesBuildPhase";
-			"buildActionMask" = "2147483647";
-			"files" = (
-				"0B5C5FA1B3C95E8B88E794AF",
-				"93E1CB7549395B3BB5B3FF9A",
-				"ACEA61B41479D2499FC95AF5",
-				"691CA6C9A71932E6A349F760",
-				"DC7ACBFCC8E6C15D9EC853B8",
-				"7B3E2C5676EBE27B765693BA",
-				"3C7F2A2CFC271490C210AFC3",
-				"414BAB0F763378E955220561",
-				"E42177DF3511A18FEA785860",
-				"1199BA168DA81D8A4AC0777E",
-				"AFDC78236306697C2268A307",
-				"A206AD51FE68FFB8FE1FBE7C",
-				"DA7FD718AB13A736847FC291",
-				"1B48203B8AC7C6E946204040",
-				"0092942069EF00210FEF3572",
-				"B39A0726AB37E2B1DFECEE2F",
-				"D35235A95315C64DEA25546F",
-				"80B75418C84CBF88BD3B789D",
-				"997D3BC8BAD52D57DCC3369E",
-				"7FA803AF4215ED344D905B2B",
-				"AA93254FA89332A4B716DBB8",
-				"29E92D84ED381D3310545004",
-				"3663B8C41A919F4479A854AC",
-				"08770DCF868AAFB55689A5F1",
-				"B0EAD04570B8C01D8F0B394B",
-				"4A7BC252FF7099D8A6F67BBB",
+		D145047FF4C68A74E4A88E22 /* Lobby */ = {
+			isa = PBXGroup;
+			children = (
+				EC37C49D43C499435599F02F /* LobbyVIPER.swift */,
+				CEBF88F78D47633E2CD7BFC6 /* LobbyViewController.swift */,
 			);
-			"runOnlyForDeploymentPostprocessing" = "0";
+			path = Lobby;
+			sourceTree = "<group>";
 		};
-		"33ADDA73D0F2C2DECCBB2DB6" = {
-			"isa" = "PBXFrameworksBuildPhase";
-			"buildActionMask" = "2147483647";
-			"files" = (
+		E20FB7C94A8EF9BE495AB2A4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E78547D18CC71A776CC75DE5 /* AppContainer.swift */,
+				5586BA0348C8B0D44F998019 /* AppDelegate.swift */,
+				A28744FECC1A4711366BD8F8 /* Localization.swift */,
+				03EDBF5800BB1E6570E105A3 /* SceneDelegate.swift */,
 			);
-			"runOnlyForDeploymentPostprocessing" = "0";
+			path = App;
+			sourceTree = "<group>";
 		};
-		"928DE91FB9CEEF35768AE353" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "2635EFF94AEFBB980A538B5D";
-		};
-		"72F47F2319C6E69B2A853797" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "A8F19A7727F161F477272659";
-		};
-		"FEF06B25DB9D010F0A955204" = {
-			"isa" = "PBXResourcesBuildPhase";
-			"buildActionMask" = "2147483647";
-			"files" = (
-				"928DE91FB9CEEF35768AE353",
-				"72F47F2319C6E69B2A853797",
+		E73290434CF2536C8BFF49F3 /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				11FF0C1D51C51BFED00CC84E /* Core */,
+				75EDFB885D78DD89377A91E6 /* GameInteractorTests.swift */,
+				F3D30BEDE8D17E76DF71F39A /* LocalizationTests.swift */,
 			);
-			"runOnlyForDeploymentPostprocessing" = "0";
+			name = "Unit Tests";
+			path = TetrisDuelTests;
+			sourceTree = "<group>";
 		};
-		"4346A114A0B89B35A702F938" = {
-			"isa" = "XCBuildConfiguration";
-			"buildSettings" = {
-				"SDKROOT" = "iphoneos";
-				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
-				"SWIFT_VERSION" = "5.0";
-				"SWIFT_STRICT_CONCURRENCY" = "minimal";
-				"CLANG_ENABLE_MODULES" = "YES";
-				"CLANG_ENABLE_OBJC_ARC" = "YES";
-				"TARGETED_DEVICE_FAMILY" = "1,2";
-				"CODE_SIGN_STYLE" = "Automatic";
-				"DEVELOPMENT_TEAM" = "";
-				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
-				"SUPPORTS_MACCATALYST" = "NO";
-				"SWIFT_EMIT_LOC_STRINGS" = "YES";
-				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
-				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.TetrisDuel";
-				"PRODUCT_NAME" = "$(TARGET_NAME)";
-				"INFOPLIST_FILE" = "TetrisDuel/Resources/Info.plist";
-				"GENERATE_INFOPLIST_FILE" = "NO";
-				"PRODUCT_MODULE_NAME" = "pt_TetrisDuel";
-				"ASSETCATALOG_COMPILER_APPICON_NAME" = "AppIcon";
-				"LD_RUNPATH_SEARCH_PATHS" = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
-				"DEBUG_INFORMATION_FORMAT" = "dwarf";
-				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
-				"ENABLE_TESTABILITY" = "YES";
-			};
-			"name" = "Debug";
-		};
-		"F10AEB8D0775536BCC747138" = {
-			"isa" = "XCBuildConfiguration";
-			"buildSettings" = {
-				"SDKROOT" = "iphoneos";
-				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
-				"SWIFT_VERSION" = "5.0";
-				"SWIFT_STRICT_CONCURRENCY" = "minimal";
-				"CLANG_ENABLE_MODULES" = "YES";
-				"CLANG_ENABLE_OBJC_ARC" = "YES";
-				"TARGETED_DEVICE_FAMILY" = "1,2";
-				"CODE_SIGN_STYLE" = "Automatic";
-				"DEVELOPMENT_TEAM" = "";
-				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
-				"SUPPORTS_MACCATALYST" = "NO";
-				"SWIFT_EMIT_LOC_STRINGS" = "YES";
-				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
-				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.TetrisDuel";
-				"PRODUCT_NAME" = "$(TARGET_NAME)";
-				"INFOPLIST_FILE" = "TetrisDuel/Resources/Info.plist";
-				"GENERATE_INFOPLIST_FILE" = "NO";
-				"PRODUCT_MODULE_NAME" = "pt_TetrisDuel";
-				"ASSETCATALOG_COMPILER_APPICON_NAME" = "AppIcon";
-				"LD_RUNPATH_SEARCH_PATHS" = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				"SWIFT_OPTIMIZATION_LEVEL" = "-O";
-				"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
-			};
-			"name" = "Release";
-		};
-		"1E7FBC7F2BEA0B24B8C978D2" = {
-			"isa" = "XCConfigurationList";
-			"buildConfigurations" = (
-				"4346A114A0B89B35A702F938",
-				"F10AEB8D0775536BCC747138",
+		F3D639DAD13860D099B3BDA8 /* UI Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5FF25CE7B649C0C7902FB7DE /* TetrisDuelUITests.swift */,
 			);
-			"defaultConfigurationIsVisible" = "0";
-			"defaultConfigurationName" = "Release";
+			name = "UI Tests";
+			path = TetrisDuelUITests;
+			sourceTree = "<group>";
 		};
-		"C33D12BD84D022C69279C1EF" = {
-			"isa" = "PBXNativeTarget";
-			"buildConfigurationList" = "1E7FBC7F2BEA0B24B8C978D2";
-			"buildPhases" = (
-				"122D841EF3DC792DA0203EE7",
-				"33ADDA73D0F2C2DECCBB2DB6",
-				"FEF06B25DB9D010F0A955204",
+		F7852CDC93E1FD22386D6EDD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2635EFF94AEFBB980A538B5D /* Assets.xcassets */,
+				87DB4D009CC59A34D01477E7 /* Info.plist */,
+				B5241E79DC57D927386EF387 /* InfoPlist.xcstrings */,
+				84E8DD3B6F1960F72D9AEC9A /* Localizable.xcstrings */,
+				A8F19A7727F161F477272659 /* PrivacyInfo.xcprivacy */,
 			);
-			"buildRules" = (
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		375B7DD02422F305ACB12CFB /* TetrisDuelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DA3E6FFD22BE9270CCB21B3 /* Build configuration list for PBXNativeTarget "TetrisDuelTests" */;
+			buildPhases = (
+				0C20181D85BBCDDE5C24AE9B /* Sources */,
+				0F1C84843F1EF60D5BD7C4E3 /* Frameworks */,
+				0F005296F4A95AEA31BE5BB6 /* Resources */,
 			);
-			"dependencies" = (
+			buildRules = (
 			);
-			"name" = "pt.TetrisDuel";
-			"productName" = "pt.TetrisDuel";
-			"productReference" = "F84862199BFD648C79081BF3";
-			"productType" = "com.apple.product-type.application";
-		};
-		"E9DA9E2F1137BCD388AB11EF" = {
-			"isa" = "PBXFileReference";
-			"explicitFileType" = "wrapper.cfbundle";
-			"includeInIndex" = "0";
-			"path" = "TetrisDuelTests.xctest";
-			"sourceTree" = "BUILT_PRODUCTS_DIR";
-		};
-		"2A0C0BDF8835171B7C955E9A" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "04BC14F364338B68420CC225";
-		};
-		"AAF003FDAB1267A0A41667F0" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "5F557267C8CF9C962D57F893";
-		};
-		"8800EE5A0B8591C2AB3899B1" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "75EDFB885D78DD89377A91E6";
-		};
-		"0C20181D85BBCDDE5C24AE9B" = {
-			"isa" = "PBXSourcesBuildPhase";
-			"buildActionMask" = "2147483647";
-			"files" = (
-				"2A0C0BDF8835171B7C955E9A",
-				"AAF003FDAB1267A0A41667F0",
-				"8800EE5A0B8591C2AB3899B1",
+			dependencies = (
+				31F618711B96EF7ABC27EF69 /* PBXTargetDependency */,
 			);
-			"runOnlyForDeploymentPostprocessing" = "0";
+			name = TetrisDuelTests;
+			productName = TetrisDuelTests;
+			productReference = E9DA9E2F1137BCD388AB11EF /* TetrisDuelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		"0F1C84843F1EF60D5BD7C4E3" = {
-			"isa" = "PBXFrameworksBuildPhase";
-			"buildActionMask" = "2147483647";
-			"files" = (
+		C33D12BD84D022C69279C1EF /* pt.TetrisDuel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E7FBC7F2BEA0B24B8C978D2 /* Build configuration list for PBXNativeTarget "pt.TetrisDuel" */;
+			buildPhases = (
+				122D841EF3DC792DA0203EE7 /* Sources */,
+				33ADDA73D0F2C2DECCBB2DB6 /* Frameworks */,
+				FEF06B25DB9D010F0A955204 /* Resources */,
 			);
-			"runOnlyForDeploymentPostprocessing" = "0";
-		};
-		"0F005296F4A95AEA31BE5BB6" = {
-			"isa" = "PBXResourcesBuildPhase";
-			"buildActionMask" = "2147483647";
-			"files" = (
+			buildRules = (
 			);
-			"runOnlyForDeploymentPostprocessing" = "0";
-		};
-		"7C0929761C43C9BD56666C01" = {
-			"isa" = "PBXContainerItemProxy";
-			"containerPortal" = "244210E48437B6556980A702";
-			"proxyType" = "1";
-			"remoteGlobalIDString" = "C33D12BD84D022C69279C1EF";
-			"remoteInfo" = "pt.TetrisDuel";
-		};
-		"31F618711B96EF7ABC27EF69" = {
-			"isa" = "PBXTargetDependency";
-			"target" = "C33D12BD84D022C69279C1EF";
-			"targetProxy" = "7C0929761C43C9BD56666C01";
-		};
-		"043D535C88A60A005DDCFD7B" = {
-			"isa" = "XCBuildConfiguration";
-			"buildSettings" = {
-				"SDKROOT" = "iphoneos";
-				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
-				"SWIFT_VERSION" = "5.0";
-				"SWIFT_STRICT_CONCURRENCY" = "minimal";
-				"CLANG_ENABLE_MODULES" = "YES";
-				"CLANG_ENABLE_OBJC_ARC" = "YES";
-				"TARGETED_DEVICE_FAMILY" = "1,2";
-				"CODE_SIGN_STYLE" = "Automatic";
-				"DEVELOPMENT_TEAM" = "";
-				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
-				"SUPPORTS_MACCATALYST" = "NO";
-				"SWIFT_EMIT_LOC_STRINGS" = "YES";
-				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
-				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.TetrisDuelTests";
-				"PRODUCT_NAME" = "$(TARGET_NAME)";
-				"GENERATE_INFOPLIST_FILE" = "YES";
-				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/pt.TetrisDuel.app/pt.TetrisDuel";
-				"BUNDLE_LOADER" = "$(TEST_HOST)";
-				"LD_RUNPATH_SEARCH_PATHS" = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
-				"DEBUG_INFORMATION_FORMAT" = "dwarf";
-				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
-				"ENABLE_TESTABILITY" = "YES";
-			};
-			"name" = "Debug";
-		};
-		"A0C5DE804E3835B494BCDE97" = {
-			"isa" = "XCBuildConfiguration";
-			"buildSettings" = {
-				"SDKROOT" = "iphoneos";
-				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
-				"SWIFT_VERSION" = "5.0";
-				"SWIFT_STRICT_CONCURRENCY" = "minimal";
-				"CLANG_ENABLE_MODULES" = "YES";
-				"CLANG_ENABLE_OBJC_ARC" = "YES";
-				"TARGETED_DEVICE_FAMILY" = "1,2";
-				"CODE_SIGN_STYLE" = "Automatic";
-				"DEVELOPMENT_TEAM" = "";
-				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
-				"SUPPORTS_MACCATALYST" = "NO";
-				"SWIFT_EMIT_LOC_STRINGS" = "YES";
-				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
-				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.TetrisDuelTests";
-				"PRODUCT_NAME" = "$(TARGET_NAME)";
-				"GENERATE_INFOPLIST_FILE" = "YES";
-				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/pt.TetrisDuel.app/pt.TetrisDuel";
-				"BUNDLE_LOADER" = "$(TEST_HOST)";
-				"LD_RUNPATH_SEARCH_PATHS" = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				"SWIFT_OPTIMIZATION_LEVEL" = "-O";
-				"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
-			};
-			"name" = "Release";
-		};
-		"8DA3E6FFD22BE9270CCB21B3" = {
-			"isa" = "XCConfigurationList";
-			"buildConfigurations" = (
-				"043D535C88A60A005DDCFD7B",
-				"A0C5DE804E3835B494BCDE97",
+			dependencies = (
 			);
-			"defaultConfigurationIsVisible" = "0";
-			"defaultConfigurationName" = "Release";
+			name = pt.TetrisDuel;
+			productName = pt.TetrisDuel;
+			productReference = F84862199BFD648C79081BF3 /* pt.TetrisDuel.app */;
+			productType = "com.apple.product-type.application";
 		};
-		"375B7DD02422F305ACB12CFB" = {
-			"isa" = "PBXNativeTarget";
-			"buildConfigurationList" = "8DA3E6FFD22BE9270CCB21B3";
-			"buildPhases" = (
-				"0C20181D85BBCDDE5C24AE9B",
-				"0F1C84843F1EF60D5BD7C4E3",
-				"0F005296F4A95AEA31BE5BB6",
+		D28A1A6A2A62CE61DE2F1DF7 /* TetrisDuelUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45C6E6EFB26DD1D605432DE2 /* Build configuration list for PBXNativeTarget "TetrisDuelUITests" */;
+			buildPhases = (
+				B5564A9520CA90618B895D19 /* Sources */,
+				4C756D735D43CE1143BFA89A /* Frameworks */,
+				899B65E1F2612EDBD22EF940 /* Resources */,
 			);
-			"buildRules" = (
+			buildRules = (
 			);
-			"dependencies" = (
-				"31F618711B96EF7ABC27EF69",
+			dependencies = (
+				7D5D54B5EFE4F24B6D543B9E /* PBXTargetDependency */,
 			);
-			"name" = "TetrisDuelTests";
-			"productName" = "TetrisDuelTests";
-			"productReference" = "E9DA9E2F1137BCD388AB11EF";
-			"productType" = "com.apple.product-type.bundle.unit-test";
+			name = TetrisDuelUITests;
+			productName = TetrisDuelUITests;
+			productReference = 058FF6F83844D9D8F507FD3C /* TetrisDuelUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		"058FF6F83844D9D8F507FD3C" = {
-			"isa" = "PBXFileReference";
-			"explicitFileType" = "wrapper.cfbundle";
-			"includeInIndex" = "0";
-			"path" = "TetrisDuelUITests.xctest";
-			"sourceTree" = "BUILT_PRODUCTS_DIR";
-		};
-		"432567C444E540EBFACD06BF" = {
-			"isa" = "PBXBuildFile";
-			"fileRef" = "5FF25CE7B649C0C7902FB7DE";
-		};
-		"B5564A9520CA90618B895D19" = {
-			"isa" = "PBXSourcesBuildPhase";
-			"buildActionMask" = "2147483647";
-			"files" = (
-				"432567C444E540EBFACD06BF",
-			);
-			"runOnlyForDeploymentPostprocessing" = "0";
-		};
-		"4C756D735D43CE1143BFA89A" = {
-			"isa" = "PBXFrameworksBuildPhase";
-			"buildActionMask" = "2147483647";
-			"files" = (
-			);
-			"runOnlyForDeploymentPostprocessing" = "0";
-		};
-		"899B65E1F2612EDBD22EF940" = {
-			"isa" = "PBXResourcesBuildPhase";
-			"buildActionMask" = "2147483647";
-			"files" = (
-			);
-			"runOnlyForDeploymentPostprocessing" = "0";
-		};
-		"4FE9244EBB88BF6AF5DE80B6" = {
-			"isa" = "PBXContainerItemProxy";
-			"containerPortal" = "244210E48437B6556980A702";
-			"proxyType" = "1";
-			"remoteGlobalIDString" = "C33D12BD84D022C69279C1EF";
-			"remoteInfo" = "pt.TetrisDuel";
-		};
-		"7D5D54B5EFE4F24B6D543B9E" = {
-			"isa" = "PBXTargetDependency";
-			"target" = "C33D12BD84D022C69279C1EF";
-			"targetProxy" = "4FE9244EBB88BF6AF5DE80B6";
-		};
-		"EC7E183500219429303D3139" = {
-			"isa" = "XCBuildConfiguration";
-			"buildSettings" = {
-				"SDKROOT" = "iphoneos";
-				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
-				"SWIFT_VERSION" = "5.0";
-				"SWIFT_STRICT_CONCURRENCY" = "minimal";
-				"CLANG_ENABLE_MODULES" = "YES";
-				"CLANG_ENABLE_OBJC_ARC" = "YES";
-				"TARGETED_DEVICE_FAMILY" = "1,2";
-				"CODE_SIGN_STYLE" = "Automatic";
-				"DEVELOPMENT_TEAM" = "";
-				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
-				"SUPPORTS_MACCATALYST" = "NO";
-				"SWIFT_EMIT_LOC_STRINGS" = "YES";
-				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
-				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.TetrisDuelUITests";
-				"PRODUCT_NAME" = "$(TARGET_NAME)";
-				"GENERATE_INFOPLIST_FILE" = "YES";
-				"TEST_TARGET_NAME" = "pt.TetrisDuel";
-				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
-				"DEBUG_INFORMATION_FORMAT" = "dwarf";
-				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
-				"ENABLE_TESTABILITY" = "YES";
-			};
-			"name" = "Debug";
-		};
-		"B0F02F14914737F72A232337" = {
-			"isa" = "XCBuildConfiguration";
-			"buildSettings" = {
-				"SDKROOT" = "iphoneos";
-				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
-				"SWIFT_VERSION" = "5.0";
-				"SWIFT_STRICT_CONCURRENCY" = "minimal";
-				"CLANG_ENABLE_MODULES" = "YES";
-				"CLANG_ENABLE_OBJC_ARC" = "YES";
-				"TARGETED_DEVICE_FAMILY" = "1,2";
-				"CODE_SIGN_STYLE" = "Automatic";
-				"DEVELOPMENT_TEAM" = "";
-				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
-				"SUPPORTS_MACCATALYST" = "NO";
-				"SWIFT_EMIT_LOC_STRINGS" = "YES";
-				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
-				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.TetrisDuelUITests";
-				"PRODUCT_NAME" = "$(TARGET_NAME)";
-				"GENERATE_INFOPLIST_FILE" = "YES";
-				"TEST_TARGET_NAME" = "pt.TetrisDuel";
-				"SWIFT_OPTIMIZATION_LEVEL" = "-O";
-				"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
-			};
-			"name" = "Release";
-		};
-		"45C6E6EFB26DD1D605432DE2" = {
-			"isa" = "XCConfigurationList";
-			"buildConfigurations" = (
-				"EC7E183500219429303D3139",
-				"B0F02F14914737F72A232337",
-			);
-			"defaultConfigurationIsVisible" = "0";
-			"defaultConfigurationName" = "Release";
-		};
-		"D28A1A6A2A62CE61DE2F1DF7" = {
-			"isa" = "PBXNativeTarget";
-			"buildConfigurationList" = "45C6E6EFB26DD1D605432DE2";
-			"buildPhases" = (
-				"B5564A9520CA90618B895D19",
-				"4C756D735D43CE1143BFA89A",
-				"899B65E1F2612EDBD22EF940",
-			);
-			"buildRules" = (
-			);
-			"dependencies" = (
-				"7D5D54B5EFE4F24B6D543B9E",
-			);
-			"name" = "TetrisDuelUITests";
-			"productName" = "TetrisDuelUITests";
-			"productReference" = "058FF6F83844D9D8F507FD3C";
-			"productType" = "com.apple.product-type.bundle.ui-testing";
-		};
-		"AE7805B56D1DCAFAA071416F" = {
-			"isa" = "PBXGroup";
-			"children" = (
-				"F84862199BFD648C79081BF3",
-				"E9DA9E2F1137BCD388AB11EF",
-				"058FF6F83844D9D8F507FD3C",
-			);
-			"name" = "Products";
-			"sourceTree" = "<group>";
-		};
-		"1581DD06BA742054F0CA2C42" = {
-			"isa" = "PBXGroup";
-			"children" = (
-				"5BA6CA76DD1BD29BBBB5547D",
-				"E73290434CF2536C8BFF49F3",
-				"F3D639DAD13860D099B3BDA8",
-				"AE7805B56D1DCAFAA071416F",
-			);
-			"sourceTree" = "<group>";
-		};
-		"0B8CF9A978C27BD86D8B22D2" = {
-			"isa" = "XCBuildConfiguration";
-			"buildSettings" = {
-				"SDKROOT" = "iphoneos";
-				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
-				"SWIFT_VERSION" = "5.0";
-				"SWIFT_STRICT_CONCURRENCY" = "minimal";
-				"CLANG_ENABLE_MODULES" = "YES";
-				"CLANG_ENABLE_OBJC_ARC" = "YES";
-				"TARGETED_DEVICE_FAMILY" = "1,2";
-				"CODE_SIGN_STYLE" = "Automatic";
-				"DEVELOPMENT_TEAM" = "";
-				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
-				"SUPPORTS_MACCATALYST" = "NO";
-				"SWIFT_EMIT_LOC_STRINGS" = "YES";
-				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
-				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
-				"DEBUG_INFORMATION_FORMAT" = "dwarf";
-				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
-				"ENABLE_TESTABILITY" = "YES";
-			};
-			"name" = "Debug";
-		};
-		"9EA3F85534490133C1FD3250" = {
-			"isa" = "XCBuildConfiguration";
-			"buildSettings" = {
-				"SDKROOT" = "iphoneos";
-				"IPHONEOS_DEPLOYMENT_TARGET" = "16.0";
-				"SWIFT_VERSION" = "5.0";
-				"SWIFT_STRICT_CONCURRENCY" = "minimal";
-				"CLANG_ENABLE_MODULES" = "YES";
-				"CLANG_ENABLE_OBJC_ARC" = "YES";
-				"TARGETED_DEVICE_FAMILY" = "1,2";
-				"CODE_SIGN_STYLE" = "Automatic";
-				"DEVELOPMENT_TEAM" = "";
-				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
-				"SUPPORTS_MACCATALYST" = "NO";
-				"SWIFT_EMIT_LOC_STRINGS" = "YES";
-				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
-				"SWIFT_OPTIMIZATION_LEVEL" = "-O";
-				"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
-			};
-			"name" = "Release";
-		};
-		"72FE4DCF846896F90B9F49D6" = {
-			"isa" = "XCConfigurationList";
-			"buildConfigurations" = (
-				"0B8CF9A978C27BD86D8B22D2",
-				"9EA3F85534490133C1FD3250",
-			);
-			"defaultConfigurationIsVisible" = "0";
-			"defaultConfigurationName" = "Release";
-		};
-		"244210E48437B6556980A702" = {
-			"isa" = "PBXProject";
-			"attributes" = {
-				"LastUpgradeCheck" = "1600";
-				"BuildIndependentTargetsInParallel" = "YES";
-				"TargetAttributes" = {
-					"C33D12BD84D022C69279C1EF" = {
-						"CreatedOnToolsVersion" = "16.0";
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		244210E48437B6556980A702 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					375B7DD02422F305ACB12CFB = {
+						CreatedOnToolsVersion = 16.0;
 					};
-					"375B7DD02422F305ACB12CFB" = {
-						"CreatedOnToolsVersion" = "16.0";
+					C33D12BD84D022C69279C1EF = {
+						CreatedOnToolsVersion = 16.0;
 					};
-					"D28A1A6A2A62CE61DE2F1DF7" = {
-						"CreatedOnToolsVersion" = "16.0";
+					D28A1A6A2A62CE61DE2F1DF7 = {
+						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
-			"buildConfigurationList" = "72FE4DCF846896F90B9F49D6";
-			"compatibilityVersion" = "Xcode 14.0";
-			"developmentRegion" = "en";
-			"hasScannedForEncodings" = "0";
-			"knownRegions" = (
-				"en",
-				"Base",
+			buildConfigurationList = 72FE4DCF846896F90B9F49D6 /* Build configuration list for PBXProject "pt.TetrisDuel" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				ru,
+				Base,
 			);
-			"mainGroup" = "1581DD06BA742054F0CA2C42";
-			"productRefGroup" = "AE7805B56D1DCAFAA071416F";
-			"projectDirPath" = "";
-			"projectRoot" = "";
-			"targets" = (
-				"C33D12BD84D022C69279C1EF",
-				"375B7DD02422F305ACB12CFB",
-				"D28A1A6A2A62CE61DE2F1DF7",
+			mainGroup = 1581DD06BA742054F0CA2C42;
+			productRefGroup = AE7805B56D1DCAFAA071416F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C33D12BD84D022C69279C1EF /* pt.TetrisDuel */,
+				375B7DD02422F305ACB12CFB /* TetrisDuelTests */,
+				D28A1A6A2A62CE61DE2F1DF7 /* TetrisDuelUITests */,
 			);
 		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0F005296F4A95AEA31BE5BB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		899B65E1F2612EDBD22EF940 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEF06B25DB9D010F0A955204 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				928DE91FB9CEEF35768AE353 /* Assets.xcassets in Resources */,
+				72F47F2319C6E69B2A853797 /* PrivacyInfo.xcprivacy in Resources */,
+				A41F93DDC774D620299EA626 /* Localizable.xcstrings in Resources */,
+				25695AD4145FCF21391E09A9 /* InfoPlist.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C20181D85BBCDDE5C24AE9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0C0BDF8835171B7C955E9A /* EngineTests.swift in Sources */,
+				AAF003FDAB1267A0A41667F0 /* WireTests.swift in Sources */,
+				8800EE5A0B8591C2AB3899B1 /* GameInteractorTests.swift in Sources */,
+				18B156A8CC3A3E1797CC35A4 /* LocalizationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		122D841EF3DC792DA0203EE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B5C5FA1B3C95E8B88E794AF /* AppContainer.swift in Sources */,
+				93E1CB7549395B3BB5B3FF9A /* AppDelegate.swift in Sources */,
+				25DB57FD0A9BC7FEC483BE72 /* Localization.swift in Sources */,
+				ACEA61B41479D2499FC95AF5 /* SceneDelegate.swift in Sources */,
+				691CA6C9A71932E6A349F760 /* Board.swift in Sources */,
+				DC7ACBFCC8E6C15D9EC853B8 /* Entities.swift in Sources */,
+				7B3E2C5676EBE27B765693BA /* HeldInput.swift in Sources */,
+				3C7F2A2CFC271490C210AFC3 /* Match.swift in Sources */,
+				414BAB0F763378E955220561 /* SeededRandom.swift in Sources */,
+				E42177DF3511A18FEA785860 /* WireProtocol.swift in Sources */,
+				1199BA168DA81D8A4AC0777E /* GameContracts.swift in Sources */,
+				AFDC78236306697C2268A307 /* GameInteractor.swift in Sources */,
+				A206AD51FE68FFB8FE1FBE7C /* GamePresenter.swift in Sources */,
+				DA7FD718AB13A736847FC291 /* GameRouter.swift in Sources */,
+				1B48203B8AC7C6E946204040 /* GameViewController.swift in Sources */,
+				0092942069EF00210FEF3572 /* LobbyVIPER.swift in Sources */,
+				B39A0726AB37E2B1DFECEE2F /* LobbyViewController.swift in Sources */,
+				D35235A95315C64DEA25546F /* MenuVIPER.swift in Sources */,
+				80B75418C84CBF88BD3B789D /* MenuViewController.swift in Sources */,
+				997D3BC8BAD52D57DCC3369E /* DisplayLinkClock.swift in Sources */,
+				7FA803AF4215ED344D905B2B /* FeedbackService.swift in Sources */,
+				AA93254FA89332A4B716DBB8 /* MultipeerTransport.swift in Sources */,
+				29E92D84ED381D3310545004 /* ServiceContracts.swift in Sources */,
+				3663B8C41A919F4479A854AC /* CubeBoardView.swift in Sources */,
+				08770DCF868AAFB55689A5F1 /* PlayerPanel.swift in Sources */,
+				B0EAD04570B8C01D8F0B394B /* Theme.swift in Sources */,
+				4A7BC252FF7099D8A6F67BBB /* TouchControls.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5564A9520CA90618B895D19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				432567C444E540EBFACD06BF /* TetrisDuelUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31F618711B96EF7ABC27EF69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C33D12BD84D022C69279C1EF /* pt.TetrisDuel */;
+			targetProxy = 7C0929761C43C9BD56666C01 /* PBXContainerItemProxy */;
+		};
+		7D5D54B5EFE4F24B6D543B9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C33D12BD84D022C69279C1EF /* pt.TetrisDuel */;
+			targetProxy = 4FE9244EBB88BF6AF5DE80B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		043D535C88A60A005DDCFD7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.TetrisDuelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pt.TetrisDuel.app/pt.TetrisDuel";
+			};
+			name = Debug;
+		};
+		0B8CF9A978C27BD86D8B22D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4346A114A0B89B35A702F938 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = RUPH5Y35UV;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TetrisDuel/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pro.pteam.TetrisDuel;
+				PRODUCT_MODULE_NAME = pt_TetrisDuel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9EA3F85534490133C1FD3250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A0C5DE804E3835B494BCDE97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.TetrisDuelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pt.TetrisDuel.app/pt.TetrisDuel";
+			};
+			name = Release;
+		};
+		B0F02F14914737F72A232337 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.TetrisDuelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = pt.TetrisDuel;
+			};
+			name = Release;
+		};
+		EC7E183500219429303D3139 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.TetrisDuelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = pt.TetrisDuel;
+			};
+			name = Debug;
+		};
+		F10AEB8D0775536BCC747138 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = RUPH5Y35UV;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TetrisDuel/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pro.pteam.TetrisDuel;
+				PRODUCT_MODULE_NAME = pt_TetrisDuel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E7FBC7F2BEA0B24B8C978D2 /* Build configuration list for PBXNativeTarget "pt.TetrisDuel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4346A114A0B89B35A702F938 /* Debug */,
+				F10AEB8D0775536BCC747138 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45C6E6EFB26DD1D605432DE2 /* Build configuration list for PBXNativeTarget "TetrisDuelUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7E183500219429303D3139 /* Debug */,
+				B0F02F14914737F72A232337 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72FE4DCF846896F90B9F49D6 /* Build configuration list for PBXProject "pt.TetrisDuel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B8CF9A978C27BD86D8B22D2 /* Debug */,
+				9EA3F85534490133C1FD3250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DA3E6FFD22BE9270CCB21B3 /* Build configuration list for PBXNativeTarget "TetrisDuelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				043D535C88A60A005DDCFD7B /* Debug */,
+				A0C5DE804E3835B494BCDE97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
 	};
-	"rootObject" = "244210E48437B6556980A702";
+	rootObject = 244210E48437B6556980A702 /* Project object */;
 }

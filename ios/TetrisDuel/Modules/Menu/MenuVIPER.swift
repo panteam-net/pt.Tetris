@@ -1,21 +1,26 @@
 import UIKit
 
 enum MenuChoice { case solo, shared, host, join }
+
 struct MenuItem {
     let choice: MenuChoice
     let title: String
     let symbol: String
 }
+
 protocol MenuViewing: AnyObject { func show(items: [MenuItem], name: String) }
+
 protocol MenuPresenting: AnyObject {
     func load()
     func select(_ choice: MenuChoice, name: String)
 }
+
 protocol MenuInteracting: AnyObject {
     var name: String { get }
     var items: [MenuItem] { get }
     func saveName(_ name: String)
 }
+
 protocol MenuRouting: AnyObject {
     func game(_ mode: MatchMode)
     func lobby(_ role: NearbyRole, name: String)
@@ -24,10 +29,15 @@ protocol MenuRouting: AnyObject {
 final class MenuInteractor: MenuInteracting {
     private let defaults: UserDefaults
     private let isPad: Bool
-    init(defaults: UserDefaults, isPad: Bool) { self.defaults = defaults; self.isPad = isPad }
+    init(defaults: UserDefaults, isPad: Bool) {
+        self.defaults = defaults
+        self.isPad = isPad
+    }
+    
     var name: String {
         defaults.string(forKey: "playerName") ?? L10n.text("player.default")
     }
+    
     var items: [MenuItem] {
         var values = [MenuItem(
             choice: .solo,
@@ -54,11 +64,16 @@ final class MenuInteractor: MenuInteracting {
                 symbol: "antenna.radiowaves.left.and.right"
             )
         ]
+    
         return values
     }
+    
     func saveName(_ name: String) {
         var value = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        while value.utf8.count > 60 { value.removeLast() }
+        while value.utf8.count > 60 {
+            value.removeLast()
+        }
+        
         defaults.set(
             value.isEmpty ? L10n.text("player.default") : value,
             forKey: "playerName"
@@ -70,8 +85,13 @@ final class MenuPresenter: MenuPresenting {
     weak var view: MenuViewing?
     private let interactor: MenuInteracting
     private let router: MenuRouting
-    init(interactor: MenuInteracting, router: MenuRouting) { self.interactor = interactor; self.router = router }
+    init(interactor: MenuInteracting, router: MenuRouting) {
+        self.interactor = interactor
+        self.router = router
+    }
+
     func load() { view?.show(items: interactor.items, name: interactor.name) }
+    
     func select(_ choice: MenuChoice, name: String) {
         interactor.saveName(name)
         switch choice {

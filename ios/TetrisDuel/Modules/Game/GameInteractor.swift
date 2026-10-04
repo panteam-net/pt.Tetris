@@ -32,11 +32,20 @@ final class GameInteractor: GameInteracting {
     private var remoteInputCount = 0
     var feedbackEnabled: Bool { feedback.isEnabled }
 
-    init(configuration: GameConfiguration, clock: GameClock, transport: NearbyTransport?,
-         feedback: FeedbackServing, seeds: SeedProviding) {
-        self.configuration = configuration; self.clock = clock; self.transport = transport
-        self.feedback = feedback; self.seeds = seeds
-        match = Match(seed: seeds.next(), players: configuration.mode.playerCount)
+    init(
+        configuration: GameConfiguration,
+        clock: GameClock,
+        transport: NearbyTransport?,
+        feedback: FeedbackServing,
+        seeds: SeedProviding) {
+        self.configuration = configuration
+        self.clock = clock
+        self.transport = transport
+        self.feedback = feedback
+        self.seeds = seeds
+        match = Match(
+            seed: seeds.next(),
+            players: configuration.mode.playerCount)
     }
 
     func start() {
@@ -51,8 +60,14 @@ final class GameInteractor: GameInteracting {
             }
         }
         clock.onTick = { [weak self] in self?.tick($0) }
-        if !configuration.mode.isNearby { phase = .countdown }
-        if configuration.mode == .nearbyGuest { send(.ready) }
+        if !configuration.mode.isNearby {
+            phase = .countdown
+        }
+        
+        if configuration.mode == .nearbyGuest {
+            send(.ready)
+        }
+        
         clock.start()
         publish()
     }
@@ -62,15 +77,23 @@ final class GameInteractor: GameInteracting {
               configuration.mode == .sharedDevice || seat == configuration.mode.localSeat else { return }
         if configuration.mode == .nearbyGuest {
             sequence &+= 1
-            send(.input(round: remoteSnapshot?.round ?? round, sequence: sequence, action: action, pressed: pressed))
+            send(.input(
+                round: remoteSnapshot?.round ?? round,
+                sequence: sequence,
+                action: action,
+                pressed: pressed))
         } else {
             applyInput(action, seat: seat, pressed: pressed)
             publish()
         }
     }
 
-    private func applyInput(_ action: GameAction, seat: Int, pressed: Bool) {
-        if let immediate = inputs[seat].set(action, down: pressed) { match.action(immediate, player: seat) }
+    private func applyInput(
+        _ action: GameAction,
+        seat: Int,
+        pressed: Bool) {
+        if let immediate = inputs[seat].set(action, down: pressed) { match.action(immediate, player: seat)
+        }
     }
 
     private var currentPhase: MatchPhase { remoteSnapshot?.phase ?? phase }
@@ -82,20 +105,29 @@ final class GameInteractor: GameInteracting {
                 connectionLost(L10n.text("game.notice.timeout"))
                 return
             }
+            
             heartbeatTimer += dt
             if heartbeatTimer >= 1 {
                 heartbeatTimer = 0
                 send(configuration.mode == .nearbyGuest && remoteSnapshot == nil ? .ready : .heartbeat)
             }
         }
+        
         guard configuration.mode != .nearbyGuest else { return }
         if phase == .countdown {
             countdown -= dt
-            if countdown <= 0 { countdown = 0; phase = .playing; clearInputs() }
+            if countdown <= 0 {
+                countdown = 0
+                phase = .playing
+                clearInputs()
+            }
         } else if phase == .playing {
             for seat in match.boards.indices {
-                for action in inputs[seat].tick(dt) { match.action(action, player: seat) }
+                for action in inputs[seat].tick(dt) {
+                    match.action(action, player: seat)
+                }
             }
+            
             match.tick(dt, softDrop: inputs.map { $0.softDrop })
             for (seat, board) in match.boards.enumerated() {
                 if configuration.mode == .sharedDevice || seat == configuration.mode.localSeat {
@@ -103,6 +135,7 @@ final class GameInteractor: GameInteracting {
                 }
                 board.effects.removeAll(keepingCapacity: true)
             }
+            
             if match.finished {
                 phase = .finished
                 clearInputs()
@@ -110,16 +143,27 @@ final class GameInteractor: GameInteracting {
                 feedback.play(.win)
             }
         }
+        
         publish()
         if configuration.mode == .nearbyHost {
             snapshotTimer += dt
-            if snapshotTimer >= 1.0 / 12 { snapshotTimer = 0; send(.snapshot(snapshot)) }
+            if snapshotTimer >= 1.0 / 12 {
+                snapshotTimer = 0
+                send(.snapshot(snapshot))
+            }
         }
     }
 
     private var snapshot: MatchSnapshot {
-        MatchSnapshot(round: round, revision: revision, phase: phase, countdown: countdown,
-                      elapsed: match.elapsed, boards: match.boards.map { $0.snapshot }, wins: wins, winner: match.winner)
+        MatchSnapshot(
+            round: round,
+            revision: revision,
+            phase: phase,
+            countdown: countdown,
+            elapsed: match.elapsed,
+            boards: match.boards.map { $0.snapshot },
+            wins: wins,
+            winner: match.winner)
     }
 
     private func publish() {
@@ -131,7 +175,9 @@ final class GameInteractor: GameInteracting {
     func setPaused(_ paused: Bool) {
         guard !stopped else { return }
         if configuration.mode == .nearbyGuest {
-            send(.pause(round: remoteSnapshot?.round ?? round, paused: paused))
+            send(.pause(
+                round: remoteSnapshot?.round ?? round,
+                paused: paused))
         } else { applyPause(paused) }
     }
 
@@ -147,9 +193,15 @@ final class GameInteractor: GameInteracting {
 
             phase = resumePhase; notice = nil; clearInputs()
         }
+        
         publish()
-        // Send critical state immediately, before iOS suspends a backgrounded host.
-        if configuration.mode == .nearbyHost { send(.snapshot(snapshot)) }
+        sendSnapshotImmediatelyBeforeIOSSuspendsBackgroundedHost()
+    }
+    
+    private func sendSnapshotImmediatelyBeforeIOSSuspendsBackgroundedHost() {
+        if configuration.mode == .nearbyHost {
+            send(.snapshot(snapshot))
+        }
     }
 
     func setAvailable(_ available: Bool) {
@@ -206,13 +258,23 @@ final class GameInteractor: GameInteracting {
                 guard state.round > old.round || (state.round == old.round && state.revision > old.revision) else { return }
                 if state.boards[1].lines > old.boards[1].lines { feedback.play(.clear) }
                 if state.phase == .finished && old.phase != .finished { feedback.play(.win) }
-                if state.round > old.round { notice = nil; sequence = 0; clearInputs() }
+                if state.round > old.round {
+                    notice = nil
+                    sequence = 0
+                    clearInputs()
+                }
             }
-            remoteSnapshot = state; phase = state.phase; round = state.round
+            
+            remoteSnapshot = state
+            phase = state.phase
+            round = state.round
             output?.gameUpdated(state, notice: notice)
         case .input(let epoch, let serial, let action, let pressed) where configuration.mode == .nearbyHost:
             guard epoch == round, serial > lastRemoteSequence, phase == .playing else { return }
-            if clock.now - inputWindowStart >= 1 { inputWindowStart = clock.now; remoteInputCount = 0 }
+            if clock.now - inputWindowStart >= 1 {
+                inputWindowStart = clock.now
+                remoteInputCount = 0
+            }
             remoteInputCount += 1
             guard remoteInputCount <= 160 else {
                 connectionLost(L10n.text("game.notice.rateLimit"))
@@ -237,13 +299,19 @@ final class GameInteractor: GameInteracting {
     private func send(_ message: WireMessage) {
         guard let transport = transport, !stopped, phase != .disconnected else { return }
         do { try transport.send(message) }
-        catch { connectionLost(L10n.text("game.notice.interrupted")) }
+        catch {
+            connectionLost(L10n.text("game.notice.interrupted"))
+        }
     }
 
     private func connectionLost(_ text: String) {
         guard phase != .disconnected, !stopped else { return }
         phase = .disconnected; notice = text; clearInputs()
-        if var state = remoteSnapshot { state.phase = .disconnected; remoteSnapshot = state }
+        if var state = remoteSnapshot {
+            state.phase = .disconnected
+            remoteSnapshot = state
+        }
+        
         transport?.disconnect()
         publish()
     }
@@ -252,10 +320,18 @@ final class GameInteractor: GameInteracting {
     func toggleFeedback() { feedback.isEnabled.toggle(); publish() }
     func stop() {
         guard !stopped else { return }
-        if transport?.isConnected == true { try? transport?.send(.bye) }
-        stopped = true; clock.stop(); clock.onTick = nil
-        transport?.onMessage = nil; transport?.onEvent = nil; transport?.disconnect()
+        if transport?.isConnected == true {
+            try? transport?.send(.bye)
+        }
+        
+        stopped = true
+        clock.stop()
+        clock.onTick = nil
+        transport?.onMessage = nil
+        transport?.onEvent = nil
+        transport?.disconnect()
         clearInputs()
     }
+    
     deinit { clock.stop() }
 }

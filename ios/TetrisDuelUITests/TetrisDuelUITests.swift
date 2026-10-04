@@ -30,11 +30,17 @@ final class TetrisDuelUITests: XCTestCase {
     }
     
     func testSharedDeviceModeOnIPad() throws {
-        let app = application()
+        let app = application(language: "ru")
         guard app.buttons["menu-shared"].exists else { throw XCTSkip("Shared-device mode is iPad-only.") }
+        XCTAssertEqual(
+            app.buttons["menu-shared"].label,
+            "Два игрока · этот iPad"
+        )
         app.buttons["menu-shared"].tap()
         XCTAssertTrue(app.staticTexts["player-0-name"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["player-1-name"].exists)
+        XCTAssertEqual(app.staticTexts["player-0-name"].label, "ИГРОК 01")
+        XCTAssertEqual(app.staticTexts["player-1-name"].label, "ИГРОК 02")
     }
 
     func testRussianMenuAndGameAreLocalized() {
@@ -48,6 +54,13 @@ final class TetrisDuelUITests: XCTestCase {
             app.staticTexts["player-0-name"].waitForExistence(timeout: 5)
         )
         XCTAssertEqual(app.staticTexts["player-0-name"].label, "ВЫ")
+        XCTAssertEqual(app.buttons["control-0-left"].label, "ВЛЕВО")
+        XCTAssertEqual(app.buttons["control-0-hold"].label, "ЗАПАС")
+        XCTAssertEqual(app.buttons["control-0-hardDrop"].label, "СБРОС")
+        XCTAssertEqual(
+            app.staticTexts["player-0-stats"].label,
+            "ЛИНИИ 0   УР 1   ОТПР 0   +0"
+        )
         app.navigationBars.buttons["game-pause"].tap()
         XCTAssertEqual(app.staticTexts["game-overlay-title"].label, "ПАУЗА")
         XCTAssertEqual(app.buttons["game-primary"].label, "Продолжить")

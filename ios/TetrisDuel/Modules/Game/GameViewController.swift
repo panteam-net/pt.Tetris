@@ -22,7 +22,9 @@ final class GameViewController: UIViewController, GameViewing {
         self.presenter = presenter; self.mode = mode
         super.init(nibName: nil, bundle: nil)
     }
+    
     required init?(coder: NSCoder) { fatalError("Use dependency-injected initializer") }
+    
     override var canBecomeFirstResponder: Bool { true }
 
     override func viewDidLoad() {
@@ -31,37 +33,67 @@ final class GameViewController: UIViewController, GameViewing {
         view.backgroundColor = Theme.background
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "pause.fill"), style: .plain, target: self, action: #selector(pausePressed)),
-            UIBarButtonItem(image: UIImage(systemName: "questionmark.circle"), style: .plain, target: self, action: #selector(helpPressed)),
-            UIBarButtonItem(image: UIImage(systemName: "speaker.wave.2"), style: .plain, target: self, action: #selector(soundPressed))
+            UIBarButtonItem(
+                image: UIImage(systemName: "pause.fill"),
+                style: .plain,
+                target: self,
+                action: #selector(pausePressed)),
+            UIBarButtonItem(
+                image: UIImage(systemName: "questionmark.circle"),
+                style: .plain,
+                target: self,
+                action: #selector(helpPressed)),
+            UIBarButtonItem(
+                image: UIImage(systemName: "speaker.wave.2"),
+                style: .plain,
+                target: self,
+                action: #selector(soundPressed))
         ]
-        navigationItem.rightBarButtonItems?[0].accessibilityLabel =
-            L10n.text("game.pause.accessibility")
-        navigationItem.rightBarButtonItems?[0].accessibilityIdentifier =
-            "game-pause"
-        navigationItem.rightBarButtonItems?[1].accessibilityLabel =
-            L10n.text("game.help.title")
-        navigationItem.rightBarButtonItems?[1].accessibilityIdentifier =
-            "game-help"
-        navigationItem.rightBarButtonItems?[2].accessibilityIdentifier =
-            "game-sound"
+        navigationItem
+            .rightBarButtonItems?[0]
+            .accessibilityLabel = L10n.text("game.pause.accessibility")
+        navigationItem
+            .rightBarButtonItems?[0]
+            .accessibilityIdentifier = "game-pause"
+        navigationItem
+            .rightBarButtonItems?[1]
+            .accessibilityLabel = L10n.text("game.help.title")
+        navigationItem
+            .rightBarButtonItems?[1]
+            .accessibilityIdentifier = "game-help"
+        navigationItem
+            .rightBarButtonItems?[2]
+            .accessibilityIdentifier = "game-sound"
         let spacer = UIView()
         let header = UIStackView(arrangedSubviews: [statusLabel, spacer, timerLabel])
-        header.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        header
+            .heightAnchor
+            .constraint(equalToConstant: 24)
+            .isActive = true
         let area = UIStackView()
-        area.axis = .horizontal; area.distribution = .fillEqually; area.spacing = 12
-        let seats = mode == .solo ? [0] : (UIDevice.current.userInterfaceIdiom == .pad ? [0, 1] : [mode.localSeat])
+        area.axis = .horizontal
+        area.distribution = .fillEqually
+        area.spacing = 12
+        let seats = mode == .solo
+            ? [0]
+        : (UIDevice.current.userInterfaceIdiom == .pad
+           ? [0, 1]
+           : [mode.localSeat])
         for seat in seats {
             let controlled = mode == .sharedDevice || seat == mode.localSeat
             let panel = PlayerPanel(seat: seat, controlled: controlled)
             panel.controls.onInput = { [weak self] action, pressed in self?.presenter.input(action, seat: seat, pressed: pressed) }
-            panels.append(panel); area.addArrangedSubview(panel)
+            panels.append(panel)
+            area.addArrangedSubview(panel)
         }
+        
         opponentLabel.isHidden = !mode.isNearby || UIDevice.current.userInterfaceIdiom == .pad
         opponentLabel.numberOfLines = 1; opponentLabel.adjustsFontSizeToFitWidth = true
         let content = UIStackView(arrangedSubviews: [header, opponentLabel, area])
-        content.axis = .vertical; content.spacing = 8
-        view.addSubview(content); content.translatesAutoresizingMaskIntoConstraints = false
+        content.axis = .vertical
+        content.spacing = 8
+        view.addSubview(content)
+        content.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             content.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12),
             content.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12),
@@ -83,28 +115,43 @@ final class GameViewController: UIViewController, GameViewing {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated); becomeFirstResponder(); UIApplication.shared.isIdleTimerDisabled = true
     }
+    
     override func didMove(toParent parent: UIViewController?) {
         super.didMove(toParent: parent)
-        // An interactive back-swipe may be cancelled: stop only after removal.
         if parent == nil && isViewLoaded {
-            presenter.exit(); UIApplication.shared.isIdleTimerDisabled = false
+            presenter.exit()
+            UIApplication.shared.isIdleTimerDisabled = false
         }
     }
 
     private func buildOverlay() {
-        overlay.layer.cornerRadius = 24; overlay.clipsToBounds = true
-        overlay.layer.borderColor = Theme.line.cgColor; overlay.layer.borderWidth = 1
-        overlayTitle.numberOfLines = 0; overlayTitle.textAlignment = .center
+        overlay.layer.cornerRadius = 24
+        overlay.clipsToBounds = true
+        overlay.layer.borderColor = Theme.line.cgColor
+        overlay.layer.borderWidth = 1
+        overlayTitle.numberOfLines = 0
+        overlayTitle.textAlignment = .center
         overlayTitle.accessibilityIdentifier = "game-overlay-title"
-        overlayTitle.adjustsFontSizeToFitWidth = true; overlayTitle.minimumScaleFactor = 0.65
-        overlayDetail.numberOfLines = 0; overlayDetail.textAlignment = .center
-        primaryButton.addTarget(self, action: #selector(primaryPressed), for: .touchUpInside)
+        overlayTitle.adjustsFontSizeToFitWidth = true
+        overlayTitle.minimumScaleFactor = 0.65
+        overlayDetail.numberOfLines = 0
+        overlayDetail.textAlignment = .center
+        primaryButton.addTarget(
+            self,
+            action: #selector(primaryPressed),
+            for: .touchUpInside)
         primaryButton.accessibilityIdentifier = "game-primary"
-        let stack = UIStackView(arrangedSubviews: [overlayTitle, overlayDetail, primaryButton])
-        stack.axis = .vertical; stack.spacing = 20
-        overlay.contentView.addSubview(stack); stack.pinEdges(to: overlay.contentView, inset: 28)
-        view.addSubview(overlay); overlay.translatesAutoresizingMaskIntoConstraints = false
-        let fillWidth = overlay.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -40)
+        let stack = UIStackView(
+            arrangedSubviews: [overlayTitle, overlayDetail, primaryButton])
+        stack.axis = .vertical
+        stack.spacing = 20
+        overlay.contentView.addSubview(stack)
+        stack.pinEdges(to: overlay.contentView, inset: 28)
+        view.addSubview(overlay)
+        overlay.translatesAutoresizingMaskIntoConstraints = false
+        let fillWidth = overlay.widthAnchor.constraint(
+            equalTo: view.safeAreaLayoutGuide.widthAnchor,
+            constant: -40)
         fillWidth.priority = .defaultHigh
         NSLayoutConstraint.activate([
             overlay.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
@@ -182,28 +229,48 @@ final class GameViewController: UIViewController, GameViewing {
         if let action = right[code] { return (mode == .sharedDevice ? 1 : mode.localSeat, action) }
         return nil
     }
+    
     override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
         var handled = false
         for press in presses {
             guard let key = press.key else { continue }
             let code = Int(key.keyCode.rawValue)
             guard heldKeys.insert(code).inserted else { continue }
-            if code == 19 || code == 41 { presenter.pause(); handled = true }
-            else if let (seat, action) = binding(code) { presenter.input(action, seat: seat, pressed: true); handled = true }
+            if code == 19 || code == 41 {
+                presenter.pause()
+                handled = true
+            }
+            else if let (seat, action) = binding(code) {
+                presenter.input(action, seat: seat, pressed: true)
+                handled = true
+            }
         }
         if !handled { super.pressesBegan(presses, with: event) }
     }
-    override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
-        release(presses); super.pressesEnded(presses, with: event)
+    
+    override func pressesEnded(
+        _ presses: Set<UIPress>,
+        with event: UIPressesEvent?) {
+        release(presses)
+        super.pressesEnded(presses, with: event)
     }
-    override func pressesCancelled(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
-        release(presses); super.pressesCancelled(presses, with: event)
+    
+    override func pressesCancelled(
+        _ presses: Set<UIPress>,
+        with event: UIPressesEvent?) {
+        release(presses)
+        super.pressesCancelled(presses, with: event)
     }
+    
     private func release(_ presses: Set<UIPress>) {
         for press in presses {
             guard let key = press.key else { continue }
-            let code = Int(key.keyCode.rawValue); heldKeys.remove(code)
-            if let (seat, action) = binding(code) { presenter.input(action, seat: seat, pressed: false) }
+            
+            let code = Int(key.keyCode.rawValue)
+            heldKeys.remove(code)
+            if let (seat, action) = binding(code) {
+                presenter.input(action, seat: seat, pressed: false)
+            }
         }
     }
     deinit { observers.forEach(NotificationCenter.default.removeObserver) }

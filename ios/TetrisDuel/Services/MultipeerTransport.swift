@@ -30,16 +30,23 @@ final class MultipeerTransport: NSObject, NearbyTransport {
             displayName: name.isEmpty ? L10n.text("player.nearbyDefault") : name
         )
         super.init()
-        session = MCSession(peer: identity, securityIdentity: nil, encryptionPreference: .required)
+        session = MCSession(
+            peer: identity,
+            securityIdentity: nil,
+            encryptionPreference: .required)
         session.delegate = self
     }
 
     func host() {
         guard !closed else { return }
         role = .host
-        let service = MCNearbyServiceAdvertiser(peer: identity,
-            discoveryInfo: ["version": String(WireCodec.version)], serviceType: Self.serviceType)
-        advertiser = service; service.delegate = self; service.startAdvertisingPeer()
+        let service = MCNearbyServiceAdvertiser(
+            peer: identity,
+            discoveryInfo: ["version": String(WireCodec.version)],
+            serviceType: Self.serviceType)
+        advertiser = service
+        service.delegate = self
+        service.startAdvertisingPeer()
         onEvent?(.status(L10n.text("nearby.status.waiting")))
     }
 

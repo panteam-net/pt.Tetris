@@ -25,6 +25,7 @@ public struct HeldInput {
             direction = next; repeatTime = -0.16
             return next == 0 ? [] : [next < 0 ? .left : .right]
         }
+        
         guard next != 0 else { return [] }
         repeatTime += dt
         var result: [GameAction] = []

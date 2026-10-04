@@ -20,6 +20,7 @@ final class PlayerPanel: UIView {
         score.adjustsFontSizeToFitWidth = true; score.minimumScaleFactor = 0.55
         score.accessibilityLabel = L10n.text("player.score")
         stats.adjustsFontSizeToFitWidth = true; stats.minimumScaleFactor = 0.7
+        stats.accessibilityIdentifier = "player-\(seat)-stats"
         board.seat = seat
         let holdLabel = Theme.label(
             L10n.text("player.hold"),
@@ -63,6 +64,7 @@ final class PlayerPanel: UIView {
     func render(_ state: BoardSnapshot, title: String, enabled: Bool) {
         name.text = title
         score.text = state.score.formatted()
+        score.accessibilityValue = score.text
         stats.text = L10n.format(
             "player.stats",
             state.lines,

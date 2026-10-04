@@ -5,6 +5,10 @@ These are outstanding runtime checks, not a record of completed tests.
 ## Build and local play
 
 - Build the app and run the pt.TetrisDuel scheme tests on an iPhone and an iPad.
+- Try English and Russian app languages; check menus, controls, help and results
+  on both devices for clipped text, and verify translated VoiceOver labels.
+- With Russian selected, verify the Local Network permission explanation when
+  hosting or joining a nearby game for the first time.
 - Confirm iPhone shows one board, iPad offers the shared-device duel, and both
   full-size iPad orientations keep the controls and both fields visible.
 - Start solo, rotate at both walls and the floor, hold once per piece, soft-drop,

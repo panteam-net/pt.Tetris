@@ -6,12 +6,28 @@ final class GamePresenter: GamePresenting, GameInteractorOutput {
     private let router: GameRouting
     private var phase: MatchPhase = .waiting
 
-    init(interactor: GameInteracting, router: GameRouting) {
-        self.interactor = interactor; self.router = router
+    init(
+        interactor: GameInteracting,
+        router: GameRouting) {
+        self.interactor = interactor
+        self.router = router
     }
-    func load() { interactor.start() }
-    func input(_ action: GameAction, seat: Int, pressed: Bool) { interactor.input(action, seat: seat, pressed: pressed) }
-    func pause() { interactor.setPaused(phase != .paused) }
+    
+    func load() {
+        interactor.start()
+    }
+    
+    func input(
+        _ action: GameAction,
+        seat: Int,
+        pressed: Bool) {
+            interactor.input(action, seat: seat, pressed: pressed)
+        }
+    
+    func pause() {
+        interactor.setPaused(phase != .paused)
+    }
+    
     func primaryAction() {
         switch phase {
         case .paused: interactor.setPaused(false)
@@ -20,10 +36,23 @@ final class GamePresenter: GamePresenting, GameInteractorOutput {
         default: break
         }
     }
-    func help() { interactor.setPaused(true); view?.showHelp() }
-    func toggleFeedback() { interactor.toggleFeedback() }
-    func setAvailable(_ available: Bool) { interactor.setAvailable(available) }
-    func exit() { interactor.stop() }
+    
+    func help() {
+        interactor.setPaused(true)
+        view?.showHelp()
+    }
+    
+    func toggleFeedback() {
+        interactor.toggleFeedback()
+    }
+    
+    func setAvailable(_ available: Bool) {
+        interactor.setAvailable(available)
+    }
+    
+    func exit() {
+        interactor.stop()
+    }
 
     func gameUpdated(_ snapshot: MatchSnapshot, notice: String?) {
         phase = snapshot.phase
@@ -79,6 +108,7 @@ final class GamePresenter: GamePresenting, GameInteractorOutput {
         case .sharedDevice: title = L10n.text("game.mode.shared")
         case .nearbyHost, .nearbyGuest: title = L10n.text("game.mode.nearby")
         }
+     
         view?.render(GameViewModel(
             snapshot: snapshot,
             mode: mode,

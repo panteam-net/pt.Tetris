@@ -21,6 +21,21 @@ The renderer uses UIKit and Core Graphics, with no external assets or game engin
 The project uses Swift 5 language mode and the UIKit scene lifecycle. It includes
 an app icon, launch background, privacy manifest and shared test scheme.
 
+## Languages
+
+The interface supports **English and Russian** and follows the device's preferred
+language, with English as the fallback. You can also select the app's language
+in iOS Settings under **pt.TetrisDuel → Language**.
+
+In Xcode, use **Edit Scheme → Run → Options → App Language → Russian** to try
+Russian without changing the simulator's system language.
+
+Menus, controls, game results, help, nearby-connection messages and VoiceOver
+labels use `TetrisDuel/Resources/Localizable.xcstrings`. The Local Network
+permission explanation uses `TetrisDuel/Resources/InfoPlist.xcstrings`.
+Player-entered names are preserved. Add translations to these string catalogs
+and register new languages in the project generator and `Info.plist`.
+
 ## Play modes
 
 | Device / mode | Layout and controls |
@@ -114,7 +129,7 @@ keeps outcomes consistent, with guest control latency depending on the network.
 
 ## Tests and validation
 
-The checked-in scheme includes **31 unit tests** and **3 UI tests**. On a Mac:
+The checked-in scheme includes **33 unit tests** and **4 UI tests**. On a Mac:
 
 ```sh
 cd ios
@@ -124,7 +139,8 @@ open pt.TetrisDuel.xcodeproj
 ```
 
 `swift test` runs the **22 portable core tests**. Xcode also runs nine interactor
-tests with injected fake clocks, transports and feedback, plus the UI tests.
+tests with injected fake clocks, transports and feedback, two localization tests,
+and the UI tests. UI tests cover English and Russian menus and gameplay screens.
 The shared-iPad UI test skips on an iPhone simulator.
 
 From the command line, list available destinations and choose one:

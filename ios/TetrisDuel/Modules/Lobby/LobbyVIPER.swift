@@ -5,21 +5,25 @@ protocol LobbyViewing: AnyObject {
     func showPeers(_ peers: [NearbyPeer])
     func showInvitation(name: String, answer: @escaping (Bool) -> Void)
 }
+
 protocol LobbyPresenting: AnyObject {
     func load()
     func select(_ peer: NearbyPeer)
     func leave()
 }
+
 protocol LobbyInteracting: AnyObject {
     var output: LobbyInteractorOutput? { get set }
     func start()
     func invite(_ peer: NearbyPeer)
     func stop()
 }
+
 protocol LobbyInteractorOutput: AnyObject {
     func lobbyEvent(_ event: NearbyEvent)
     func lobbyConnected(name: String, transport: NearbyTransport)
 }
+
 protocol LobbyRouting: AnyObject {
     func game(mode: MatchMode, name: String, transport: NearbyTransport)
 }
@@ -29,20 +33,45 @@ final class LobbyInteractor: LobbyInteracting {
     private let role: NearbyRole
     private let transport: NearbyTransport
     private var handedOff = false
-    init(role: NearbyRole, transport: NearbyTransport) { self.role = role; self.transport = transport }
+    init(role: NearbyRole, transport: NearbyTransport) {
+        self.role = role
+        self.transport = transport
+    }
+    
     func start() {
         transport.onEvent = { [weak self] event in
             guard let self = self, !self.handedOff else { return }
             if case .connected(let name) = event {
                 self.handedOff = true
                 self.output?.lobbyConnected(name: name, transport: self.transport)
-            } else { self.output?.lobbyEvent(event) }
+            } else {
+                self.output?.lobbyEvent(event)
+            }
         }
-        if role == .host { transport.host() } else { transport.browse() }
+        
+        if role == .host {
+            transport.host()
+        } else {
+            transport.browse()
+        }
     }
-    func invite(_ peer: NearbyPeer) { transport.invite(peer) }
-    func stop() { if !handedOff { transport.disconnect(); transport.onEvent = nil } }
-    deinit { if !handedOff { transport.disconnect() } }
+    
+    func invite(_ peer: NearbyPeer) {
+        transport.invite(peer)
+    }
+    
+    func stop() {
+        if !handedOff {
+            transport.disconnect()
+            transport.onEvent = nil
+        }
+    }
+    
+    deinit {
+        if !handedOff {
+            transport.disconnect()
+        }
+    }
 }
 
 final class LobbyPresenter: LobbyPresenting, LobbyInteractorOutput {

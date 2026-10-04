@@ -3,7 +3,9 @@ import Foundation
 /// SplitMix64 has specified wrapping arithmetic, unlike system RNG algorithms.
 public struct SeededRandom {
     private var state: UInt64
+    
     public init(seed: UInt64) { state = seed }
+    
     public mutating func next() -> UInt64 {
         state &+= 0x9E3779B97F4A7C15
         var z = state
@@ -11,6 +13,7 @@ public struct SeededRandom {
         z = (z ^ (z >> 27)) &* 0x94D049BB133111EB
         return z ^ (z >> 31)
     }
+    
     public mutating func index(_ upper: Int) -> Int {
         precondition(upper > 0)
         // Reject the short tail rather than introducing modulo bias.
@@ -25,7 +28,9 @@ public struct SeededRandom {
 public final class PieceStream {
     private var random: SeededRandom
     private var sequence: [Tetromino] = []
+    
     public init(seed: UInt64) { random = SeededRandom(seed: seed) }
+    
     public func at(_ index: Int) -> Tetromino {
         precondition(index >= 0)
         while sequence.count <= index {

@@ -13,6 +13,41 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / ".validation"))
 
 
+def validate_localizations(sources, project_text):
+    catalogs = {}
+    placeholder = r"%(?:\d+\$)?[-+0 #]*\d*(?:\.\d+)?(?:ll|l|z)?[@diufFeEgG]"
+    for path in (ROOT / "TetrisDuel/Resources").glob("*.xcstrings"):
+        catalog = json.loads(path.read_text(encoding="utf-8"))
+        assert catalog["sourceLanguage"] == "en"
+        assert path.relative_to(ROOT).as_posix() in project_text
+        catalogs[path.stem] = catalog["strings"]
+        for key, entry in catalog["strings"].items():
+            values = {}
+            for language in ("en", "ru"):
+                unit = entry["localizations"][language]["stringUnit"]
+                assert unit["state"] == "translated", f"Untranslated: {key}"
+                assert unit["value"].strip(), f"Empty: {key}/{language}"
+                values[language] = unit["value"]
+
+            english = sorted(re.findall(placeholder, values["en"]))
+            russian = sorted(re.findall(placeholder, values["ru"]))
+            assert english == russian, f"Format mismatch: {key}"
+
+    namespaces = "common|menu|player|lobby|nearby|game|controls|board"
+    keys = set()
+    for path in sources:
+        keys.update(re.findall(
+            rf'"((?:{namespaces})\.[A-Za-z0-9.]+)"',
+            path.read_text(encoding="utf-8"),
+        ))
+
+    missing = keys - catalogs["Localizable"].keys()
+    assert not missing, f"Missing localization keys: {sorted(missing)}"
+    assert "NSLocalNetworkUsageDescription" in catalogs["InfoPlist"]
+    count = sum(len(entries) for entries in catalogs.values())
+    print(f"Localization checked: {count} English/Russian strings and formats")
+
+
 def validate():
     for path in [*ROOT.rglob("*.plist"), *ROOT.rglob("*.xcprivacy")]:
         if ".validation" not in path.parts:
@@ -32,11 +67,13 @@ def validate():
         info = plistlib.load(file)
     assert info["NSBonjourServices"] == ["_tetris-duel._tcp"]
     assert info.get("NSLocalNetworkUsageDescription")
+    assert info["CFBundleLocalizations"] == ["en", "ru"]
     assert not any("Bluetooth" in key for key in info), "No Bluetooth permission should be requested"
     project_directory = ROOT / "pt.TetrisDuel.xcodeproj"
     project_path = project_directory / "project.pbxproj"
     project_text = project_path.read_text()
     all_sources = list((ROOT / "TetrisDuel").rglob("*.swift")) + list((ROOT / "TetrisDuelTests").rglob("*.swift")) + list((ROOT / "TetrisDuelUITests").rglob("*.swift"))
+    validate_localizations(all_sources, project_text)
     for path in all_sources:
         assert path.relative_to(ROOT).as_posix() in project_text, f"Source missing from project: {path}"
     for path in (ROOT / "TetrisDuel/Core").glob("*.swift"):

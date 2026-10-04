@@ -6,6 +6,7 @@ struct NearbyPeer: Equatable {
 }
 
 enum NearbyRole { case host, guest }
+
 enum NearbyEvent {
     case status(String)
     case peers([NearbyPeer])
@@ -41,6 +42,7 @@ protocol FeedbackServing: AnyObject {
 }
 
 protocol SeedProviding { func next() -> UInt64 }
+
 struct SystemSeedProvider: SeedProviding {
     func next() -> UInt64 { UInt64.random(in: UInt64.min...UInt64.max) }
 }
