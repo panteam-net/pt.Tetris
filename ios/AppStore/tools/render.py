@@ -199,6 +199,7 @@ iPhone 6.5-inch: 1284 × 2778 · iPad 13-inch: 2064 × 2752<br>
 5 designs per device and language. Select an image to open its full-resolution PNG.</p>
 <p><a href="promotional-appstore.zip">Download promotional iPhone 6.5-inch + iPad screenshot pack</a></p>
 <p><a href="metadata/en-US.json">English listing</a> · <a href="metadata/ru.json">Russian listing</a> · <a href="README.md">Upload and regeneration guide</a></p>
+<p>Privacy policy: <a href="privacy/en.md">English</a> · <a href="privacy/ru.md">Русский</a></p>
 <p><a href="snapshots/README.md">Required-size app snapshots</a> · <a href="snapshots/appstore-snapshots.zip">Download snapshot ZIP</a></p>
 """ + "".join(sections) + "</html>\n"
     (ROOT / "index.html").write_text(content)

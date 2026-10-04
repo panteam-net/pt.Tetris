@@ -57,6 +57,17 @@ Name and subtitle are within 30 characters, promotional text within 170,
 keywords within 100, and descriptions within 4000. Set your support URL,
 privacy policy URL, and copyright in App Store Connect using your publishing details.
 
+## Privacy policies
+
+- [English privacy policy](privacy/en.md)
+- [Политика конфиденциальности на русском](privacy/ru.md)
+
+Both policies describe local preferences, nearby multiplayer, Firebase
+Analytics, permissions, retention, and privacy requests. Publishing guidance
+and implementation references are in [`privacy/README.md`](privacy/README.md).
+Publish the policies as public HTTPS pages and enter their URLs in App Store
+Connect's **Privacy Policy URL** field.
+
 ## Capture provenance
 
 `captures` contains the original **iPhone 13 Pro Max (1284 × 2778)**,
