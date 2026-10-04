@@ -66,7 +66,7 @@ jobs:
           swift test --scratch-path "$RUNNER_TEMP/SwiftCoreBuild"
 
       - name: Cache Swift packages
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ runner.temp }}/SourcePackages
           key: >-
@@ -100,7 +100,7 @@ jobs:
 
       - name: Save test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ios-tests-${{ matrix.platform }}-${{ github.run_attempt }}
           path: |
@@ -128,7 +128,7 @@ jobs:
           persist-credentials: false
 
       - name: Cache Swift packages
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ runner.temp }}/SourcePackages
           key: >-
@@ -155,7 +155,7 @@ jobs:
 
       - name: Save archive, IPA and upload logs
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: testflight-${{ github.run_number }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/testflight
