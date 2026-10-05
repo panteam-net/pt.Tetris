@@ -4,3 +4,4 @@
 - [GitHub build and TestFlight publishing](ios/TESTFLIGHT.md)
 - [App Store screenshots and descriptions](ios/AppStore/README.md)
 - Privacy policy: [English](ios/AppStore/privacy/en.md) · [Русский](ios/AppStore/privacy/ru.md)
+- App support: [English](ios/AppStore/support/en.md) · [Русский](ios/AppStore/support/ru.md)

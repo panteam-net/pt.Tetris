@@ -2,11 +2,15 @@
 
 Listing text is generated from the JSON files in `metadata`.
 
+**Copyright:** 2026 PTEAM
+
 ## English (U.S.)
 
 **Name:** pt.TetrisDuel
 
 **Subtitle:** 3D blocks. Solo & local duels.
+
+**Support URL:** https://github.com/panteam-net/pt.Tetris/issues
 
 ### Promotional text
 
@@ -51,6 +55,8 @@ Stack. Clear. Go again.
 **Name:** pt.TetrisDuel
 
 **Subtitle:** 3D-фигуры и дуэли рядом
+
+**Support URL:** https://github.com/panteam-net/pt.Tetris/issues
 
 ### Promotional text
 

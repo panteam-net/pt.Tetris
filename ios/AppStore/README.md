@@ -57,6 +57,46 @@ Name and subtitle are within 30 characters, promotional text within 170,
 keywords within 100, and descriptions within 4000. Set your support URL,
 privacy policy URL, and copyright in App Store Connect using your publishing details.
 
+## Support URLs
+
+Both localized metadata files include this public support contact URL:
+
+```text
+https://github.com/panteam-net/pt.Tetris/issues
+```
+
+Enter it in **Support URL** under **English (U.S.)** and again under **Russian**
+in App Store Connect. The same support URL can be used for both languages.
+
+Localized help pages are also included:
+
+- [English support page](support/en.md)
+- [Страница поддержки на русском](support/ru.md)
+
+After publishing these new pages to the public repository, you can use their
+individual public URLs instead:
+
+- English: `https://github.com/panteam-net/pt.Tetris/blob/main/ios/AppStore/support/en.md`
+- Russian: `https://github.com/panteam-net/pt.Tetris/blob/main/ios/AppStore/support/ru.md`
+
+Local Markdown files become public support pages only after they are published.
+
+## Copyright
+
+Enter this value in the version's shared **Copyright** field:
+
+```text
+2026 PTEAM
+```
+
+This is a single version-level field, not a separate field for each language.
+The value is stored in [`metadata/version.json`](metadata/version.json).
+
+To clear the three missing-field errors, enter the support URL under both
+**English (U.S.)** and **Russian**, enter the copyright above, and choose **Save**
+in App Store Connect. Updating the repository's metadata files does not itself
+change the values in App Store Connect.
+
 ## Privacy policies
 
 - [English privacy policy](privacy/en.md)

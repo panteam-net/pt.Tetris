@@ -200,6 +200,7 @@ iPhone 6.5-inch: 1284 × 2778 · iPad 13-inch: 2064 × 2752<br>
 <p><a href="promotional-appstore.zip">Download promotional iPhone 6.5-inch + iPad screenshot pack</a></p>
 <p><a href="metadata/en-US.json">English listing</a> · <a href="metadata/ru.json">Russian listing</a> · <a href="README.md">Upload and regeneration guide</a></p>
 <p>Privacy policy: <a href="privacy/en.md">English</a> · <a href="privacy/ru.md">Русский</a></p>
+<p>App support: <a href="support/en.md">English</a> · <a href="support/ru.md">Русский</a></p>
 <p><a href="snapshots/README.md">Required-size app snapshots</a> · <a href="snapshots/appstore-snapshots.zip">Download snapshot ZIP</a></p>
 """ + "".join(sections) + "</html>\n"
     (ROOT / "index.html").write_text(content)
@@ -229,12 +230,15 @@ def package_promotional_screenshots(entries):
 
 
 def listing_document():
+    version = json.loads((ROOT / "metadata/version.json").read_text())
     sections = ["# pt.TetrisDuel — App Store descriptions\n",
-                "Listing text is generated from the JSON files in `metadata`.\n"]
+                "Listing text is generated from the JSON files in `metadata`.\n",
+                f"**Copyright:** {version['copyright']}\n"]
     for locale, language in [("en-US", "English (U.S.)"), ("ru", "Russian / Русский")]:
         metadata = json.loads((ROOT / "metadata" / f"{locale}.json").read_text())
         sections.append(f"## {language}\n\n**Name:** {metadata['name']}\n\n"
                         f"**Subtitle:** {metadata['subtitle']}\n\n"
+                        f"**Support URL:** {metadata['support_url']}\n\n"
                         f"### Promotional text\n\n{metadata['promotional_text']}\n\n"
                         f"### Keywords\n\n`{metadata['keywords']}`\n\n"
                         f"### Description\n\n{metadata['description']}\n")

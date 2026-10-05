@@ -1,5 +1,6 @@
 {
   "name": "pt.TetrisDuel",
+  "support_url": "https://github.com/panteam-net/pt.Tetris/issues",
   "subtitle": "3D blocks. Solo & local duels.",
   "promotional_text": "Stack colorful 3D blocks, chase higher scores, and challenge a friend. Play solo, share an iPad, or duel over nearby Wi-Fi—no account required.",
   "keywords": "falling,blocks,puzzle,local,multiplayer,wifi,offline,arcade,3d,combo,clear,versus,two,players",

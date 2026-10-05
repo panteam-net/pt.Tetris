@@ -5,6 +5,7 @@ import json
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urlsplit
 from zipfile import ZipFile
 
 from PIL import Image
@@ -85,8 +86,16 @@ def main():
             for board in metadata.get("boards", []):
                 assert board["level"] == 1 + board["lines"] // 10
 
-    for path in sorted((ROOT / "metadata").glob("*.json")):
+    version_metadata = json.loads((ROOT / "metadata/version.json").read_text())
+    copyright_value = version_metadata["copyright"]
+    year, owner = copyright_value.split(maxsplit=1)
+    assert len(year) == 4 and year.isdigit() and owner.strip(), "Copyright must contain a year and rights-holder name"
+    assert f"**Copyright:** {copyright_value}" in (ROOT / "DESCRIPTION.md").read_text(), "Stale readable copyright"
+    for locale in ("en-US", "ru"):
+        path = ROOT / "metadata" / f"{locale}.json"
         metadata = json.loads(path.read_text())
+        support = urlsplit(metadata["support_url"])
+        assert support.scheme in {"http", "https"} and support.netloc, f"{path.name}: missing or invalid Support URL"
         for field, limit in LIMITS.items():
             length = len(metadata[field])
             assert 0 < length <= limit, f"{path.name}/{field}: {length} > {limit}"
